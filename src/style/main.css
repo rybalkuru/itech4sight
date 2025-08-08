@@ -1,0 +1,18 @@
+@import "./base/_reset.css";
+@import "./base/_variables.css";
+@import "./base/_typography.css";
+@import "./base/_globals.css";
+
+@import "./sections/_welcome.css";
+@import "./sections/_audience.css";
+@import "./sections/_advantages.css";
+@import "./sections/_features.css";
+@import "./sections/_price.css";
+@import "./sections/_questions.css";
+@import "./sections/_feedback.css";
+@import "./sections/_mobile.css";
+
+@import "./components/_container.css";
+@import "./components/_title.css";
+@import "./components/_header.css";
+@import "./components/_footer.css";

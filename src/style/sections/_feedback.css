@@ -1,0 +1,82 @@
+.feedback {
+    padding: 112px 0px;
+}
+
+.feedback__wrapper {
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.feedback__content {
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow:
+        0 8px 16px rgba(16, 24, 40, 0.08),
+        0 0 4px rgba(16, 24, 40, 0.04);
+    background:
+        url("../../images/feedback-bg.svg") no-repeat 852px 50px,
+        #295bff;
+}
+
+.feedback__info {
+    margin-bottom: 32px;
+    max-width: 740px;
+}
+
+.feedback__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    color: #fdfdfd;
+    margin-bottom: 16px;
+}
+
+.feedback__description {
+    color: #d2ddff;
+    line-height: 144%;
+    max-width: 640px;
+}
+
+.feedback__button {
+    border-radius: 8px;
+    padding: 16px 24px;
+    width: 280px;
+    min-width: 280px;
+    background-color: var(--btn-sec-bg);
+    letter-spacing: 0.01em;
+}
+
+.feedback__button:hover {
+    background-color: var(--btn-sec-bg-hover);
+}
+
+.feedback__button:focus {
+    background-color: var(--btn-sec-bg-focus);
+}
+
+.feedback__button:active {
+    background-color: var(--btn-sec-bg-active);
+}
+
+@media (max-width: 1024px) {
+    .feedback {
+        padding: 80px 0;
+    }
+
+    .feedback__content {
+        padding: 24px;
+    }
+
+    .feedback__title {
+        font-size: 20px;
+        line-height: 130%;
+        font-family: var(--second-family);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .feedback__button {
+        letter-spacing: 0;
+    }
+}

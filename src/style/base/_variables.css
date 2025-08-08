@@ -1,0 +1,37 @@
+:root {
+    --color-text-main: #101828;
+    --color-text-secondary: #445565;
+    --color-text-primary: #295bff;
+    --font-main: "Roboto", sans-serif;
+    --second-family: "Exo 2", sans-serif;
+    --font-size-base: 18px;
+    --font-weight-normal: 400;
+
+    --neautral-50: #fdfdfd;
+    --blue-300: #809dff;
+    --blue-500: #295bff;
+
+    --color-text-primary-press: #527aff;
+
+    --btn-sec-bg: #101828;
+    --btn-sec-bg-hover: #232c34;
+    --btn-sec-bg-focus: #445565;
+    --btn-sec-bg-active: #678198;
+
+    --btn-pri-bg: #295bff;
+    --btn-pri-bg-hover: #527aff;
+    --btn-pri-bg-focus: #809dff;
+    --btn-pri-bg-active: #9eb6ff;
+    --btn-pri-text-disabled: #97a9b9;
+    --btn-pri-bg-disabled: #e1e6ea;
+
+    --btn-ter-bg: #e1e6ea;
+    --btn-ter-bg-hover: #d4dce2;
+    --btn-ter-bg-focus: #cbd4dc;
+    --btn-ter-bg-active: #97a9b9;
+
+    --btn-contact-bg: #fdfdfd;
+    --btn-contact-bg-hover: var(--btn-contact-bg);
+    --btn-contact-bg-focus: var(--btn-contact-bg);
+    --btn-contact-bg-active: var(--btn-contact-bg);
+}
