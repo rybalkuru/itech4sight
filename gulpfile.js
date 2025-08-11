@@ -33,11 +33,12 @@ export const styles = () => {
 // Сборка JS с Rollup + минификация в src/js/main.js
 export const scripts = () => {
     return rollupStream({
-        input: "src/js/main.js",
+        input: "src/js/agrosainsurance.js",
         output: {
+            file: "src/js/main.js",
             format: "iife",
             sourcemap: true,
-            name: "bundle", // имя глобальной переменной (если нужно)
+            name: "bundle",
         },
         plugins: [resolve(), commonjs()],
     })
