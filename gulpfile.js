@@ -18,11 +18,11 @@ export const clean = () => del(["dist"]);
 // Компиляция SCSS → CSS (в src для dev)
 export const styles = () => {
     return gulp
-        .src("src/scss/**/*.scss")
+        .src("src/scss/agrosainsurance.scss")
         .pipe(sass().on("error", sass.logError))
         .pipe(cleanCSS())
-        .pipe(gulp.dest("src/css")) // Кладём CSS в src/css для сервера
-        .pipe(bs.stream()); // inject css без полной перезагрузки
+        .pipe(gulp.dest("src/css"))
+        .pipe(bs.stream());
 };
 
 // Минификация JS (в src для dev)
