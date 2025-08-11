@@ -1,5 +1,5 @@
 import gulp from "gulp";
-import dartSass from "sass";
+import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
 import cleanCSS from "gulp-clean-css";
 import del from "del";
@@ -11,6 +11,8 @@ import rollupStream from "@rollup/stream";
 import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import terser from "gulp-terser";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 
 const sass = gulpSass(dartSass);
 const bs = browserSync.create();
@@ -33,9 +35,11 @@ export const scripts = () => {
     return rollupStream({
         input: "src/js/main.js",
         output: {
-            format: "iife", // для браузера (можно 'esm', но для поддержки лучше iife)
+            format: "iife",
             sourcemap: true,
+            name: "bundle", // имя глобальной переменной (если нужно)
         },
+        plugins: [resolve(), commonjs()],
     })
         .pipe(source("main.js"))
         .pipe(buffer())
