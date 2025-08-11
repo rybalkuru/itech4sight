@@ -1,5 +1,5 @@
 import gulp from "gulp";
-import dartSass from "sass";
+import * as dartSass from "sass"; // <- вот тут исправлено
 import gulpSass from "gulp-sass";
 import uglify from "gulp-uglify";
 import concat from "gulp-concat";
