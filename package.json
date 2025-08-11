@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "build": "gulp build",
-        "dev": "gulp serve"
+        "dev": "gulp dev"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^28.0.6",

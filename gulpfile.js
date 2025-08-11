@@ -20,22 +20,22 @@ const bs = browserSync.create();
 // Очистка dist
 export const clean = () => del(["dist"]);
 
-// Компиляция SCSS → CSS (в src/css для dev)
+// Компиляция SCSS → CSS (в dist/css)
 export const styles = () => {
     return gulp
-        .src("src/scss/agrosainsurance.scss")
+        .src("src/scss/main.scss")
         .pipe(sass().on("error", sass.logError))
         .pipe(cleanCSS())
-        .pipe(gulp.dest("src/css"))
-        .pipe(bs.stream());
+        .pipe(gulp.dest("dist/css")) // <-- dist
+        .pipe(bs.stream()); // inject css без полной перезагрузки
 };
 
-// Сборка JS с Rollup + минификация в src/js/main.js
+// Сборка JS с Rollup + минификация (в dist/js)
 export const scripts = () => {
     return rollupStream({
-        input: "src/js/agrosainsurance.js",
+        input: "src/js/main.js",
         output: {
-            file: "src/js/main.js",
+            file: "dist/js/main.js",
             format: "iife",
             sourcemap: true,
             name: "bundle",
@@ -45,7 +45,7 @@ export const scripts = () => {
         .pipe(source("main.js"))
         .pipe(buffer())
         .pipe(terser())
-        .pipe(gulp.dest("src/js"))
+        .pipe(gulp.dest("dist/js")) // <-- dist
         .pipe(bs.stream());
 };
 
@@ -54,7 +54,6 @@ export const html = () => {
     return gulp
         .src("src/**/*.html")
         .pipe(replace(/dist\//g, "<?= SITE_TEMPLATE_PATH ?>/"))
-        .pipe(rename({ extname: ".php" }))
         .pipe(gulp.dest("dist"));
 };
 
@@ -72,11 +71,11 @@ export const fonts = () => {
         .pipe(gulp.dest("dist/fonts"));
 };
 
-// Локальный сервер для разработки
+// Локальный сервер для разработки (смотрит dist)
 export const serve = () => {
     bs.init({
         server: {
-            baseDir: "src",
+            baseDir: "dist", // <-- dist
         },
         port: 3000,
         notify: false,
@@ -84,12 +83,12 @@ export const serve = () => {
 
     gulp.watch("src/scss/**/*.scss", styles);
     gulp.watch("src/js/**/*.js", scripts);
-    gulp.watch("src/**/*.html").on("change", bs.reload);
-    gulp.watch("src/fonts/**/*.{woff,woff2,ttf,eot,otf}").on(
+    gulp.watch("src/**/*.html", html).on("change", bs.reload);
+    gulp.watch("src/fonts/**/*.{woff,woff2,ttf,eot,otf}", fonts).on(
         "change",
         bs.reload
     );
-    gulp.watch("src/**/*.{jpg,jpeg,png,svg,gif,webp,mp4,webm}").on(
+    gulp.watch("src/**/*.{jpg,jpeg,png,svg,gif,webp,mp4,webm}", assets).on(
         "change",
         bs.reload
     );
@@ -101,5 +100,8 @@ export const build = gulp.series(
     gulp.parallel(styles, scripts, html, assets, fonts)
 );
 
-// Задача по умолчанию — сборка и запуск сервера
-export default gulp.series(gulp.parallel(styles, scripts), serve);
+// dev: билд и запуск сервера с наблюдением
+export const dev = gulp.series(build, serve);
+
+// по умолчанию — dev
+export default dev;
