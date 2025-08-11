@@ -1,3 +1,4 @@
+@use "../base/variables";
 .advantages {
   padding: 112px 0;
 }
@@ -24,7 +25,7 @@
   width: 100%;
   min-height: 224px;
   max-height: 298px;
-  background-color: $color-bg-light;
+  background-color: variables.$color-bg-light;
 }
 
 .advantages__card-header {
@@ -44,7 +45,7 @@
   border-radius: 8px;
   min-width: 48px;
   min-height: 48px;
-  background-color: $color-second;
+  background-color: variables.$color-second;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +54,7 @@
 .advantages__description {
   margin-top: 16px;
   line-height: 144%;
-  color: $color-text-muted;
+  color: variables.$color-text-muted;
 }
 
 .advantages__card_chart {

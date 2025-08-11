@@ -18,10 +18,10 @@ export const clean = () => del(["dist"]);
 // Компиляция SCSS → CSS (в src для dev)
 export const styles = () => {
     return gulp
-        .src("src/scss/agrosainsurance.scss")
+        .src("src/scss/agrosainsurance.scss") // конкретный scss файл
         .pipe(sass().on("error", sass.logError))
         .pipe(cleanCSS())
-        .pipe(gulp.dest("src/css"))
+        .pipe(gulp.dest("src/css")) // в src/css, а не в dist
         .pipe(bs.stream());
 };
 
