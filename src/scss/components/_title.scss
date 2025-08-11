@@ -1,0 +1,8 @@
+@use "../base/variables";
+
+.title {
+    font-family: variables.$font-second;
+    font-weight: variables.$font-weight-bold;
+    font-size: 50px;
+    line-height: 112%;
+}

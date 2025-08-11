@@ -1,0 +1,81 @@
+@use "../base/variables";
+
+.welcome {
+    padding-top: 112px;
+    padding-bottom: 304px;
+    background: url("/images/welcome-bg.svg");
+    background-position: 10% 25%;
+    background-repeat: no-repeat;
+}
+
+.welcome__wrapper {
+    margin: 0 auto;
+    padding: 0 8px;
+    display: flex;
+    gap: 56px;
+}
+
+.welcome__main {
+    margin-top: 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.welcome__title {
+    font-weight: 700;
+    font-size: 71px;
+    line-height: 113%;
+    font-family: $font-second;
+}
+
+.welcome__title_custom {
+    color: $color-second;
+}
+
+.welcome__description {
+    margin-top: 24px;
+    font-size: 24px;
+    line-height: 133%;
+    color: $color-text-muted;
+}
+
+.welcome__button {
+    padding: 16px 24px;
+    letter-spacing: 0.01em;
+    background-color: $color-text-main;
+    width: 193px;
+}
+
+.welcome__secondary {
+    padding: 53px 38px 33px 46px;
+}
+
+.welcome__img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 514 / 338;
+}
+
+.welcome__img-bg {
+    position: absolute;
+    top: 4px;
+    width: 100%;
+    height: 100%;
+    background: $color-bg-light;
+    transform: rotate(-4deg);
+    border-radius: 24px;
+}
+
+.welcome__img {
+    position: relative;
+    z-index: 1;
+    border-radius: 24px;
+    width: 87.5%;
+    height: 100%;
+    box-shadow: 0 8px 16px 0 rgba(16, 24, 40, 0.08),
+        0 0 4px 0 rgba(16, 24, 40, 0.04);
+    object-fit: cover;
+    margin-left: 30px;
+}
