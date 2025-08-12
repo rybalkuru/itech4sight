@@ -1,24 +1,25 @@
 import gulp from "gulp";
-import dartSass from "gulp-dart-sass";
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
 import cleanCSS from "gulp-clean-css";
 import del from "del";
 import rename from "gulp-rename";
 import replace from "gulp-replace";
 import browserSync from "browser-sync";
 
-import rollup from "gulp-better-rollup";
+import rollup from "rollup";
+import rollupStream from "@rollup/stream";
+import source from "vinyl-source-stream";
+import buffer from "vinyl-buffer";
+import terser from "gulp-terser";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import terser from "gulp-terser";
-import babel from "gulp-babel";
 
+const sass = gulpSass(dartSass);
 const bs = browserSync.create();
-const sass = dartSass;
 
-// Очистка dist
 export const clean = () => del(["dist"]);
 
-// Компиляция SCSS → CSS
 export const styles = () => {
     return gulp
         .src("src/scss/main.scss")
@@ -28,33 +29,23 @@ export const styles = () => {
         .pipe(bs.stream());
 };
 
-// Сборка JS с Rollup + Babel + минификация
 export const scripts = () => {
-    return gulp
-        .src("src/js/main.js")
-        .pipe(
-            rollup(
-                {
-                    plugins: [resolve(), commonjs()],
-                },
-                {
-                    format: "iife",
-                    sourcemap: true,
-                    name: "bundle",
-                }
-            )
-        )
-        .pipe(
-            babel({
-                presets: ["@babel/preset-env"],
-            })
-        )
+    return rollupStream({
+        input: "src/js/main.js",
+        output: {
+            format: "iife",
+            sourcemap: true,
+            name: "bundle",
+        },
+        plugins: [resolve(), commonjs()],
+    })
+        .pipe(source("main.js"))
+        .pipe(buffer())
         .pipe(terser())
         .pipe(gulp.dest("dist/js"))
         .pipe(bs.stream());
 };
 
-// Копирование html с заменой путей
 export const html = () => {
     return gulp
         .src("src/**/*.html")
@@ -62,21 +53,18 @@ export const html = () => {
         .pipe(gulp.dest("dist"));
 };
 
-// Копирование assets
 export const assets = () => {
     return gulp
         .src(["src/**/*.{jpg,jpeg,png,svg,gif,webp,mp4,webm}"])
         .pipe(gulp.dest("dist"));
 };
 
-// Копирование шрифтов
 export const fonts = () => {
     return gulp
         .src("src/fonts/**/*.{woff,woff2,ttf,eot,otf}")
         .pipe(gulp.dest("dist/fonts"));
 };
 
-// Сервер для разработки
 export const serve = () => {
     bs.init({
         server: {
@@ -99,11 +87,8 @@ export const serve = () => {
     );
 };
 
-// Билд
 export const build = gulp.series(
     clean,
     gulp.parallel(styles, scripts, html, assets, fonts)
 );
-
-// Дефолтная задача — билд и запуск сервера
 export default gulp.series(build, serve);
