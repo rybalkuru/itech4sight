@@ -1,76 +1,75 @@
-@use "../base/variables";
 .advantages {
-  padding: 112px 0;
+    padding: 112px 0;
 }
 
 .advantages__wrapper {
-  padding: 0 8px;
-  margin: 0 auto;
+    padding: 0 8px;
+    margin: 0 auto;
 }
 
 .advantages__title {
-  margin-bottom: 56px;
+    margin-bottom: 56px;
 }
 
 .advantages__cards {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
 }
 
 .advantages__card {
-  border-radius: 16px;
-  padding: 32px;
-  width: 100%;
-  min-height: 224px;
-  max-height: 298px;
-  background-color: variables.$color-bg-light;
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    min-height: 224px;
+    max-height: 298px;
+    background-color: var(--color-bg-light);
 }
 
 .advantages__card-header {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .advantages__subtitle {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 133%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
 }
 
 .advantages__icon {
-  border-radius: 8px;
-  min-width: 48px;
-  min-height: 48px;
-  background-color: variables.$color-second;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    border-radius: 8px;
+    min-width: 48px;
+    min-height: 48px;
+    background-color: var(--color-primary-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .advantages__description {
-  margin-top: 16px;
-  line-height: 144%;
-  color: variables.$color-text-muted;
+    margin-top: 16px;
+    line-height: 144%;
+    color: var(--color-text-muted);
 }
 
 .advantages__card_chart {
-  grid-column: 1 / 8;
+    grid-column: 1 / 8;
 }
 
 .advantages__card_security {
-  grid-column: 8 / 13;
+    grid-column: 8 / 13;
 }
 
 .advantages__card_ease {
-  grid-row: 2;
-  grid-column: 1 / 6;
+    grid-row: 2;
+    grid-column: 1 / 6;
 }
 
 .advantages__card_solution {
-  grid-row: 2;
-  grid-column: 6 / 13;
+    grid-row: 2;
+    grid-column: 6 / 13;
 }

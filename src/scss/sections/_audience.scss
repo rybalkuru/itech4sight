@@ -1,79 +1,78 @@
-@use "../base/variables";
 .audience {
-  padding: 112px 0;
+    padding: 112px 0;
 }
 
 .audience__wrapper {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .audience__title {
-  margin-bottom: 56px;
+    margin-bottom: 56px;
 }
 
 .audience__content {
-  display: flex;
-  gap: 16px;
-  width: 100%;
+    display: flex;
+    gap: 16px;
+    width: 100%;
 }
 
 .audience__list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 752px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 752px;
 }
 
 .audience__item {
-  border-radius: 16px;
-  padding: 32px;
-  width: 100%;
-  min-width: 328px;
-  max-width: 752px;
-  background-color: variables.$color-bg-grey;
-  display: flex;
-  gap: 16px;
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    min-width: 328px;
+    max-width: 752px;
+    background-color: var(--color-bg-grey);
+    display: flex;
+    gap: 16px;
 }
 
 .audience__item-img {
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 .audience__subtitle {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 133%;
-  font-family: variables.$font-second;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    font-family: var(--font-second);
 }
 
 .audience__img-wrapper {
-  position: relative;
-  width: 100%;
-  min-width: 328px;
-  max-width: 416px;
-  min-height: 328px;
-  max-height: 416px;
-  display: flex;
-  align-items: flex-end;
+    position: relative;
+    width: 100%;
+    min-width: 328px;
+    max-width: 416px;
+    min-height: 328px;
+    max-height: 416px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .audience__img-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 369px;
-  height: 378px;
-  background-color: variables.$color-bg-light;
-  border-radius: 24px;
-  z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 369px;
+    height: 378px;
+    background-color: var(--color-bg-light);
+    border-radius: 24px;
+    z-index: 0;
 }
 
 .audience__img {
-  position: relative;
-  z-index: 1;
-  width: 386px;
-  height: 384px;
-  border-radius: 24px;
-  object-fit: cover;
+    position: relative;
+    z-index: 1;
+    width: 386px;
+    height: 384px;
+    border-radius: 24px;
+    object-fit: cover;
 }

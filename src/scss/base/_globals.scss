@@ -2,10 +2,10 @@
 
 html,
 body {
-    font-size: variables.$font-size-base;
-    font-weight: variables.$font-weight-normal;
-    color: variables.$color-text-main;
-    font-family: variables.$font-main;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-main);
+    font-family: var(--font-main);
     overflow-x: hidden;
 }
 

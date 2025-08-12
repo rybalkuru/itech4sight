@@ -17,23 +17,23 @@
                 <nav class="nav">
                     <a href="#" class="link">О компании</a>
                     <a href="#" class="link">Платформа</a>
-                    <button
-                        class="link active header__products-wrapper"
-                    >
-                        Продукты
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M17.2929 8.29302C17.6834 7.90249 18.3164 7.90249 18.707 8.29302C19.0973 8.68355 19.0974 9.3166 18.707 9.70708L12.707 15.7071C12.3165 16.0976 11.6834 16.0975 11.2929 15.7071L5.29289 9.70708C4.90237 9.31655 4.90237 8.68354 5.29289 8.29302C5.68342 7.90249 6.31643 7.90249 6.70696 8.29302L11.9999 13.586L17.2929 8.29302Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <div class="header__products">
+                    <div>
+                        <button class="link selected" id="btn-dropdown-menu">
+                            Продукты
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M17.2929 8.29302C17.6834 7.90249 18.3164 7.90249 18.707 8.29302C19.0973 8.68355 19.0974 9.3166 18.707 9.70708L12.707 15.7071C12.3165 16.0976 11.6834 16.0975 11.2929 15.7071L5.29289 9.70708C4.90237 9.31655 4.90237 8.68354 5.29289 8.29302C5.68342 7.90249 6.31643 7.90249 6.70696 8.29302L11.9999 13.586L17.2929 8.29302Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu" id="dropdown-menu">
                             <a href="#" class="header__sublink">AgrosaSmart</a>
                             <a href="/agrosainsurance" class="header__sublink"
                                 >AgrosaInsurance</a
@@ -41,66 +41,15 @@
                             <a href="#" class="header__sublink">AgrosaFarm</a>
                             <a href="#" class="header__sublink">AgroChem</a>
                         </div>
-                    </button>
+                    </div>
+
                     <a href="#" class="link">Новости</a>
                     <a href="#" class="link">Контакты</a>
                 </nav>
-                <div class="header__mobile-nav">
-                    <nav class="header__mobile-links">
-                        <a href="#" class="header__mobile-link">О компании</a>
-                        <a href="#" class="header__mobile-link">Платформа</a>
-                        <button
-                            class="header__mobile-link header__mobile-link_products"
-                        >
-                            <div class="header__mobile-link_products-top">
-                                Продукты
-                                <svg
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M17.2929 8.29289C17.6834 7.90237 18.3164 7.90237 18.707 8.29289C19.0973 8.68343 19.0974 9.31648 18.707 9.70696L12.707 15.707C12.3165 16.0974 11.6834 16.0973 11.2929 15.707L5.29289 9.70696C4.90237 9.31643 4.90237 8.68342 5.29289 8.29289C5.68342 7.90237 6.31643 7.90237 6.70696 8.29289L11.9999 13.5859L17.2929 8.29289Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </div>
-                            <div class="header__products-mobile">
-                                <a
-                                    href="#"
-                                    class="header__sublink-mobile header__sublink-mobile_first"
-                                    >AgrosaSmart</a
-                                >
-                                <a
-                                    href="/agrosainsurance"
-                                    class="header__sublink-mobile"
-                                    >AgrosaInsurance</a
-                                >
-                                <a href="#" class="header__sublink-mobile"
-                                    >AgrosaFarm</a
-                                >
-                                <a href="#" class="header__sublink-mobile"
-                                    >AgroChem</a
-                                >
-                            </div>
-                        </button>
-                        <a href="#" class="header__mobile-link">Новости</a>
-                        <a href="#" class="header__mobile-link">Контакты</a>
-                    </nav>
 
-                    <button class="header__mobile-btn">Оставить заявку</button>
-                </div>
                 <div class="header__meta">
                     <button class="header__language-switcher">En</button>
-                    <button class="header__menu">
-                        <img
-                            src="images/icons/menu.svg"
-                            class="header__menu-img"
-                            alt="Меню"
-                        />
-                    </button>
+
                     <button class="header__feedback">Написать нам</button>
                 </div>
             </div>

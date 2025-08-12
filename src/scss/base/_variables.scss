@@ -1,15 +1,20 @@
-// colors
-$color-text-main: #101828;
-$color-second: #295bff;
-$color-bg-light: #ebefff;
-$color-bg-grey: #f6f7f9;
-$color-text-muted: #445565;
+:root {
+    /* colors */
+    --color-text-main: #101828;
+    --color-text-primary: #295bff;
+    --color-primary-hover: #295bff;
+    --color-primary-press: #527aff;
+    --color-line-focus: #809dff;
+    --color-bg-light: #ebefff;
+    --color-bg-grey: #f6f7f9;
+    --color-text-muted: #445565;
 
-// fonts
-$font-main: "Roboto", sans-serif;
-$font-second: "Exo 2", sans-serif;
+    /* fonts */
+    --font-main: "Roboto", sans-serif;
+    --font-second: "Exo 2", sans-serif;
 
-// font sizes & weights
-$font-size-base: 18px;
-$font-weight-normal: 400;
-$font-weight-bold: 700;
+    /* font sizes & weights */
+    --font-size-base: 18px;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+}
