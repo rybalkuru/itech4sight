@@ -26,6 +26,18 @@ function styles() {
     return gulp
         .src("src/scss/main.scss")
         .pipe(sass().on("error", sass.logError))
+        .pipe(
+            postcss([
+                autoprefixer({
+                    overrideBrowserslist: [
+                        "last 2 versions",
+                        "> 1%",
+                        "not dead",
+                    ],
+                    cascade: false,
+                }),
+            ])
+        )
         .pipe(cleanCSS())
         .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
