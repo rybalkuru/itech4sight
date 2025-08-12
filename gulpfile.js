@@ -1,38 +1,42 @@
-import gulp from "gulp";
-import * as dartSass from "sass";
-import gulpSass from "gulp-sass";
-import cleanCSS from "gulp-clean-css";
-import del from "del";
-import rename from "gulp-rename";
-import replace from "gulp-replace";
-import browserSync from "browser-sync";
+const gulp = require("gulp");
+const dartSass = require("sass");
+const gulpSass = require("gulp-sass");
+const cleanCSS = require("gulp-clean-css");
+const del = require("del");
+const rename = require("gulp-rename");
+const replace = require("gulp-replace");
+const browserSync = require("browser-sync").create();
 
-import rollup from "rollup";
-import rollupStream from "@rollup/stream";
-import source from "vinyl-source-stream";
-import buffer from "vinyl-buffer";
-import terser from "gulp-terser";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
+const rollupStream = require("@rollup/stream");
+const source = require("vinyl-source-stream");
+const buffer = require("vinyl-buffer");
+const terser = require("gulp-terser");
+const resolve = require("@rollup/plugin-node-resolve").default;
+const commonjs = require("@rollup/plugin-commonjs");
 
 const sass = gulpSass(dartSass);
-const bs = browserSync.create();
 
-export const clean = () => del(["dist"]);
+// Очистка dist
+function clean() {
+    return del(["dist"]);
+}
 
-export const styles = () => {
+// Компиляция SCSS → CSS в dist/css
+function styles() {
     return gulp
         .src("src/scss/main.scss")
         .pipe(sass().on("error", sass.logError))
         .pipe(cleanCSS())
         .pipe(gulp.dest("dist/css"))
-        .pipe(bs.stream());
-};
+        .pipe(browserSync.stream());
+}
 
-export const scripts = () => {
+// Сборка JS с Rollup + минификация в dist/js
+function scripts() {
     return rollupStream({
         input: "src/js/main.js",
         output: {
+            file: "main.js",
             format: "iife",
             sourcemap: true,
             name: "bundle",
@@ -43,30 +47,34 @@ export const scripts = () => {
         .pipe(buffer())
         .pipe(terser())
         .pipe(gulp.dest("dist/js"))
-        .pipe(bs.stream());
-};
+        .pipe(browserSync.stream());
+}
 
-export const html = () => {
+// Обработка HTML — замена путей и копирование в dist
+function html() {
     return gulp
         .src("src/**/*.html")
         .pipe(replace(/dist\//g, "<?= SITE_TEMPLATE_PATH ?>/"))
         .pipe(gulp.dest("dist"));
-};
+}
 
-export const assets = () => {
+// Копирование ассетов
+function assets() {
     return gulp
         .src(["src/**/*.{jpg,jpeg,png,svg,gif,webp,mp4,webm}"])
         .pipe(gulp.dest("dist"));
-};
+}
 
-export const fonts = () => {
+// Копирование шрифтов
+function fonts() {
     return gulp
         .src("src/fonts/**/*.{woff,woff2,ttf,eot,otf}")
         .pipe(gulp.dest("dist/fonts"));
-};
+}
 
-export const serve = () => {
-    bs.init({
+// Сервер и слежение
+function serve() {
+    browserSync.init({
         server: {
             baseDir: "dist",
         },
@@ -76,19 +84,30 @@ export const serve = () => {
 
     gulp.watch("src/scss/**/*.scss", styles);
     gulp.watch("src/js/**/*.js", scripts);
-    gulp.watch("src/**/*.html", html).on("change", bs.reload);
+    gulp.watch("src/**/*.html", html).on("change", browserSync.reload);
     gulp.watch("src/fonts/**/*.{woff,woff2,ttf,eot,otf}", fonts).on(
         "change",
-        bs.reload
+        browserSync.reload
     );
     gulp.watch("src/**/*.{jpg,jpeg,png,svg,gif,webp,mp4,webm}", assets).on(
         "change",
-        bs.reload
+        browserSync.reload
     );
-};
+}
 
-export const build = gulp.series(
+const build = gulp.series(
     clean,
     gulp.parallel(styles, scripts, html, assets, fonts)
 );
-export default gulp.series(build, serve);
+const dev = gulp.series(build, serve);
+
+exports.clean = clean;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.html = html;
+exports.assets = assets;
+exports.fonts = fonts;
+exports.build = build;
+exports.serve = serve;
+exports.dev = dev;
+exports.default = dev;
