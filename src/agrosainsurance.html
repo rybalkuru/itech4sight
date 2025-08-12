@@ -1,881 +1,1523 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css" />
+        <title>iTech4Sight</title>
+    </head>
 
-    <link rel="stylesheet" href="css/main.css" />
-    <title>iTech4Sight</title>
-</head>
-
-<body>
-    <header class="header">
-        <div class="header__wrapper">
-            <a href="/">
-                <img class="" src="images/logo.svg" width="156" height="32" alt="Лого" />
-            </a>
-            <nav class="header__nav">
-                <a href="#" class="header__link">О компании</a>
-                <a href="#" class="header__link">Платформа</a>
-                <button class="header__link header__link_active header__products-wrapper">Продукты
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M17.2929 8.29302C17.6834 7.90249 18.3164 7.90249 18.707 8.29302C19.0973 8.68355 19.0974 9.3166 18.707 9.70708L12.707 15.7071C12.3165 16.0976 11.6834 16.0975 11.2929 15.7071L5.29289 9.70708C4.90237 9.31655 4.90237 8.68354 5.29289 8.29302C5.68342 7.90249 6.31643 7.90249 6.70696 8.29302L11.9999 13.586L17.2929 8.29302Z"
-                            fill="currentColor" />
-                    </svg>
-                    <div class="header__products">
-                        <a href="#" class="header__sublink">AgrosaSmart</a>
-                        <a href="/agrosainsurance" class="header__sublink">AgrosaInsurance</a>
-                        <a href="#" class="header__sublink">AgrosaFarm</a>
-                        <a href="#" class="header__sublink">AgroChem</a>
-                    </div>
-                </button>
-                <a href="#" class="header__link">Новости</a>
-                <a href="#" class="header__link">Контакты</a>
-            </nav>
-            <div class="header__mobile-nav">
-                <nav class="header__mobile-links">
-                    <a href="#" class="header__mobile-link">О компании</a>
-                    <a href="#" class="header__mobile-link">Платформа</a>
-                    <button class="header__mobile-link header__mobile-link_products">
-                        <div class="header__mobile-link_products-top">
-                            Продукты
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.2929 8.29289C17.6834 7.90237 18.3164 7.90237 18.707 8.29289C19.0973 8.68343 19.0974 9.31648 18.707 9.70696L12.707 15.707C12.3165 16.0974 11.6834 16.0973 11.2929 15.707L5.29289 9.70696C4.90237 9.31643 4.90237 8.68342 5.29289 8.29289C5.68342 7.90237 6.31643 7.90237 6.70696 8.29289L11.9999 13.5859L17.2929 8.29289Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </div>
-                        <div class="header__products-mobile">
-                            <a href="#" class="header__sublink-mobile header__sublink-mobile_first">AgrosaSmart</a>
-                            <a href="/agrosainsurance" class="header__sublink-mobile">AgrosaInsurance</a>
-                            <a href="#" class="header__sublink-mobile">AgrosaFarm</a>
-                            <a href="#" class="header__sublink-mobile">AgroChem</a>
+    <body>
+        <header class="header">
+            <div class="wrapper">
+                <a href="/">
+                    <img class="logo" src="images/logo.svg" alt="Лого" />
+                </a>
+                <nav class="nav">
+                    <a href="#" class="link">О компании</a>
+                    <a href="#" class="link">Платформа</a>
+                    <button
+                        class="link active header__products-wrapper"
+                    >
+                        Продукты
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M17.2929 8.29302C17.6834 7.90249 18.3164 7.90249 18.707 8.29302C19.0973 8.68355 19.0974 9.3166 18.707 9.70708L12.707 15.7071C12.3165 16.0976 11.6834 16.0975 11.2929 15.7071L5.29289 9.70708C4.90237 9.31655 4.90237 8.68354 5.29289 8.29302C5.68342 7.90249 6.31643 7.90249 6.70696 8.29302L11.9999 13.586L17.2929 8.29302Z"
+                                fill="currentColor"
+                            />
+                        </svg>
+                        <div class="header__products">
+                            <a href="#" class="header__sublink">AgrosaSmart</a>
+                            <a href="/agrosainsurance" class="header__sublink"
+                                >AgrosaInsurance</a
+                            >
+                            <a href="#" class="header__sublink">AgrosaFarm</a>
+                            <a href="#" class="header__sublink">AgroChem</a>
                         </div>
                     </button>
-                    <a href="#" class="header__mobile-link">Новости</a>
-                    <a href="#" class="header__mobile-link">Контакты</a>
+                    <a href="#" class="link">Новости</a>
+                    <a href="#" class="link">Контакты</a>
                 </nav>
+                <div class="header__mobile-nav">
+                    <nav class="header__mobile-links">
+                        <a href="#" class="header__mobile-link">О компании</a>
+                        <a href="#" class="header__mobile-link">Платформа</a>
+                        <button
+                            class="header__mobile-link header__mobile-link_products"
+                        >
+                            <div class="header__mobile-link_products-top">
+                                Продукты
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M17.2929 8.29289C17.6834 7.90237 18.3164 7.90237 18.707 8.29289C19.0973 8.68343 19.0974 9.31648 18.707 9.70696L12.707 15.707C12.3165 16.0974 11.6834 16.0973 11.2929 15.707L5.29289 9.70696C4.90237 9.31643 4.90237 8.68342 5.29289 8.29289C5.68342 7.90237 6.31643 7.90237 6.70696 8.29289L11.9999 13.5859L17.2929 8.29289Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="header__products-mobile">
+                                <a
+                                    href="#"
+                                    class="header__sublink-mobile header__sublink-mobile_first"
+                                    >AgrosaSmart</a
+                                >
+                                <a
+                                    href="/agrosainsurance"
+                                    class="header__sublink-mobile"
+                                    >AgrosaInsurance</a
+                                >
+                                <a href="#" class="header__sublink-mobile"
+                                    >AgrosaFarm</a
+                                >
+                                <a href="#" class="header__sublink-mobile"
+                                    >AgroChem</a
+                                >
+                            </div>
+                        </button>
+                        <a href="#" class="header__mobile-link">Новости</a>
+                        <a href="#" class="header__mobile-link">Контакты</a>
+                    </nav>
 
-                <button class="header__mobile-btn">Оставить заявку</button>
-            </div>
-            <div class="header__meta">
-                <button class="header__language-switcher">
-                    En
-                </button>
-                <button class="header__menu">
-                    <img src="images/icons/menu.svg" class="header__menu-img" alt="Меню">
-                </button>
-                <button class="header__feedback">
-                    Написать нам
-                </button>
-            </div>
-        </div>
-    </header>
-    <main class="main">
-        <section class="welcome">
-            <div class="welcome__wrapper container">
-                <div class="welcome__main">
-                    <img class="welcome__background" src="images/welcome-bg.svg" alt="Задний фон" />
-                    <div class="welcome__info">
-                        <h1 class="welcome__title">Agrosa<span class="welcome__title_custom">Insurance</span></h1>
-                        <p class="welcome__description">Космический мониторинг и оценка состояния посевов с/х культур
-                            с учётом влияния метеорологических
-                            факторов на отклонения в их развитии.</p>
-                    </div>
-                    <button class="welcome__button">Оставить заявку</button>
+                    <button class="header__mobile-btn">Оставить заявку</button>
                 </div>
-                <div class="welcome__secondary">
-                    <div class="welcome__img-wrapper">
-                        <div class="welcome__img-bg"></div>
-                        <img src="images/welcome-img.jpg" class="welcome__img" alt="Космос">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="audience">
-            <div class="audience__wrapper container">
-                <h2 class="title audience__title">Кому полезен этот продукт?</h2>
-                <div class="audience__content">
-                    <div class="audience__list">
-                        <div class="audience__item">
-                            <img src="images/icons/confirm.svg" alt="Подтверждаем" class="audience__item-img">
-                            <h4 class="audience__subtitle">
-                                Консультанты и юристы, работающие в сфере сельского хозяйства
-                            </h4>
-                        </div>
-                        <div class="audience__item">
-                            <img src="images/icons/confirm.svg" alt="Подтверждаем" class="audience__item-img">
-                            <h4 class="audience__subtitle">Эксперты, выезжающие на поля для проведения обследований</h4>
-
-                        </div>
-                        <div class="audience__item">
-                            <img src="images/icons/confirm.svg" alt="Подтверждаем" class="audience__item-img">
-                            <h4 class="audience__subtitle">Специалисты страховых компаний по андеррайтингу
-                                и урегулированию убытков</h4>
-
-                        </div>
-                    </div>
-                    <div class="audience__img-wrapper">
-                        <div class="audience__img-bg"></div>
-                        <img src="images/audience-img.jpg" class="audience__img" alt="Кому полезен продукт">
-                    </div>
+                <div class="header__meta">
+                    <button class="header__language-switcher">En</button>
+                    <button class="header__menu">
+                        <img
+                            src="images/icons/menu.svg"
+                            class="header__menu-img"
+                            alt="Меню"
+                        />
+                    </button>
+                    <button class="header__feedback">Написать нам</button>
                 </div>
             </div>
-        </section>
-        <section class="advantages">
-            <div class="advantages__wrapper container">
-                <h2 class="title advantages__title">
-                    Ключевые преимущества
-                </h2>
-                <div class="advantages__cards">
-                    <div class="advantages__card advantages__card_chart">
-                        <div class="advantages__card-header">
-                            <h5 class="advantages__subtitle">Комплексный анализ разнородных данных</h5>
-                            <div class="advantages__icon">
-                                <img src="images/icons/chart.svg" width="24" height="24" alt="Анализ">
-                            </div>
+        </header>
+        <main class="main">
+            <section class="welcome">
+                <div class="welcome__wrapper container">
+                    <div class="welcome__main">
+                        <img
+                            class="welcome__background"
+                            src="images/welcome-bg.svg"
+                            alt="Задний фон"
+                        />
+                        <div class="welcome__info">
+                            <h1 class="welcome__title">
+                                Agrosa<span class="welcome__title_custom"
+                                    >Insurance</span
+                                >
+                            </h1>
+                            <p class="welcome__description">
+                                Космический мониторинг и оценка состояния
+                                посевов с/х культур с учётом влияния
+                                метеорологических факторов на отклонения в их
+                                развитии.
+                            </p>
                         </div>
-                        <div class="advantages__description">
-                            Развитые инструменты для комплексного анализа агроландшафтных, климатических, почвенных
-                            и спутниковых данных с визуализацией на графиках и картах.
-                        </div>
+                        <button class="welcome__button">Оставить заявку</button>
                     </div>
-                    <div class="advantages__card advantages__card_security">
-                        <div class="advantages__card-header">
-                            <h5 class="advantages__subtitle">Скорость и безопасность</h5>
-                            <div class="advantages__icon">
-                                <img src="images/icons/shield-check.svg" width="24" height="24"
-                                    alt="Скорость и безопасность">
-                            </div>
-                        </div>
-                        <div class="advantages__description">
-                            Скоростные каналы связи, эффективные алгоритмы обработки данных, резервное копирование,
-                            дата-центры на территории РФ для надёжной и безопасной работы.
-                        </div>
-                    </div>
-                    <div class="advantages__card advantages__card_ease">
-                        <div class="advantages__card-header">
-                            <h5 class="advantages__subtitle">Удобство и простота</h5>
-                            <div class="advantages__icon">
-                                <img src="images/icons/flash.svg" width="24" height="24" alt="Удобство и простота">
-                            </div>
-                        </div>
-                        <div class="advantages__description">
-                            Для начала работы даже не требуется оцифровка контуров полей. Основной функционал доступен в
-                            несколько кликов.
-                        </div>
-                    </div>
-                    <div class="advantages__card advantages__card_solution">
-                        <div class="advantages__card-header">
-                            <h5 class="advantages__subtitle">Прозрачность и помощь в принятии решений</h5>
-                            <div class="advantages__icon">
-                                <img src="images/icons/artificial.svg" width="24" height="24"
-                                    alt="Прозрачность и помощь">
-                            </div>
-                        </div>
-                        <div class="advantages__description">
-                            Ускорение принятия решений за счёт ситуационной осведомлённости и упрощения процессов по
-                            мониторингу, оценке и фиксации рисков.
+                    <div class="welcome__secondary">
+                        <div class="welcome__img-wrapper">
+                            <div class="welcome__img-bg"></div>
+                            <img
+                                src="images/welcome-img.jpg"
+                                class="welcome__img"
+                                alt="Космос"
+                            />
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="features">
-            <div class="features__wrapper container">
-                <h2 class="title features__title">Основные возможности AgrosaInsurance</h2>
-                <div class="features__block">
-                    <div class="features__main">
-                        <h3 class="features__subtitle">
-                            <span class="features__subtitle_custom">Экономьте время</span> на оцифровке полей
-                        </h3>
-                        <div class="features__list features__list_tablet">
-                            <div class="features__item">
-                                <span class="features__item-number">1.</span>
-                                <p class="features__item-text">
-                                    Автоматическая оцифровка контуров полей в один клик за счет использования
-                                    современных инструментов искусственного интеллекта.
-                                </p>
+            </section>
+            <section class="audience">
+                <div class="audience__wrapper container">
+                    <h2 class="title audience__title">
+                        Кому полезен этот продукт?
+                    </h2>
+                    <div class="audience__content">
+                        <div class="audience__list">
+                            <div class="audience__item">
+                                <img
+                                    src="images/icons/confirm.svg"
+                                    alt="Подтверждаем"
+                                    class="audience__item-img"
+                                />
+                                <h4 class="audience__subtitle">
+                                    Консультанты и юристы, работающие в сфере
+                                    сельского хозяйства
+                                </h4>
                             </div>
-                            <div class="features__item">
-                                <span class="features__item-number">2.</span>
-                                <p class="features__item-text">
-                                    Поиск полей по кадастровым номерам и загрузка в систему.
-                                </p>
+                            <div class="audience__item">
+                                <img
+                                    src="images/icons/confirm.svg"
+                                    alt="Подтверждаем"
+                                    class="audience__item-img"
+                                />
+                                <h4 class="audience__subtitle">
+                                    Эксперты, выезжающие на поля для проведения
+                                    обследований
+                                </h4>
                             </div>
-                            <div class="features__item">
-                                <span class="features__item-number">3.</span>
-                                <p class="features__item-text">
-                                    Загрузка контуров полей из файлов обменных форматов (Shape files, KML, GeoJson).
-                                </p>
+                            <div class="audience__item">
+                                <img
+                                    src="images/icons/confirm.svg"
+                                    alt="Подтверждаем"
+                                    class="audience__item-img"
+                                />
+                                <h4 class="audience__subtitle">
+                                    Специалисты страховых компаний по
+                                    андеррайтингу и урегулированию убытков
+                                </h4>
                             </div>
                         </div>
+                        <div class="audience__img-wrapper">
+                            <div class="audience__img-bg"></div>
+                            <img
+                                src="images/audience-img.jpg"
+                                class="audience__img"
+                                alt="Кому полезен продукт"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="advantages">
+                <div class="advantages__wrapper container">
+                    <h2 class="title advantages__title">
+                        Ключевые преимущества
+                    </h2>
+                    <div class="advantages__cards">
+                        <div class="advantages__card advantages__card_chart">
+                            <div class="advantages__card-header">
+                                <h5 class="advantages__subtitle">
+                                    Комплексный анализ разнородных данных
+                                </h5>
+                                <div class="advantages__icon">
+                                    <img
+                                        src="images/icons/chart.svg"
+                                        width="24"
+                                        height="24"
+                                        alt="Анализ"
+                                    />
+                                </div>
+                            </div>
+                            <div class="advantages__description">
+                                Развитые инструменты для комплексного анализа
+                                агроландшафтных, климатических, почвенных и
+                                спутниковых данных с визуализацией на графиках и
+                                картах.
+                            </div>
+                        </div>
+                        <div class="advantages__card advantages__card_security">
+                            <div class="advantages__card-header">
+                                <h5 class="advantages__subtitle">
+                                    Скорость и безопасность
+                                </h5>
+                                <div class="advantages__icon">
+                                    <img
+                                        src="images/icons/shield-check.svg"
+                                        width="24"
+                                        height="24"
+                                        alt="Скорость и безопасность"
+                                    />
+                                </div>
+                            </div>
+                            <div class="advantages__description">
+                                Скоростные каналы связи, эффективные алгоритмы
+                                обработки данных, резервное копирование,
+                                дата-центры на территории РФ для надёжной и
+                                безопасной работы.
+                            </div>
+                        </div>
+                        <div class="advantages__card advantages__card_ease">
+                            <div class="advantages__card-header">
+                                <h5 class="advantages__subtitle">
+                                    Удобство и простота
+                                </h5>
+                                <div class="advantages__icon">
+                                    <img
+                                        src="images/icons/flash.svg"
+                                        width="24"
+                                        height="24"
+                                        alt="Удобство и простота"
+                                    />
+                                </div>
+                            </div>
+                            <div class="advantages__description">
+                                Для начала работы даже не требуется оцифровка
+                                контуров полей. Основной функционал доступен в
+                                несколько кликов.
+                            </div>
+                        </div>
+                        <div class="advantages__card advantages__card_solution">
+                            <div class="advantages__card-header">
+                                <h5 class="advantages__subtitle">
+                                    Прозрачность и помощь в принятии решений
+                                </h5>
+                                <div class="advantages__icon">
+                                    <img
+                                        src="images/icons/artificial.svg"
+                                        width="24"
+                                        height="24"
+                                        alt="Прозрачность и помощь"
+                                    />
+                                </div>
+                            </div>
+                            <div class="advantages__description">
+                                Ускорение принятия решений за счёт ситуационной
+                                осведомлённости и упрощения процессов по
+                                мониторингу, оценке и фиксации рисков.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features">
+                <div class="features__wrapper container">
+                    <h2 class="title features__title">
+                        Основные возможности AgrosaInsurance
+                    </h2>
+                    <div class="features__block">
+                        <div class="features__main">
+                            <h3 class="features__subtitle">
+                                <span class="features__subtitle_custom"
+                                    >Экономьте время</span
+                                >
+                                на оцифровке полей
+                            </h3>
+                            <div class="features__list features__list_tablet">
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >1.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Автоматическая оцифровка контуров полей
+                                        в один клик за счет использования
+                                        современных инструментов искусственного
+                                        интеллекта.
+                                    </p>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >2.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Поиск полей по кадастровым номерам и
+                                        загрузка в систему.
+                                    </p>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >3.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Загрузка контуров полей из файлов
+                                        обменных форматов (Shape files, KML,
+                                        GeoJson).
+                                    </p>
+                                </div>
+                            </div>
 
-                        <div class="features__cards features__cards_desktop">
-                            <div class="features__card " data-id="1-1">
-                                Автоматическая оцифровка контуров полей в один клик за счёт использования современных
+                            <div
+                                class="features__cards features__cards_desktop"
+                            >
+                                <div class="features__card" data-id="1-1">
+                                    Автоматическая оцифровка контуров полей в
+                                    один клик за счёт использования современных
+                                    инструментов искусственного интеллекта.
+                                </div>
+                                <div class="features__card" data-id="1-2">
+                                    Поиск полей по кадастровым номерам и
+                                    загрузка в систему.
+                                </div>
+                                <div class="features__card" data-id="1-3">
+                                    Загрузка контуров полей из файлов обменных
+                                    форматов (Shape files, KML, GeoJson).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features__content">
+                            <video
+                                class="features__content-item active"
+                                data-id="1-1"
+                                autoplay
+                                muted
+                                loop
+                            >
+                                <source
+                                    src="videos/features-1.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                            <video
+                                class="features__content-item"
+                                data-id="1-2"
+                                autoplay
+                                muted
+                                loop
+                            >
+                                <source
+                                    src="videos/features-1-2.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                            <img
+                                class="features__content-item"
+                                src="images/features-4-1.png"
+                                alt="Отслеживание на сайте"
+                                data-id="1-3"
+                            />
+                        </div>
+                        <div class="features__cards features__cards_mobile">
+                            <div
+                                class="features__card features__card_small-long"
+                                data-id="1-1"
+                            >
+                                Автоматическая оцифровка контуров полей в один
+                                клик за счёт использования современных
                                 инструментов искусственного интеллекта.
                             </div>
-                            <div class="features__card" data-id="1-2">
-                                Поиск полей по кадастровым номерам и загрузка в систему.
+                            <div
+                                class="features__card features__card_middle"
+                                data-id="1-2"
+                            >
+                                Поиск полей по кадастровым номерам и загрузка в
+                                систему.
                             </div>
-                            <div class="features__card" data-id="1-3">
-                                Загрузка контуров полей из файлов обменных форматов (Shape files, KML, GeoJson).
-                            </div>
-                        </div>
-                    </div>
-                    <div class="features__content">
-                        <video class="features__content-item active" data-id="1-1" autoplay muted loop>
-                            <source src="videos/features-1.mp4" type="video/mp4" />
-                        </video>
-                        <video class="features__content-item" data-id="1-2" autoplay muted loop>
-                            <source src="videos/features-1-2.mp4" type="video/mp4" />
-                        </video>
-                        <img class=" features__content-item" src="images/features-4-1.png" alt="Отслеживание на сайте"
-                            data-id="1-3" />
-                    </div>
-                    <div class="features__cards features__cards_mobile">
-                        <div class="features__card features__card_small-long " data-id="1-1">
-                            Автоматическая оцифровка контуров полей в один клик за счёт использования современных
-                            инструментов искусственного интеллекта.
-                        </div>
-                        <div class="features__card features__card_middle" data-id="1-2">
-                            Поиск полей по кадастровым номерам и загрузка в систему.
-                        </div>
-                        <div class="features__card features__card_middle features__card_middle-mobile" data-id="1-3">
-                            Загрузка контуров полей из файлов обменных форматов (Shape files, KML, GeoJson).
-                        </div>
-                    </div>
-                </div>
-                <div class="features__block">
-                    <div class="features__main">
-                        <h3 class="features__subtitle">
-                            Анализируйте<span class="features__subtitle_custom"> разнообразные климатические
-                                показатели</span>
-                        </h3>
-                        <div class="features__cards features__cards_desktop">
-                            <div class="features__card " data-id="2-1">
-                                Доступные показатели включают средние и экстремальные температуры, накопленные и
-                                выпавшие
-                                осадки, а также различные показатели содержания влаги в почве, включая SPI и
-                                продуктивную
-                                влажность.
-                            </div>
-                            <div class="features__card" data-id="2-2">
-                                Регулярно пополняемый архив климатических данных глубиной более 30-ти лет.
-                            </div>
-                            <div class="features__card" data-id="2-3">
-                                Сравнение текущих показателей с климатической нормой и многолетними экстремумами.
-                            </div>
-                        </div>
-                        <button class="features__button features__button_desktop">Подробнее</button>
-                    </div>
-                    <div class="features__content">
-                        <video class="features__content-item active" data-id="2-1" autoplay muted loop>
-                            <source src="videos/features-2.mp4" type="video/mp4" />
-                        </video>
-                        <video class="features__content-item" data-id="2-2" autoplay muted loop>
-                            <source src="videos/features-1-2.mp4" type="video/mp4" />
-                        </video>
-                        <img class=" features__content-item" src="images/features-4-1.png" alt="Отслеживание на сайте"
-                            data-id="2-3" />
-                    </div>
-                    <div class="features__cards features__cards_mobile">
-                        <div class="features__card features__card_middle-long  " data-id="2-1">
-                            Доступные показатели включают средние и экстремальные температуры, накопленные и
-                            выпавшие
-                            осадки, а также различные показатели содержания влаги в почве, включая SPI и
-                            продуктивную
-                            влажность.
-                        </div>
-                        <div class="features__card features__card_small" data-id="2-2">
-                            Регулярно пополняемый архив климатических данных глубиной более 30-ти лет.
-                        </div>
-                        <div class="features__card features__card_small" data-id="2-3">
-                            Сравнение текущих показателей с климатической нормой и многолетними экстремумами.
-                        </div>
-                    </div>
-                    <button class="features__button features__button_mobile">Подробнее</button>
-                </div>
-                <div class="features__block">
-                    <div class="features__main">
-                        <h3 class="features__subtitle">
-                            <span class="features__subtitle_custom">Мониторьте состояние посевов</span> с использованием
-                            данных ДЗЗ
-                        </h3>
-                        <div class="features__list">
-                            <div class="features__item">
-                                <span class="features__item-number">1.</span>
-                                <p class="features__item-text">
-                                    Регулярно пополняемый архив мультиспектральных снимков высокого разрешения глубиной
-                                    до 5-ти лет.
-                                </p>
-                            </div>
-                            <div class="features__item">
-                                <span class="features__item-number">2.</span>
-                                <p class="features__item-text">
-                                    Представление данных с использованием RGB-композитов, вегетационных, водных и
-                                    спектральных индексов.
-                                </p>
-                            </div>
-                            <div class="features__item">
-                                <span class="features__item-number">3.</span>
-                                <p class="features__item-text">
-                                    Анализ данных посредством различных инструментов, включая графики изменения индексов
-                                    во времени и зоны однородности для заданных диапазонов значений.
-                                </p>
-                            </div>
-                        </div>
-                        <button class="features__button features__button_desktop">Подробнее</button>
-                    </div>
-                    <div class="features__content">
-                        <video class="features__content-item features__content-item_visible active" data-id="3-1"
-                            autoplay muted loop>
-                            <source src="videos/features-3.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                    <button class="features__button features__button_mobile">Подробнее</button>
-                </div>
-                <div class="features__block">
-                    <div class="features__main">
-                        <h3 class="features__subtitle">
-                            <span class="features__subtitle_custom">Отслеживайте чрезвычайные ситуации</span>
-                        </h3>
-                        <div class="features__cards features__cards_desktop">
-                            <div class="features__card " data-id="4-1">
-                                Регулярно пополняемый архив ЧС, влияющих на урожайность с/х культур, на всей территории
-                                РФ начиная с 2012 года.
-                            </div>
-                            <div class="features__card" data-id="4-2">
-                                Удобные инструменты поиска записей в архиве по различным параметрам.
-                            </div>
-                            <div class="features__card" data-id="4-3">
-                                Отображение результатов на интерактивной карте с административно-территориальными
-                                границами РФ.
+                            <div
+                                class="features__card features__card_middle features__card_middle-mobile"
+                                data-id="1-3"
+                            >
+                                Загрузка контуров полей из файлов обменных
+                                форматов (Shape files, KML, GeoJson).
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="features__img features__img_desktop">
+                    <div class="features__block">
+                        <div class="features__main">
+                            <h3 class="features__subtitle">
+                                Анализируйте<span
+                                    class="features__subtitle_custom"
+                                >
+                                    разнообразные климатические показатели</span
+                                >
+                            </h3>
+                            <div
+                                class="features__cards features__cards_desktop"
+                            >
+                                <div class="features__card" data-id="2-1">
+                                    Доступные показатели включают средние и
+                                    экстремальные температуры, накопленные и
+                                    выпавшие осадки, а также различные
+                                    показатели содержания влаги в почве, включая
+                                    SPI и продуктивную влажность.
+                                </div>
+                                <div class="features__card" data-id="2-2">
+                                    Регулярно пополняемый архив климатических
+                                    данных глубиной более 30-ти лет.
+                                </div>
+                                <div class="features__card" data-id="2-3">
+                                    Сравнение текущих показателей с
+                                    климатической нормой и многолетними
+                                    экстремумами.
+                                </div>
+                            </div>
+                            <button
+                                class="features__button features__button_desktop"
+                            >
+                                Подробнее
+                            </button>
+                        </div>
+                        <div class="features__content">
+                            <video
+                                class="features__content-item active"
+                                data-id="2-1"
+                                autoplay
+                                muted
+                                loop
+                            >
+                                <source
+                                    src="videos/features-2.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                            <video
+                                class="features__content-item"
+                                data-id="2-2"
+                                autoplay
+                                muted
+                                loop
+                            >
+                                <source
+                                    src="videos/features-1-2.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                            <img
+                                class="features__content-item"
+                                src="images/features-4-1.png"
+                                alt="Отслеживание на сайте"
+                                data-id="2-3"
+                            />
+                        </div>
+                        <div class="features__cards features__cards_mobile">
+                            <div
+                                class="features__card features__card_middle-long"
+                                data-id="2-1"
+                            >
+                                Доступные показатели включают средние и
+                                экстремальные температуры, накопленные и
+                                выпавшие осадки, а также различные показатели
+                                содержания влаги в почве, включая SPI и
+                                продуктивную влажность.
+                            </div>
+                            <div
+                                class="features__card features__card_small"
+                                data-id="2-2"
+                            >
+                                Регулярно пополняемый архив климатических данных
+                                глубиной более 30-ти лет.
+                            </div>
+                            <div
+                                class="features__card features__card_small"
+                                data-id="2-3"
+                            >
+                                Сравнение текущих показателей с климатической
+                                нормой и многолетними экстремумами.
+                            </div>
+                        </div>
+                        <button
+                            class="features__button features__button_mobile"
+                        >
+                            Подробнее
+                        </button>
+                    </div>
+                    <div class="features__block">
+                        <div class="features__main">
+                            <h3 class="features__subtitle">
+                                <span class="features__subtitle_custom"
+                                    >Мониторьте состояние посевов</span
+                                >
+                                с использованием данных ДЗЗ
+                            </h3>
+                            <div class="features__list">
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >1.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Регулярно пополняемый архив
+                                        мультиспектральных снимков высокого
+                                        разрешения глубиной до 5-ти лет.
+                                    </p>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >2.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Представление данных с использованием
+                                        RGB-композитов, вегетационных, водных и
+                                        спектральных индексов.
+                                    </p>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >3.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Анализ данных посредством различных
+                                        инструментов, включая графики изменения
+                                        индексов во времени и зоны однородности
+                                        для заданных диапазонов значений.
+                                    </p>
+                                </div>
+                            </div>
+                            <button
+                                class="features__button features__button_desktop"
+                            >
+                                Подробнее
+                            </button>
+                        </div>
+                        <div class="features__content">
+                            <video
+                                class="features__content-item features__content-item_visible active"
+                                data-id="3-1"
+                                autoplay
+                                muted
+                                loop
+                            >
+                                <source
+                                    src="videos/features-3.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        </div>
+                        <button
+                            class="features__button features__button_mobile"
+                        >
+                            Подробнее
+                        </button>
+                    </div>
+                    <div class="features__block">
+                        <div class="features__main">
+                            <h3 class="features__subtitle">
+                                <span class="features__subtitle_custom"
+                                    >Отслеживайте чрезвычайные ситуации</span
+                                >
+                            </h3>
+                            <div
+                                class="features__cards features__cards_desktop"
+                            >
+                                <div class="features__card" data-id="4-1">
+                                    Регулярно пополняемый архив ЧС, влияющих на
+                                    урожайность с/х культур, на всей территории
+                                    РФ начиная с 2012 года.
+                                </div>
+                                <div class="features__card" data-id="4-2">
+                                    Удобные инструменты поиска записей в архиве
+                                    по различным параметрам.
+                                </div>
+                                <div class="features__card" data-id="4-3">
+                                    Отображение результатов на интерактивной
+                                    карте с административно-территориальными
+                                    границами РФ.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="features__img features__img_desktop">
                         <img class="features__img-item" src="images/features-4-1.png" alt="Отслеживание на сайте" />
                     </div> -->
-                    <!-- <div class="features__content features__video_tablet"> -->
-                    <div class="features__content">
-                        <video class=" features__content-item active" data-id="4-1" autoplay muted loop>
-                            <source src="videos/features-2.mp4" type="video/mp4" />
-                        </video>
-                        <video class=" features__content-item" data-id="4-2" autoplay muted loop>
-                            <source src="videos/features-1-2.mp4" type="video/mp4" />
-                        </video>
-                        <img class=" features__content-item" src="images/features-4-1.png" alt="Отслеживание на сайте"
-                            data-id="4-3" />
-                    </div>
-                    <div class="features__cards features__cards_mobile">
-                        <div class="features__card features__card_middle-small  " data-id="4-1">
-                            Регулярно пополняемый архив ЧС, влияющих на урожайность с/х культур, на всей территории
-                            РФ начиная с 2012 года.
+                        <!-- <div class="features__content features__video_tablet"> -->
+                        <div class="features__content">
+                            <video
+                                class="features__content-item active"
+                                data-id="4-1"
+                                autoplay
+                                muted
+                                loop
+                            >
+                                <source
+                                    src="videos/features-2.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                            <video
+                                class="features__content-item"
+                                data-id="4-2"
+                                autoplay
+                                muted
+                                loop
+                            >
+                                <source
+                                    src="videos/features-1-2.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                            <img
+                                class="features__content-item"
+                                src="images/features-4-1.png"
+                                alt="Отслеживание на сайте"
+                                data-id="4-3"
+                            />
                         </div>
-                        <div class="features__card features__card_small-medium" data-id="4-2">
-                            Удобные инструменты поиска записей в архиве по различным параметрам.
-                        </div>
-                        <div class="features__card features__card_middle-small" data-id="4-3">
-                            Отображение результатов на интерактивной карте с административно-территориальными
-                            границами РФ.
-                        </div>
-                    </div>
-                </div>
-                <div class="features__block">
-                    <div class="features__main">
-                        <h3 class="features__subtitle">
-                            <span class="features__subtitle_custom">Обследуйте посевы</span> с удобным мобильным
-                            приложением
-                        </h3>
-                        <div class="features__list">
-                            <div class="features__item">
-                                <span class="features__item-number">1.</span>
-                                <p class="features__item-text">
-                                    Простое и функциональное мобильное приложение для выполнения заданий на обследование
-                                    посевов с возможность работы офлайн.
-                                </p>
+                        <div class="features__cards features__cards_mobile">
+                            <div
+                                class="features__card features__card_middle-small"
+                                data-id="4-1"
+                            >
+                                Регулярно пополняемый архив ЧС, влияющих на
+                                урожайность с/х культур, на всей территории РФ
+                                начиная с 2012 года.
                             </div>
-                            <div class="features__item">
-                                <span class="features__item-number">2.</span>
-                                <p class="features__item-text">
-                                    Дистанционная постановка заданий на проведение обследований с различным уровнем
-                                    детализации описаний.
-                                </p>
+                            <div
+                                class="features__card features__card_small-medium"
+                                data-id="4-2"
+                            >
+                                Удобные инструменты поиска записей в архиве по
+                                различным параметрам.
                             </div>
-                            <div class="features__item">
-                                <span class="features__item-number">3.</span>
-                                <p class="features__item-text">
-                                    Автоматическая синхронизация с облачным хранилищем, отображение результатов на
-                                    интерактивных картах и в отчётах.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="features__img features__img_custom">
-                        <img class="features__img-item features__img-item_custom" src="images/features-5-1.png"
-                            alt="Мобильное приложение" />
-                        <div class="features__img-card features__img-card_tasks">
-                            Удаленная постановка задач
-                        </div>
-                        <div class="features__img-card features__img-card_mode">
-                            <span class="features__circle"></span>
-                            Оффлайн режим
-                        </div>
-                        <div class="features__img-card features__img-card_results">
-                            Результаты обследований <span class="features__img-card_custom">синхронизируются
-                                автоматически</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="prices">
-            <div class="prices__wrapper container">
-                <h2 class="title prices__title">
-                    Стоимость продукта
-                </h2>
-                <div class="prices__calculator calculator">
-                    <div class="calculator__period">
-                        <h5 class="calculator__title">Период</h5>
-                        <div class="calculator__period-switcher switcher">
-                            <div class="switcher__left switcher__active">
-                                Месяц
-                            </div>
-                            <div class="switcher__right">
-                                Год <div class="switcher__right-subtitle">-30%</div>
+                            <div
+                                class="features__card features__card_middle-small"
+                                data-id="4-3"
+                            >
+                                Отображение результатов на интерактивной карте с
+                                административно-территориальными границами РФ.
                             </div>
                         </div>
                     </div>
-                    <div class="calculator__users">
-                        <h5 class="calculator__title">Количество пользователей</h5>
-
-                        <div class="calculator__users-range">
-                            <div class="range">
-                                <div class="range-marks">
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
+                    <div class="features__block">
+                        <div class="features__main">
+                            <h3 class="features__subtitle">
+                                <span class="features__subtitle_custom"
+                                    >Обследуйте посевы</span
+                                >
+                                с удобным мобильным приложением
+                            </h3>
+                            <div class="features__list">
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >1.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Простое и функциональное мобильное
+                                        приложение для выполнения заданий на
+                                        обследование посевов с возможность
+                                        работы офлайн.
+                                    </p>
                                 </div>
-
-                                <input type="range" min="0" max="5" step="1" value="0" class="range-input"
-                                    id="calculator__users-range" />
-
-                                <div class="calculator__users-labels">
-                                    <span>10</span>
-                                    <span>20</span>
-                                    <span>30</span>
-                                    <span>40</span>
-                                    <span>50</span>
-                                    <span>100</span>
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >2.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Дистанционная постановка заданий на
+                                        проведение обследований с различным
+                                        уровнем детализации описаний.
+                                    </p>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__item-number"
+                                        >3.</span
+                                    >
+                                    <p class="features__item-text">
+                                        Автоматическая синхронизация с облачным
+                                        хранилищем, отображение результатов на
+                                        интерактивных картах и в отчётах.
+                                    </p>
                                 </div>
                             </div>
-                            <input type="number" min="1" max="1000" class="calculator__users-count" value="10">
                         </div>
-
+                        <div class="features__img features__img_custom">
+                            <img
+                                class="features__img-item features__img-item_custom"
+                                src="images/features-5-1.png"
+                                alt="Мобильное приложение"
+                            />
+                            <div
+                                class="features__img-card features__img-card_tasks"
+                            >
+                                Удаленная постановка задач
+                            </div>
+                            <div
+                                class="features__img-card features__img-card_mode"
+                            >
+                                <span class="features__circle"></span>
+                                Оффлайн режим
+                            </div>
+                            <div
+                                class="features__img-card features__img-card_results"
+                            >
+                                Результаты обследований
+                                <span class="features__img-card_custom"
+                                    >синхронизируются автоматически</span
+                                >
+                            </div>
+                        </div>
                     </div>
-                    <div class="calculator__region">
-                        <h5 class="calculator__title">Количество областей</h5>
-
-                        <div class="calculator__region-range">
-                            <div class="range">
-                                <div class="range-marks">
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
-                                    <span class="range-mark"></span>
+                </div>
+            </section>
+            <section class="prices">
+                <div class="prices__wrapper container">
+                    <h2 class="title prices__title">Стоимость продукта</h2>
+                    <div class="prices__calculator calculator">
+                        <div class="calculator__period">
+                            <h5 class="calculator__title">Период</h5>
+                            <div class="calculator__period-switcher switcher">
+                                <div class="switcher__left switcher__active">
+                                    Месяц
                                 </div>
-
-                                <input type="range" min="0" max="5" step="1" value="0" class="range-input"
-                                    id="calculator__region-range" />
-
-                                <div class="calculator__region-labels">
-                                    <span>1</span>
-                                    <span>2</span>
-                                    <span>3</span>
-                                    <span>4</span>
-                                    <span>5</span>
-                                    <span>10</span>
+                                <div class="switcher__right">
+                                    Год
+                                    <div class="switcher__right-subtitle">
+                                        -30%
+                                    </div>
                                 </div>
                             </div>
-                            <input type="number" min="1" max="100" class="calculator__region-count" value="1" />
                         </div>
+                        <div class="calculator__users">
+                            <h5 class="calculator__title">
+                                Количество пользователей
+                            </h5>
 
-                    </div>
-                    <button class="calculator__reset" disabled>Сбросить</button>
-                </div>
-                <div class="prices__costs costs">
-                    <div class="costs__block costs__base">
-                        <h5 class="costs__title">
-                            Базовый
-                        </h5>
-                        <div class="costs__main-info">
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Пользователи:</span>
-                                <span class="costs__item-value">10</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Количество областей:</span>
-                                <span class="costs__item-value">1</span>
-                            </div>
-                        </div>
-                        <h5 class="costs__title">15 000 ₽/месяц</h5>
-                        <button class="costs__button">Оставить заявку</button>
-                        <span class="costs__line"></span>
-                        <div class="costs__secondary-info">
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Спутниковые данные</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Заметки на полях</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Управление полями</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Карточка поля</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Таблица севооборотов</span>
+                            <div class="calculator__users-range">
+                                <div class="range">
+                                    <div class="range-marks">
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                    </div>
+
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="5"
+                                        step="1"
+                                        value="0"
+                                        class="range-input"
+                                        id="calculator__users-range"
+                                    />
+
+                                    <div class="calculator__users-labels">
+                                        <span>10</span>
+                                        <span>20</span>
+                                        <span>30</span>
+                                        <span>40</span>
+                                        <span>50</span>
+                                        <span>100</span>
+                                    </div>
+                                </div>
+                                <input
+                                    type="number"
+                                    min="1"
+                                    max="1000"
+                                    class="calculator__users-count"
+                                    value="10"
+                                />
                             </div>
                         </div>
-                    </div>
-                    <div class="costs__block costs__standart">
-                        <h5 class="costs__title">
-                            Стандарт
-                        </h5>
-                        <div class="costs__main-info">
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Пользователи:</span>
-                                <span class="costs__item-value">10</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Количество областей:</span>
-                                <span class="costs__item-value">1</span>
-                            </div>
-                        </div>
-                        <h5 class="costs__title">25 000 ₽/месяц</h5>
-                        <button class="costs__button">Оставить заявку</button>
-                        <span class="costs__line"></span>
-                        <div class="costs__secondary-info">
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Спутниковые данные</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Заметки на полях</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Управление полями</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Карточка поля</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Таблица севооборотов</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Калькулятор NPK</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Климатические данные</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Чрезвычайные ситуации</span>
+                        <div class="calculator__region">
+                            <h5 class="calculator__title">
+                                Количество областей
+                            </h5>
+
+                            <div class="calculator__region-range">
+                                <div class="range">
+                                    <div class="range-marks">
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                        <span class="range-mark"></span>
+                                    </div>
+
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="5"
+                                        step="1"
+                                        value="0"
+                                        class="range-input"
+                                        id="calculator__region-range"
+                                    />
+
+                                    <div class="calculator__region-labels">
+                                        <span>1</span>
+                                        <span>2</span>
+                                        <span>3</span>
+                                        <span>4</span>
+                                        <span>5</span>
+                                        <span>10</span>
+                                    </div>
+                                </div>
+                                <input
+                                    type="number"
+                                    min="1"
+                                    max="100"
+                                    class="calculator__region-count"
+                                    value="1"
+                                />
                             </div>
                         </div>
-                    </div>
-                    <div class="costs__block costs__profi">
-                        <h5 class="costs__title">
-                            Профи
-                        </h5>
-                        <div class="costs__main-info">
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Пользователи:</span>
-                                <span class="costs__item-value">10</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Количество областей:</span>
-                                <span class="costs__item-value">1</span>
-                            </div>
-                        </div>
-                        <h5 class="costs__title">35 000 ₽/месяц</h5>
-                        <button class="costs__button costs__button_custom">Оставить заявку</button>
-                        <span class="costs__line"></span>
-                        <div class="costs__secondary-info">
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Спутниковые данные</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Заметки на полях</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Управление полями</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Карточка поля</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Таблица севооборотов</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Калькулятор NPK</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Климатические данные</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Чрезвычайные ситуации</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Мобильное приложение</span>
-                            </div>
-                            <div class="costs__item">
-                                <img class="costs__item-img" src="images/icons/check-white.svg" alt="Подтверждаем" />
-                                <span class="costs__item-title">Рисковое райнирование</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="prices__info">
-                    <p class="prices__info-text">Дополнительные 10 пользователей +1 000 ₽ к стоимости тарифа</p>
-                    <p class="prices__info-text">Дополнительная область +1 000 ₽ к стоимости тарифа</p>
-                </div>
-            </div>
-        </section>
-        <section class="questions">
-            <div class="questions__wrapper container">
-                <h2 class="title questions__title">
-                    Часто задаваемые вопросы
-                </h2>
-                <div class="questions__list">
-                    <div class="questions__item">
-                        <div class="questions__item-header">
-                            <h6 class="questions__item-title">
-                                Можно ли получить тестовый доступ к системе AgrosaInsurance?
-                            </h6>
-                            <img src="images/icons/chewron-up.svg" class="questions__item-img" alt="Подробнее" />
-                        </div>
-                        <p class="questions__item-info">
-                            Да. Для этого отправьте запрос по адресу <a class="questions__email"
-                                href="mailto:hello@itech4sight.ru">hello@itech4sight.ru</a>. В запросе укажите название
-                            организации, ФИО и данные для связи (номер телефона, адрес электронной почты) с контактным
-                            лицом.
-                        </p>
-                    </div>
-                    <div class="questions__item">
-                        <div class="questions__item-header">
-                            <h6 class="questions__item-title">
-                                Как часто обновляются спутниковые данные? Какое у них разрешение?
-                            </h6>
-                            <img src="images/icons/chewron-up.svg" class="questions__item-img" alt="Подробнее" />
-                        </div>
-                        <p class="questions__item-info">
-                            Спутниковые данные в текущей версии системы мы получаем из двух источников: Sentinel-2,
-                            Landsat-8/9. Обновление спутниковых данных происходит ежедневно, но для какой-то конкретной
-                            территории новые снимки будут появляться с периодом 3-5 дней для спутников Sentinel и 8-10
-                            дней для спутника Landsat. Разрешение оптических снимков спутников Sentinel до 10м, а
-                            спутника Landsat до 30м.
-                        </p>
-                    </div>
-                    <div class="questions__item">
-                        <div class="questions__item-header">
-                            <h6 class="questions__item-title">
-                                Для каких территорий и за какой период времени доступны спутниковые снимки?
-                            </h6>
-                            <img src="images/icons/chewron-up.svg" class="questions__item-img" alt="Подробнее" />
-                        </div>
-                        <p class="questions__item-info">
-                            Глубина текущего архива спутниковых снимков у нас до 5ти лет. В перспективе планируем
-                            увеличить этот показатель до 10ти лет. Мы собираем спутниковые снимки для всех
-                            сельскохозяйственных угодий на территории РФ.
-                        </p>
-                    </div>
-                    <div class="questions__item">
-                        <div class="questions__item-header">
-                            <h6 class="questions__item-title">
-                                Как часто обновляются климатические данные? Есть ли данные за прошлые года и
-                                прогноз погоды?
-                            </h6>
-                            <img src="images/icons/chewron-up.svg" class="questions__item-img" alt="Подробнее" />
-                        </div>
-                        <p class="questions__item-info">
-                            Климатические данные мы собираем из различных источников, включая ERA5, NOAA, OpenWeatherMap
-                            и MeteoBlue. Данные обновляются ежедневно, но некоторые источники предоставляют данные с
-                            задержкой в 3-5 дней. Глубина архива климатических данных составляет 30 лет. Это необходимо
-                            для того, чтобы можно было считать климатическую норму. Прогноз погоды доступен на 14 дней.
-                        </p>
-                    </div>
-                    <div class="questions__item">
-                        <div class="questions__item-header">
-                            <h6 class="questions__item-title">
-                                Я скачал мобильное приложение, но не понимаю, как его использовать?
-                            </h6>
-                            <img src="images/icons/chewron-up.svg" class="questions__item-img" alt="Подробнее" />
-                        </div>
-                        <p class="questions__item-info">
-                            Мобильное приложение доступно для скачивания бесплатно и является частью мобильного сервиса
-                            по проведению обследований системы AgrosaInsurance. Чтобы использовать приложение нужно
-                            чтобы вам как исполнителю поставили задание в системе AgrosaInsurance. Задание
-                            после постановки станет автоматически доступно в мобильном приложении, и вы сможете начать
-                            его выполнение. Более подробную информацию вы можете посмотреть в руководстве пользователя.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="feedback">
-            <div class="container feedback__wrapper">
-                <div class="feedback__content">
-                    <div class="feedback__info">
-                        <h4 class="feedback__title">Оцените возможности системы AgrosaInsurance в действии</h4>
-                        <p class="feedback__description">Начните использовать передовые технологии спутникового
-                            мониторинга
-                            для повышения эффективности
-                            вашего сельского хозяйства уже сегодня.</p>
-                    </div>
-                    <button class="feedback__button">Оставить заявку</button>
-                </div>
-            </div>
-        </section>
-        <section class="mobile">
-            <div class="mobile__wrapper container">
-                <div class="mobile__main">
-                    <div class="mobile__info">
-                        <h4 class="mobile__title">Мобильное приложение</h4>
-                        <p class="mobile__description">Начните использовать передовые технологии спутникового
-                            мониторинга
-                            для повышения эффективности вашего сельского хозяйства уже сегодня.</p>
-                    </div>
-                    <div class="mobile__links mobile__links_desktop">
-                        <button class="mobile__link">
-                            <img src="images/icons/apple.svg" width="32" height="32" alt="Apple" />
-                            <div class="mobile__link-info">
-                                <p class="mobile__link-subtitle">Доступно в</p>
-                                <h6 class="mobile__link-title">App Store</h6>
-                            </div>
-                        </button>
-                        <button class="mobile__link">
-                            <img src="images/ru-store.svg" width="32" height="32" alt="RuStore" />
-                            <div class="mobile__link-info">
-                                <p class="mobile__link-subtitle">Доступно в</p>
-                                <h6 class="mobile__link-title">RuStore</h6>
-                            </div>
+                        <button class="calculator__reset" disabled>
+                            Сбросить
                         </button>
                     </div>
-                </div>
-                <div class="mobile__img-wrapper">
-                    <img src="images/mobile-img.png" class="mobile__img" alt="Телефон с полями" />
-                    <div class="mobile__links mobile__links_mobile">
-                        <a class="mobile__link">
-                            <img src="images/icons/apple.svg" width="32" height="32" alt="Apple" />
-                            <div class="mobile__link-info">
-                                <p class="mobile__link-subtitle">Доступно в</p>
-                                <h6 class="mobile__link-title">App Store</h6>
+                    <div class="prices__costs costs">
+                        <div class="costs__block costs__base">
+                            <h5 class="costs__title">Базовый</h5>
+                            <div class="costs__main-info">
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Пользователи:</span
+                                    >
+                                    <span class="costs__item-value">10</span>
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Количество областей:</span
+                                    >
+                                    <span class="costs__item-value">1</span>
+                                </div>
                             </div>
-                        </a>
-                        <a class="mobile__link">
-                            <img src="images/ru-store.svg" width="32" height="32" alt="RuStore" />
-                            <div class="mobile__link-info">
-                                <p class="mobile__link-subtitle">Доступно в</p>
-                                <h6 class="mobile__link-title">RuStore</h6>
+                            <h5 class="costs__title">15 000 ₽/месяц</h5>
+                            <button class="costs__button">
+                                Оставить заявку
+                            </button>
+                            <span class="costs__line"></span>
+                            <div class="costs__secondary-info">
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Спутниковые данные</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Заметки на полях</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Управление полями</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Карточка поля</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Таблица севооборотов</span
+                                    >
+                                </div>
                             </div>
-                        </a>
+                        </div>
+                        <div class="costs__block costs__standart">
+                            <h5 class="costs__title">Стандарт</h5>
+                            <div class="costs__main-info">
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Пользователи:</span
+                                    >
+                                    <span class="costs__item-value">10</span>
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Количество областей:</span
+                                    >
+                                    <span class="costs__item-value">1</span>
+                                </div>
+                            </div>
+                            <h5 class="costs__title">25 000 ₽/месяц</h5>
+                            <button class="costs__button">
+                                Оставить заявку
+                            </button>
+                            <span class="costs__line"></span>
+                            <div class="costs__secondary-info">
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Спутниковые данные</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Заметки на полях</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Управление полями</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Карточка поля</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Таблица севооборотов</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Калькулятор NPK</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Климатические данные</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Чрезвычайные ситуации</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="costs__block costs__profi">
+                            <h5 class="costs__title">Профи</h5>
+                            <div class="costs__main-info">
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Пользователи:</span
+                                    >
+                                    <span class="costs__item-value">10</span>
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Количество областей:</span
+                                    >
+                                    <span class="costs__item-value">1</span>
+                                </div>
+                            </div>
+                            <h5 class="costs__title">35 000 ₽/месяц</h5>
+                            <button class="costs__button costs__button_custom">
+                                Оставить заявку
+                            </button>
+                            <span class="costs__line"></span>
+                            <div class="costs__secondary-info">
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Спутниковые данные</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Заметки на полях</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Управление полями</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Карточка поля</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Таблица севооборотов</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Калькулятор NPK</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Климатические данные</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Чрезвычайные ситуации</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Мобильное приложение</span
+                                    >
+                                </div>
+                                <div class="costs__item">
+                                    <img
+                                        class="costs__item-img"
+                                        src="images/icons/check-white.svg"
+                                        alt="Подтверждаем"
+                                    />
+                                    <span class="costs__item-title"
+                                        >Рисковое райнирование</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prices__info">
+                        <p class="prices__info-text">
+                            Дополнительные 10 пользователей +1 000 ₽ к стоимости
+                            тарифа
+                        </p>
+                        <p class="prices__info-text">
+                            Дополнительная область +1 000 ₽ к стоимости тарифа
+                        </p>
                     </div>
                 </div>
-                <div class="mobile__qr">
-                    <img src="images/mobile-qr.png" class="mobile__qr-img" alt="QR код" />
-                    <p class="mobile__qr-description">Наведите камеру, чтобы скачать приложение</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="footer__wrapper">
-            <img class="footer__background" src="images/footer-bg.svg" alt="Задний фон" />
-            <div class="footer__main">
-                <div class="footer__contacts">
-                    <h4 class="footer__title">Если у вас остались вопросы, свяжитесь с нами любым удобным вам
-                        способом
-                    </h4>
-                    <div class="footer__contacts-list">
-                        <a class="footer__contact" href="mailto:hello@itech4sight.ru">
-                            hello@itech4sight.ru
-                        </a>
-                        <a class="footer__contact" href="tel:88003019698">
-                            8 (800) 301-96-98
-                        </a>
-                        <a href="#" class="footer__contact footer__contact_icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M11.5267 5.13965C12.5563 5.15405 12.8232 5.21965 13.1976 5.31445C13.9511 5.49448 13.9658 5.98337 13.8998 7.64648C13.8806 8.12168 13.8597 8.65712 13.8597 9.28711C13.8597 9.42144 13.8539 9.57134 13.8539 9.72363C13.8311 10.5768 13.8013 11.5378 14.4037 11.9326C14.4814 11.9818 14.5715 12.0075 14.6635 12.0068C14.8722 12.0068 15.4982 12.0075 17.1937 9.09766C17.9375 7.81291 18.5131 6.29758 18.5531 6.18262C18.5867 6.11902 18.6875 5.94016 18.8099 5.86816C18.8974 5.82288 18.9947 5.7996 19.0931 5.80078H23.1674C23.6112 5.80082 23.9123 5.86818 23.9711 6.03613C24.0694 6.30862 23.9518 7.14048 22.0922 9.65527C21.7791 10.0739 21.5042 10.4362 21.2631 10.7529C19.5771 12.9657 19.5771 13.0778 21.3627 14.7578C21.3909 14.7857 23.3059 16.6802 23.7826 17.5605C23.7924 17.5729 23.7997 17.5874 23.8041 17.6025C23.9993 17.9297 24.0483 18.1882 23.9515 18.377C23.7894 18.69 23.241 18.8472 23.0551 18.8604H19.6254C19.3864 18.8603 18.8898 18.798 18.2855 18.3809C17.8235 18.0581 17.3635 17.5264 16.9183 17.0068C16.2535 16.2353 15.679 15.5655 15.097 15.5654C15.0237 15.5663 14.9509 15.5786 14.8812 15.6016C14.4408 15.7408 13.8812 16.3684 13.8812 18.04C13.881 18.563 13.4682 18.8604 13.1791 18.8604H11.6088C11.0736 18.8604 8.2866 18.6736 5.8158 16.0684C2.79241 12.8832 0.0771505 6.49769 0.0433348 6.42383C-0.125816 6.00995 0.2288 5.78431 0.612671 5.78418H4.07654C4.54041 5.78431 4.69167 6.06458 4.79724 6.31641C4.91964 6.60561 5.37355 7.7629 6.11755 9.0625C7.32232 11.1768 8.06307 12.0371 8.65466 12.0371C8.76563 12.0372 8.87475 12.0082 8.97107 11.9531C9.74376 11.5281 9.59984 8.76799 9.56384 8.19922C9.56384 8.08637 9.56187 6.96651 9.16638 6.4248C8.8833 6.03628 8.40135 5.88533 8.10974 5.83008C8.18774 5.71728 8.3534 5.54438 8.5658 5.44238C9.09503 5.17846 10.0513 5.13965 11.0004 5.13965H11.5267Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </a>
-                        <a href="#" class="footer__contact footer__contact_icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M20.5595 4.3261C20.8251 4.36209 21.0765 4.46872 21.287 4.63469C21.4976 4.80071 21.6598 5.02047 21.7567 5.27044C21.8536 5.52021 21.8822 5.79125 21.8388 6.05559L19.5702 19.8124C19.3502 21.1394 17.8946 21.901 16.6776 21.2402C15.6598 20.6872 14.1479 19.8351 12.788 18.9462C12.108 18.5012 10.0242 17.0755 10.2802 16.0615C10.501 15.194 14.0011 11.9367 16.0009 9.99993C16.7856 9.23907 16.4277 8.80017 15.5009 9.49993C13.1989 11.2379 9.50218 13.8809 8.28018 14.6249C7.20245 15.2807 6.64054 15.3931 5.96866 15.2812C4.74269 15.0772 3.60563 14.7609 2.67764 14.3759C1.42364 13.8559 1.48467 12.1318 2.67667 11.6298L19.7763 4.42962C20.0233 4.32565 20.2939 4.29018 20.5595 4.3261Z"
-                                    fill="currentColor" />
-                            </svg>
-
-                        </a>
+            </section>
+            <section class="questions">
+                <div class="questions__wrapper container">
+                    <h2 class="title questions__title">
+                        Часто задаваемые вопросы
+                    </h2>
+                    <div class="questions__list">
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <h6 class="questions__item-title">
+                                    Можно ли получить тестовый доступ к системе
+                                    AgrosaInsurance?
+                                </h6>
+                                <img
+                                    src="images/icons/chewron-up.svg"
+                                    class="questions__item-img"
+                                    alt="Подробнее"
+                                />
+                            </div>
+                            <p class="questions__item-info">
+                                Да. Для этого отправьте запрос по адресу
+                                <a
+                                    class="questions__email"
+                                    href="mailto:hello@itech4sight.ru"
+                                    >hello@itech4sight.ru</a
+                                >. В запросе укажите название организации, ФИО и
+                                данные для связи (номер телефона, адрес
+                                электронной почты) с контактным лицом.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <h6 class="questions__item-title">
+                                    Как часто обновляются спутниковые данные?
+                                    Какое у них разрешение?
+                                </h6>
+                                <img
+                                    src="images/icons/chewron-up.svg"
+                                    class="questions__item-img"
+                                    alt="Подробнее"
+                                />
+                            </div>
+                            <p class="questions__item-info">
+                                Спутниковые данные в текущей версии системы мы
+                                получаем из двух источников: Sentinel-2,
+                                Landsat-8/9. Обновление спутниковых данных
+                                происходит ежедневно, но для какой-то конкретной
+                                территории новые снимки будут появляться с
+                                периодом 3-5 дней для спутников Sentinel и 8-10
+                                дней для спутника Landsat. Разрешение оптических
+                                снимков спутников Sentinel до 10м, а спутника
+                                Landsat до 30м.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <h6 class="questions__item-title">
+                                    Для каких территорий и за какой период
+                                    времени доступны спутниковые снимки?
+                                </h6>
+                                <img
+                                    src="images/icons/chewron-up.svg"
+                                    class="questions__item-img"
+                                    alt="Подробнее"
+                                />
+                            </div>
+                            <p class="questions__item-info">
+                                Глубина текущего архива спутниковых снимков у
+                                нас до 5ти лет. В перспективе планируем
+                                увеличить этот показатель до 10ти лет. Мы
+                                собираем спутниковые снимки для всех
+                                сельскохозяйственных угодий на территории РФ.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <h6 class="questions__item-title">
+                                    Как часто обновляются климатические данные?
+                                    Есть ли данные за прошлые года и
+                                    прогноз погоды?
+                                </h6>
+                                <img
+                                    src="images/icons/chewron-up.svg"
+                                    class="questions__item-img"
+                                    alt="Подробнее"
+                                />
+                            </div>
+                            <p class="questions__item-info">
+                                Климатические данные мы собираем из различных
+                                источников, включая ERA5, NOAA, OpenWeatherMap и
+                                MeteoBlue. Данные обновляются ежедневно, но
+                                некоторые источники предоставляют данные с
+                                задержкой в 3-5 дней. Глубина архива
+                                климатических данных составляет 30 лет. Это
+                                необходимо для того, чтобы можно было считать
+                                климатическую норму. Прогноз погоды доступен на
+                                14 дней.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <h6 class="questions__item-title">
+                                    Я скачал мобильное приложение, но не
+                                    понимаю, как его использовать?
+                                </h6>
+                                <img
+                                    src="images/icons/chewron-up.svg"
+                                    class="questions__item-img"
+                                    alt="Подробнее"
+                                />
+                            </div>
+                            <p class="questions__item-info">
+                                Мобильное приложение доступно для скачивания
+                                бесплатно и является частью мобильного сервиса
+                                по проведению обследований системы
+                                AgrosaInsurance. Чтобы использовать приложение
+                                нужно чтобы вам как исполнителю поставили
+                                задание в системе AgrosaInsurance. Задание после
+                                постановки станет автоматически доступно в
+                                мобильном приложении, и вы сможете начать его
+                                выполнение. Более подробную информацию вы можете
+                                посмотреть в руководстве пользователя.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="footer__info">
-                    <p class="footer__info-description">Облачная платформа AgroSmartAssistant включена в реестр
-                        российского ПО <a href="#" class="footer__info-link">Запись № 20832 от 26.12.2023</a></p>
-                    <img src="images/skolkovo.png" height="48" width="172" alt="Сколково" />
+            </section>
+            <section class="feedback">
+                <div class="container feedback__wrapper">
+                    <div class="feedback__content">
+                        <div class="feedback__info">
+                            <h4 class="feedback__title">
+                                Оцените возможности системы AgrosaInsurance в
+                                действии
+                            </h4>
+                            <p class="feedback__description">
+                                Начните использовать передовые технологии
+                                спутникового мониторинга для повышения
+                                эффективности вашего сельского хозяйства уже
+                                сегодня.
+                            </p>
+                        </div>
+                        <button class="feedback__button">
+                            Оставить заявку
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="mobile">
+                <div class="mobile__wrapper container">
+                    <div class="mobile__main">
+                        <div class="mobile__info">
+                            <h4 class="mobile__title">Мобильное приложение</h4>
+                            <p class="mobile__description">
+                                Начните использовать передовые технологии
+                                спутникового мониторинга для повышения
+                                эффективности вашего сельского хозяйства уже
+                                сегодня.
+                            </p>
+                        </div>
+                        <div class="mobile__links mobile__links_desktop">
+                            <button class="mobile__link">
+                                <img
+                                    src="images/icons/apple.svg"
+                                    width="32"
+                                    height="32"
+                                    alt="Apple"
+                                />
+                                <div class="mobile__link-info">
+                                    <p class="mobile__link-subtitle">
+                                        Доступно в
+                                    </p>
+                                    <h6 class="mobile__link-title">
+                                        App Store
+                                    </h6>
+                                </div>
+                            </button>
+                            <button class="mobile__link">
+                                <img
+                                    src="images/ru-store.svg"
+                                    width="32"
+                                    height="32"
+                                    alt="RuStore"
+                                />
+                                <div class="mobile__link-info">
+                                    <p class="mobile__link-subtitle">
+                                        Доступно в
+                                    </p>
+                                    <h6 class="mobile__link-title">RuStore</h6>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile__img-wrapper">
+                        <img
+                            src="images/mobile-img.png"
+                            class="mobile__img"
+                            alt="Телефон с полями"
+                        />
+                        <div class="mobile__links mobile__links_mobile">
+                            <a class="mobile__link">
+                                <img
+                                    src="images/icons/apple.svg"
+                                    width="32"
+                                    height="32"
+                                    alt="Apple"
+                                />
+                                <div class="mobile__link-info">
+                                    <p class="mobile__link-subtitle">
+                                        Доступно в
+                                    </p>
+                                    <h6 class="mobile__link-title">
+                                        App Store
+                                    </h6>
+                                </div>
+                            </a>
+                            <a class="mobile__link">
+                                <img
+                                    src="images/ru-store.svg"
+                                    width="32"
+                                    height="32"
+                                    alt="RuStore"
+                                />
+                                <div class="mobile__link-info">
+                                    <p class="mobile__link-subtitle">
+                                        Доступно в
+                                    </p>
+                                    <h6 class="mobile__link-title">RuStore</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mobile__qr">
+                        <img
+                            src="images/mobile-qr.png"
+                            class="mobile__qr-img"
+                            alt="QR код"
+                        />
+                        <p class="mobile__qr-description">
+                            Наведите камеру, чтобы скачать приложение
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <img
+                    class="footer__background"
+                    src="images/footer-bg.svg"
+                    alt="Задний фон"
+                />
+                <div class="footer__main">
+                    <div class="footer__contacts">
+                        <h4 class="footer__title">
+                            Если у вас остались вопросы, свяжитесь с нами любым
+                            удобным вам способом
+                        </h4>
+                        <div class="footer__contacts-list">
+                            <a
+                                class="footer__contact"
+                                href="mailto:hello@itech4sight.ru"
+                            >
+                                hello@itech4sight.ru
+                            </a>
+                            <a class="footer__contact" href="tel:88003019698">
+                                8 (800) 301-96-98
+                            </a>
+                            <a
+                                href="#"
+                                class="footer__contact footer__contact_icon"
+                            >
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M11.5267 5.13965C12.5563 5.15405 12.8232 5.21965 13.1976 5.31445C13.9511 5.49448 13.9658 5.98337 13.8998 7.64648C13.8806 8.12168 13.8597 8.65712 13.8597 9.28711C13.8597 9.42144 13.8539 9.57134 13.8539 9.72363C13.8311 10.5768 13.8013 11.5378 14.4037 11.9326C14.4814 11.9818 14.5715 12.0075 14.6635 12.0068C14.8722 12.0068 15.4982 12.0075 17.1937 9.09766C17.9375 7.81291 18.5131 6.29758 18.5531 6.18262C18.5867 6.11902 18.6875 5.94016 18.8099 5.86816C18.8974 5.82288 18.9947 5.7996 19.0931 5.80078H23.1674C23.6112 5.80082 23.9123 5.86818 23.9711 6.03613C24.0694 6.30862 23.9518 7.14048 22.0922 9.65527C21.7791 10.0739 21.5042 10.4362 21.2631 10.7529C19.5771 12.9657 19.5771 13.0778 21.3627 14.7578C21.3909 14.7857 23.3059 16.6802 23.7826 17.5605C23.7924 17.5729 23.7997 17.5874 23.8041 17.6025C23.9993 17.9297 24.0483 18.1882 23.9515 18.377C23.7894 18.69 23.241 18.8472 23.0551 18.8604H19.6254C19.3864 18.8603 18.8898 18.798 18.2855 18.3809C17.8235 18.0581 17.3635 17.5264 16.9183 17.0068C16.2535 16.2353 15.679 15.5655 15.097 15.5654C15.0237 15.5663 14.9509 15.5786 14.8812 15.6016C14.4408 15.7408 13.8812 16.3684 13.8812 18.04C13.881 18.563 13.4682 18.8604 13.1791 18.8604H11.6088C11.0736 18.8604 8.2866 18.6736 5.8158 16.0684C2.79241 12.8832 0.0771505 6.49769 0.0433348 6.42383C-0.125816 6.00995 0.2288 5.78431 0.612671 5.78418H4.07654C4.54041 5.78431 4.69167 6.06458 4.79724 6.31641C4.91964 6.60561 5.37355 7.7629 6.11755 9.0625C7.32232 11.1768 8.06307 12.0371 8.65466 12.0371C8.76563 12.0372 8.87475 12.0082 8.97107 11.9531C9.74376 11.5281 9.59984 8.76799 9.56384 8.19922C9.56384 8.08637 9.56187 6.96651 9.16638 6.4248C8.8833 6.03628 8.40135 5.88533 8.10974 5.83008C8.18774 5.71728 8.3534 5.54438 8.5658 5.44238C9.09503 5.17846 10.0513 5.13965 11.0004 5.13965H11.5267Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="#"
+                                class="footer__contact footer__contact_icon"
+                            >
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M20.5595 4.3261C20.8251 4.36209 21.0765 4.46872 21.287 4.63469C21.4976 4.80071 21.6598 5.02047 21.7567 5.27044C21.8536 5.52021 21.8822 5.79125 21.8388 6.05559L19.5702 19.8124C19.3502 21.1394 17.8946 21.901 16.6776 21.2402C15.6598 20.6872 14.1479 19.8351 12.788 18.9462C12.108 18.5012 10.0242 17.0755 10.2802 16.0615C10.501 15.194 14.0011 11.9367 16.0009 9.99993C16.7856 9.23907 16.4277 8.80017 15.5009 9.49993C13.1989 11.2379 9.50218 13.8809 8.28018 14.6249C7.20245 15.2807 6.64054 15.3931 5.96866 15.2812C4.74269 15.0772 3.60563 14.7609 2.67764 14.3759C1.42364 13.8559 1.48467 12.1318 2.67667 11.6298L19.7763 4.42962C20.0233 4.32565 20.2939 4.29018 20.5595 4.3261Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__info">
+                        <p class="footer__info-description">
+                            Облачная платформа AgroSmartAssistant включена в
+                            реестр российского ПО
+                            <a href="#" class="footer__info-link"
+                                >Запись № 20832 от 26.12.2023</a
+                            >
+                        </p>
+                        <img
+                            src="images/skolkovo.png"
+                            height="48"
+                            width="172"
+                            alt="Сколково"
+                        />
+                    </div>
+                </div>
+                <div class="footer__meta">
+                    <h6 class="footer__copyright">
+                        © 2025 iTech4Signt. Все права защищены.
+                    </h6>
+                    <div class="footer__links">
+                        <a class="footer__link" href="#"
+                            >Политика конфиденциальности</a
+                        >
+                        <a class="footer__link" href="#"
+                            >Условия использования</a
+                        >
+                    </div>
                 </div>
             </div>
-            <div class="footer__meta">
-                <h6 class="footer__copyright">© 2025 iTech4Signt. Все права защищены.</h6>
-                <div class="footer__links">
-                    <a class="footer__link" href="#">Политика конфиденциальности</a>
-                    <a class="footer__link" href="#">Условия использования</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="js/main.js"></script>
-</body>
-
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
 </html>

@@ -1,7 +1,7 @@
 @use "../base/variables";
 
 .header {
-    background-color: #E1E6EA;
+    background-color: #e1e6ea;
     border-bottom: 1px solid #e1e6ea;
     width: 100%;
     height: 64px;
@@ -10,32 +10,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    .wrapper {
+        height: 48px;
+        width: 100%;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            width: 156px;
+            height: 32px;
+        }
+        .nav {
+            display: flex;
+            gap: 8px;
+            .link {
+                border-radius: 8px;
+                padding: 0 16px;
+                line-height: 144%;
+                display: flex;
+                align-items: center;
 
-.header__wrapper {
-    height: 48px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header__nav {
-    display: flex;
-    gap: 8px;
-}
-
-.header__link {
-    border-radius: 8px;
-    padding: 0 16px;
-    line-height: 144%;
-    display: flex;
-    align-items: center;
-}
-
-.header__link_active {
-    color: variables.$color-second;
-    gap: 8px;
+                &.active {
+                    color: variables.$color-second;
+                    gap: 8px;
+                }
+            }
+        }
+        .language-switcher {
+            padding: 11px 16px;
+            color: variables.$color-text-main;
+            font-weight: 400;
+            line-height: 144%;
+        }
+    }
 }
 
 .header__meta {
@@ -43,14 +51,7 @@
     gap: 16px;
 }
 
-.header__language-switcher {
-    padding: 11px 16px;
-    color: variables.$color-text-main;
-    font-weight: 400;
-    line-height: 144%;
-}
-
-.header__feedback {
+.header__ .header__feedback {
     padding: 12px 24px;
     background-color: variables.$color-second;
 }
