@@ -62,6 +62,7 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
+
 // Обработка HTML — замена путей и копирование в dist
 function html() {
     return gulp

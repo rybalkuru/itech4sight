@@ -1,22 +1,23 @@
 @use "../base/variables";
 
 .header {
-    background-color: rgba(253, 253, 253, 0.84);
+    background-color: #E1E6EA;
     border-bottom: 1px solid #e1e6ea;
+    width: 100%;
     height: 64px;
+    padding: 0 156px;
     backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .header__wrapper {
-    padding: 8px 0;
-    max-width: 1440px;
+    height: 48px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
 }
 
 .header__nav {
