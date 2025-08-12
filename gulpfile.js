@@ -1,55 +1,60 @@
 import gulp from "gulp";
-import * as dartSass from "sass";
-import gulpSass from "gulp-sass";
+import dartSass from "gulp-dart-sass";
 import cleanCSS from "gulp-clean-css";
 import del from "del";
 import rename from "gulp-rename";
 import replace from "gulp-replace";
 import browserSync from "browser-sync";
 
-import rollupStream from "@rollup/stream";
-import source from "vinyl-source-stream";
-import buffer from "vinyl-buffer";
-import terser from "gulp-terser";
+import rollup from "gulp-better-rollup";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import terser from "gulp-terser";
+import babel from "gulp-babel";
 
-const sass = gulpSass(dartSass);
 const bs = browserSync.create();
+const sass = dartSass;
 
 // Очистка dist
 export const clean = () => del(["dist"]);
 
-// Компиляция SCSS → CSS (в dist/css)
+// Компиляция SCSS → CSS
 export const styles = () => {
     return gulp
         .src("src/scss/main.scss")
         .pipe(sass().on("error", sass.logError))
         .pipe(cleanCSS())
-        .pipe(gulp.dest("dist/css")) // <-- dist
-        .pipe(bs.stream()); // inject css без полной перезагрузки
-};
-
-// Сборка JS с Rollup + минификация (в dist/js)
-export const scripts = () => {
-    return rollupStream({
-        input: "src/js/main.js",
-        output: {
-            file: "dist/js/main.js",
-            format: "iife",
-            sourcemap: true,
-            name: "bundle",
-        },
-        plugins: [resolve(), commonjs()],
-    })
-        .pipe(source("main.js"))
-        .pipe(buffer())
-        .pipe(terser())
-        .pipe(gulp.dest("dist/js")) // <-- dist
+        .pipe(gulp.dest("dist/css"))
         .pipe(bs.stream());
 };
 
-// Обработка HTML — замена путей и переименование в php (для билда)
+// Сборка JS с Rollup + Babel + минификация
+export const scripts = () => {
+    return gulp
+        .src("src/js/main.js")
+        .pipe(
+            rollup(
+                {
+                    plugins: [resolve(), commonjs()],
+                },
+                {
+                    format: "iife",
+                    sourcemap: true,
+                    name: "bundle",
+                }
+            )
+        )
+        .pipe(
+            babel({
+                presets: ["@babel/preset-env"],
+            })
+        )
+        .pipe(terser())
+        .pipe(gulp.dest("dist/js"))
+        .pipe(bs.stream());
+};
+
+// Копирование html с заменой путей
 export const html = () => {
     return gulp
         .src("src/**/*.html")
@@ -57,25 +62,25 @@ export const html = () => {
         .pipe(gulp.dest("dist"));
 };
 
-// Копирование картинок и видео в dist
+// Копирование assets
 export const assets = () => {
     return gulp
         .src(["src/**/*.{jpg,jpeg,png,svg,gif,webp,mp4,webm}"])
         .pipe(gulp.dest("dist"));
 };
 
-// Копирование шрифтов в dist
+// Копирование шрифтов
 export const fonts = () => {
     return gulp
         .src("src/fonts/**/*.{woff,woff2,ttf,eot,otf}")
         .pipe(gulp.dest("dist/fonts"));
 };
 
-// Локальный сервер для разработки (смотрит dist)
+// Сервер для разработки
 export const serve = () => {
     bs.init({
         server: {
-            baseDir: "dist", // <-- dist
+            baseDir: "dist",
         },
         port: 3000,
         notify: false,
@@ -94,14 +99,11 @@ export const serve = () => {
     );
 };
 
-// Полный билд в dist
+// Билд
 export const build = gulp.series(
     clean,
     gulp.parallel(styles, scripts, html, assets, fonts)
 );
 
-// dev: билд и запуск сервера с наблюдением
-export const dev = gulp.series(build, serve);
-
-// по умолчанию — dev
-export default dev;
+// Дефолтная задача — билд и запуск сервера
+export default gulp.series(build, serve);
