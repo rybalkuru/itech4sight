@@ -1,27 +1,37 @@
+@use "../base/variables";
 .header {
-    background-color: #e1e6ea;
+    background-color: #fdfdfdd6;
     border-bottom: 1px solid #e1e6ea;
     width: 100%;
     height: 64px;
-    padding: 0 156px;
+    padding: 0 16px;
     backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 10;
     .wrapper {
         height: 48px;
         width: 100%;
+        max-width: 1470px;
         display: flex;
         gap: 16px;
         align-items: center;
         justify-content: space-between;
+
         .logo {
             width: 156px;
             height: 32px;
+            padding: 0;
+            margin: 0;
         }
         .nav {
             display: flex;
             gap: 8px;
+            @media (max-width: variables.$tablet) {
+                display: none;
+            }
             .link {
                 border-radius: 8px;
                 padding: 0 16px;
@@ -30,6 +40,12 @@
                 display: flex;
                 align-items: center;
                 white-space: nowrap;
+                font-size: 18px;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--color-text-main);
                 transition: color outline-color 0.3s;
                 &:hover {
                     color: var(--color-primary-hover);
@@ -41,21 +57,55 @@
                 &:active {
                     color: var(--color-primary-press);
                 }
-                &:focus {
+                &:focus-visible {
                     outline: 1px solid var(--color-line-focus);
                     outline-offset: -1px;
                 }
             }
             .dropdown-menu {
-                display: none;
-                position: absolute;
-                top: 64px; /* под шапкой */
-                background: white;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                padding: 8px 0;
-                z-index: 100;
+                .dropdown-menu-items {
+                    opacity: 0;
+                    pointer-events: none;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 64px; /* под шапкой */
+                    background: var(--color-bg-main);
+                    border-radius: 16px;
+                    box-shadow: 0px 8px 16px 0px var(--coloreffectsshadow-2),
+                        0px 0px 4px 0px var(--coloreffectsshadow-1);
+                    padding: 32px;
+                    z-index: 100;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    transition: 0.3s;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        height: 48px;
+                        color: var(--color-text-main);
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        transition: 0.3s;
+                        &:hover {
+                            color: var(--color-primary-hover);
+                        }
+                        &.active {
+                            color: var(--color-primary-press);
+                            pointer-events: none;
+                        }
+                    }
+                }
+                &.show {
+                    button svg {
+                        transform: rotate(180deg);
+                    }
+                    .dropdown-menu-items {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
             }
 
             .dropdown-menu a {
@@ -64,16 +114,121 @@
                 color: #333;
                 text-decoration: none;
             }
+        }
+        .meta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            .send {
+                @media (max-width: variables.$tablet) {
+                    display: none;
+                }
+            }
+            .nav_mobile {
+                display: none;
+                @media (max-width: variables.$tablet) {
+                    display: block;
+                }
+                position: relative;
+                .button-icon {
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                }
 
-            .dropdown-menu.show {
-                display: block;
+                .nav_mobile-links {
+                    display: none;
+                    position: fixed;
+                    top: 64px;
+                    right: 38px;
+                    width: 328px;
+                    z-index: 1000;
+                    flex-direction: column;
+                    gap: 8px;
+                    padding: 32px;
+                    overflow-y: auto;
+                    background: var(--color-bg-main);
+                    border-radius: 16px;
+                    box-shadow: 0px 8px 16px 0px var(--coloreffectsshadow-2),
+                        0px 0px 4px 0px var(--coloreffectsshadow-1);
+
+                    &.active {
+                        display: flex;
+                    }
+
+                    .nav_mobile-links_submenu {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .nav_mobile-links_submenu-top {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+
+                        .nav_mobile-links_submenu-items {
+                            margin-top: 8px;
+                            display: none;
+                            flex-direction: column;
+
+                            a {
+                                height: 48px;
+                                display: flex;
+                                align-items: center;
+                                font-weight: 400;
+                                font-size: 18px;
+                                color: vat(--color-text-main);
+                                cursor: pointer;
+                                transition: 0.3s;
+                                &:hover {
+                                    color: var(--color-primary-hover);
+                                }
+                                &.active {
+                                    color: var(--color-primary-press);
+                                }
+                            }
+                        }
+
+                        &.open {
+                            .nav_mobile-links_submenu-items {
+                                display: flex;
+                            }
+
+                            svg {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+
+                    .header__mobile-btn {
+                        margin-top: 20px;
+                    }
+                }
             }
         }
         .language-switcher {
-            padding: 11px 16px;
+            display: grid;
+            place-content: center;
+            height: 48px;
+            width: 54px;
             color: var(--color-text-main);
             font-weight: 400;
-            line-height: 144%;
+            line-height: 26px;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+                color: var(--color-primary-hover);
+            }
+            &:focus-visible {
+                outline: 1px solid var(--color-line-focus);
+                outline-offset: -1px;
+            }
+            &.active {
+                color: var(--color-primary-press);
+            }
         }
     }
 }

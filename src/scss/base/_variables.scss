@@ -5,6 +5,7 @@
     --color-primary-hover: #295bff;
     --color-primary-press: #527aff;
     --color-line-focus: #809dff;
+    --color-bg-main: #fdfdfd;
     --color-bg-light: #ebefff;
     --color-bg-grey: #f6f7f9;
     --color-text-muted: #445565;
@@ -17,4 +18,9 @@
     --font-size-base: 18px;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
+
+    --coloreffectsshadow-1: #1018280a;
+    --coloreffectsshadow-2: #10182814;
 }
+$tablet: 1024px;
+$mobile: 768px;
