@@ -21,28 +21,28 @@ const isProd = process.env.NODE_ENV === "production";
 
 const paths = {
     styles: {
-        src: "scss/**/*.scss",
+        src: "src/scss/**/*.scss",
         dest: "dist/css",
     },
     scripts: {
-        src: "js/**/*.js",
-        entry: "js/main.js",
+        src: "src/js/**/*.js",
+        entry: "src/js/main.js",
         dest: "dist/js",
     },
     html: {
-        src: "**/*.html",
+        src: "src/**/*.html",
         dest: "dist",
     },
     images: {
-        src: "images/**/*",
+        src: "src/images/**/*",
         dest: "dist/images",
     },
     videos: {
-        src: "video/**/*",
+        src: "src/video/**/*",
         dest: "dist/video",
     },
     fonts: {
-        src: "fonts/**/*",
+        src: "src/fonts/**/*",
         dest: "dist/fonts",
     },
 };
