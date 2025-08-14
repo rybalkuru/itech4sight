@@ -59,9 +59,12 @@ export function styles() {
         .pipe(gulpIf(!isProd, sourcemaps.init()))
         .pipe(sass().on("error", sass.logError))
         .pipe(
-            replace(
-                /(\.\.\/)+(images|video|fonts)\//g,
-                "<?=SITE_TEMPLATE_PATH?>/$2/"
+            gulpIf(
+                isProd,
+                replace(
+                    /(['"`])(\.\.\/)+(images|video|fonts)\//g,
+                    "<?=SITE_TEMPLATE_PATH?>/$2/"
+                )
             )
         )
         .pipe(gulpIf(isProd, cleanCSS()))
@@ -80,9 +83,12 @@ export function scripts() {
         .pipe(source("main.js"))
         .pipe(buffer())
         .pipe(
-            replace(
-                /(\.\.\/)+(images|video|fonts)\//g,
-                "<?=SITE_TEMPLATE_PATH?>/$2/"
+            gulpIf(
+                isProd,
+                replace(
+                    /(['"`])(\.\.\/)+(images|video|fonts)\//g,
+                    "<?=SITE_TEMPLATE_PATH?>/$2/"
+                )
             )
         )
         .pipe(gulpIf(isProd, uglify()))
@@ -94,6 +100,24 @@ export function scripts() {
 export function html() {
     return gulp
         .src(paths.html.src)
+        .pipe(
+            gulpIf(
+                isProd,
+                replace(
+                    /(src|href)="(.*?)(images|video|fonts)\//g,
+                    '$1="<?=SITE_TEMPLATE_PATH?>/$3/'
+                )
+            )
+        )
+        .pipe(
+            gulpIf(
+                isProd,
+                replace(
+                    /(<(?:img|source|link|script|video|audio)[^>]*(?:src|href|srcset|poster)=['"])(\.\.\/)*(images|video|fonts)\//g,
+                    "$1<?=SITE_TEMPLATE_PATH?>/$3/"
+                )
+            )
+        )
         .pipe(gulp.dest(paths.html.dest))
         .pipe(bs.stream());
 }

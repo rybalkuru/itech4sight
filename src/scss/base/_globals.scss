@@ -156,7 +156,38 @@ button {
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-    &:active, &.open {
-        background: #F6F7F9;
+    &:active,
+    &.open {
+        background: #f6f7f9;
+    }
+}
+.button_link {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    &.primary {
+        color: var(--color-text-main);
+        &:hover {
+            color: var(--color-primary-hover);
+        }
+        &:active {
+            color: var(--color-primary-press);
+        }
+    }
+    &.secondary {
+        color: var(--color-text-secondary);
+        &:hover {
+            color: var(--color-primary-hover);
+        }
+        &:active {
+            color: var(--color-primary-press);
+        }
     }
 }
