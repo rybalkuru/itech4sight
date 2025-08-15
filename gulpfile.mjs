@@ -14,6 +14,7 @@ import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import groupMedia from "gulp-group-css-media-queries";
 
 const sass = gulpSass(dartSass);
 const bs = browserSync.create();
@@ -58,12 +59,13 @@ export function styles() {
         .src(paths.styles.src)
         .pipe(gulpIf(!isProd, sourcemaps.init()))
         .pipe(sass().on("error", sass.logError))
+        .pipe(gulpIf(isProd, groupMedia()))
         .pipe(
             gulpIf(
                 isProd,
                 replace(
                     /(['"`])(\.\.\/)+(images|video|fonts)\//g,
-                    "<?=SITE_TEMPLATE_PATH?>/$2/"
+                    "<?= SITE_TEMPLATE_PATH ?>/$2/"
                 )
             )
         )
@@ -87,7 +89,7 @@ export function scripts() {
                 isProd,
                 replace(
                     /(['"`])(\.\.\/)+(images|video|fonts)\//g,
-                    "<?=SITE_TEMPLATE_PATH?>/$2/"
+                    "<?= SITE_TEMPLATE_PATH ?>/$2/"
                 )
             )
         )
@@ -105,7 +107,7 @@ export function html() {
                 isProd,
                 replace(
                     /(src|href)="(.*?)(images|video|fonts)\//g,
-                    '$1="<?=SITE_TEMPLATE_PATH?>/$3/'
+                    '$1="<?= SITE_TEMPLATE_PATH ?>/$3/'
                 )
             )
         )
@@ -114,7 +116,7 @@ export function html() {
                 isProd,
                 replace(
                     /(<(?:img|source|link|script|video|audio)[^>]*(?:src|href|srcset|poster)=['"])(\.\.\/)*(images|video|fonts)\//g,
-                    "$1<?=SITE_TEMPLATE_PATH?>/$3/"
+                    "$1<?= SITE_TEMPLATE_PATH ?>/$3/"
                 )
             )
         )

@@ -1,29 +1,50 @@
 .welcome {
-    padding-top: 112px;
-    padding-bottom: 304px;
-    background: url("/images/welcome-bg.svg");
-    background-position: 10% 25%;
-    background-repeat: no-repeat;
+    height: calc(100vh - 64px); /* Учитываем высоту шапки */
+    position: relative;
+    display: flex;
+    align-items: center;
 }
-
 .welcome__wrapper {
-    margin: 0 auto;
-    padding: 0 8px;
     display: flex;
     gap: 56px;
+    width: 100%;
+    height: 100%;
 }
 
 .welcome__main {
-    margin-top: 88px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    justify-content: center;
+    flex: 1;
+    z-index: 2;
+}
+.welcome__info {
+    max-width: 572px;
+    position: relative;
+}
+.welcome__info::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: -50px;
+    width: 540px;
+    height: 540px;
+    background: url("../../images/welcome-bg.svg") no-repeat;
+    background-position: left top;
+    z-index: -1;
+}
+.welcome__secondary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
 }
 
 .welcome__title {
     font-weight: 700;
     font-size: 71px;
-    line-height: 113%;
+    line-height: 80px;
     font-family: var(--font-second);
 }
 
@@ -45,14 +66,9 @@
     width: 193px;
 }
 
-.welcome__secondary {
-    padding: 53px 38px 33px 46px;
-}
-
 .welcome__img-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
     aspect-ratio: 514 / 338;
 }
 

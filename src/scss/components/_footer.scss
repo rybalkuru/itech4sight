@@ -1,3 +1,4 @@
+@use "../base/variables";
 .footer {
     padding: 56px 0;
     background-color: #f6f7f9;
@@ -62,16 +63,20 @@
     line-height: 133%;
     color: var(--color-text-main);
     transition: 0.3s;
-    &:hover {
-        color: var(--color-text-primary);
+    @media (min-width: variables.$tablet) {
+        &:hover {
+            color: var(--color-text-primary);
+        }
     }
     &:active {
         color: var(--color-primary-press);
     }
     &.footer__contact_icon {
-        &:hover {
-            color: #fdfdfd;
-            background-color: var(--color-text-primary);
+        @media (min-width: variables.$tablet) {
+            &:hover {
+                color: #fdfdfd;
+                background-color: var(--color-text-primary);
+            }
         }
         &:active {
             color: #fdfdfd;

@@ -50,9 +50,10 @@ button {
         font-size: 18px;
         line-height: 24px;
         letter-spacing: 0.15px;
-
-        &:hover {
-            background: #527aff;
+        @media (min-width: variables.$tablet) {
+            &:hover {
+                background: #527aff;
+            }
         }
         &:focus-visible {
             background: #809dff;
@@ -60,6 +61,7 @@ button {
         &:active {
             background: #9eb6ff;
         }
+
         &.loading {
             background: #9eb6ff;
         }
@@ -72,9 +74,10 @@ button {
     &.secondary {
         background: #101828;
         color: #fdfdfd;
-
-        &:hover {
-            background: #232c34;
+        @media (min-width: variables.$tablet) {
+            &:hover {
+                background: #232c34;
+            }
         }
         &:focus-visible {
             background: #445565;
@@ -94,8 +97,10 @@ button {
     &.tertiary {
         background: #e1e6ea;
         color: #101828;
-        &:hover {
-            background: #d4dce2;
+        @media (min-width: variables.$tablet) {
+            &:hover {
+                background: #d4dce2;
+            }
         }
         &:focus-visible {
             background: #cbd4dc;
@@ -125,8 +130,10 @@ button {
         height: 24px;
         width: 24px;
     }
-    &:hover {
-        background: #d4dce2;
+    @media (min-width: variables.$tablet) {
+        &:hover {
+            background: #d4dce2;
+        }
     }
     &:focus-visible {
         background: #d4dce2;
@@ -156,7 +163,6 @@ button {
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-    &:active,
     &.open {
         background: #f6f7f9;
     }
@@ -174,8 +180,10 @@ button {
     transition: 0.3s;
     &.primary {
         color: var(--color-text-main);
-        &:hover {
-            color: var(--color-primary-hover);
+        @media (min-width: variables.$tablet) {
+            &:hover {
+                color: var(--color-primary-hover);
+            }
         }
         &:active {
             color: var(--color-primary-press);
@@ -183,11 +191,17 @@ button {
     }
     &.secondary {
         color: var(--color-text-secondary);
-        &:hover {
-            color: var(--color-primary-hover);
+        @media (min-width: variables.$tablet) {
+            &:hover {
+                color: var(--color-primary-hover);
+            }
         }
         &:active {
             color: var(--color-primary-press);
         }
     }
+}
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
 }

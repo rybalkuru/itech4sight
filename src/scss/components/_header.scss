@@ -49,9 +49,12 @@
                 gap: 8px;
                 color: var(--color-text-main);
                 transition: 0.3s;
-                &:hover {
-                    color: var(--color-primary-hover);
+                @media (min-width: variables.$tablet) {
+                    &:hover {
+                        color: var(--color-primary-hover);
+                    }
                 }
+
                 &.selected {
                     color: var(--color-primary-hover);
                 }
@@ -93,8 +96,11 @@
                         line-height: 24px;
                         font-weight: 400;
                         transition: 0.3s;
-                        &:hover {
-                            color: var(--color-primary-hover);
+
+                        @media (min-width: variables.$tablet) {
+                            &:hover {
+                                color: var(--color-primary-hover);
+                            }
                         }
                         &.active {
                             color: var(--color-primary-press);
@@ -135,15 +141,51 @@
             }
             .nav_mobile {
                 display: none;
+                position: relative;
                 @media (max-width: variables.$tablet) {
                     display: block;
                 }
-                position: relative;
+
                 .button-icon {
                     cursor: pointer;
                     background: none;
                     border: none;
                     padding: 0;
+                    position: relative;
+                    width: 48px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 24px;
+                        height: 24px;
+
+                        .hamburger-line {
+                            transform-origin: center;
+                            transition: transform 0.4s
+                                    cubic-bezier(0.68, -0.55, 0.27, 1.55),
+                                opacity 0.3s ease;
+                        }
+                    }
+
+                    &.active {
+                        svg {
+                            .line1 {
+                                transform: translate(-3px, -3px) rotate(-45deg)
+                                    scaleX(1.2);
+                            }
+                            .line2 {
+                                transform: translate(-3px, 3px) rotate(45deg)
+                                    scaleX(1.2);
+                            }
+                        }
+                    }
                 }
 
                 .nav_mobile-links {
@@ -174,7 +216,7 @@
                         bottom: 0;
                         width: 100%;
                         height: calc(100vh - 64px);
-                        border-radius: 0;
+                        border-radius: 8px;
                         box-shadow: none;
                         padding: 16px;
                         overflow-y: auto;
@@ -191,21 +233,39 @@
                     .nav_mobile-links_submenu {
                         flex-direction: column;
                         align-items: flex-start;
+                        cursor: auto;
 
                         .nav_mobile-links_submenu-top {
                             width: 100%;
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
+                            cursor: pointer;
                         }
 
                         .nav_mobile-links_submenu-items {
-                            margin-top: 8px;
-                            display: none;
+                            margin-top: 0;
+                            display: flex; /* Постоянно включен flex */
                             flex-direction: column;
+                            max-height: 0;
+                            opacity: 0;
+                            overflow: hidden;
+                            transform: translateY(-10px);
+                            pointer-events: none; /* Блокировка кликов в закрытом состоянии */
+                            transition: max-height 400ms
+                                    cubic-bezier(0.2, 0.8, 0.4, 1),
+                                opacity 400ms cubic-bezier(0.2, 0.8, 0.4, 1),
+                                transform 400ms cubic-bezier(0.2, 0.8, 0.4, 1),
+                                margin-top 400ms cubic-bezier(0.2, 0.8, 0.4, 1); /* Анимация отступа */
 
                             a {
-                                height: 48px;
+                                height: 0;
+                                opacity: 0;
+                                pointer-events: none; /* Блокировка кликов по ссылкам */
+                                transition: height 400ms
+                                        cubic-bezier(0.2, 0.8, 0.4, 1),
+                                    opacity 400ms cubic-bezier(0.2, 0.8, 0.4, 1);
+
                                 display: flex;
                                 align-items: center;
                                 font-weight: 400;
@@ -213,11 +273,19 @@
                                 color: vat(--color-text-main);
                                 cursor: pointer;
                                 transition: 0.3s;
-                                &:hover {
-                                    color: var(--color-primary-hover);
+                                @media (min-width: variables.$tablet) {
+                                    &:hover {
+                                        color: var(--color-primary-hover);
+                                    }
                                 }
-                                &.active {
+
+                                &:active {
                                     color: var(--color-primary-press);
+                                }
+                                &.selected {
+                                    color: var(--color-text-primary);
+                                    pointer-events: none;
+                                    cursor: auto;
                                 }
                             }
                         }
@@ -228,11 +296,22 @@
 
                         &.open {
                             .nav_mobile-links_submenu-items {
-                                display: flex;
+                                margin-top: 8px; /* Финал анимации отступа */
+                                max-height: 500px;
+                                opacity: 1;
+                                transform: translateY(0);
+                                pointer-events: auto; /* Разрешаем клики */
+
+                                a {
+                                    height: 48px;
+                                    opacity: 1;
+                                    transition-delay: 100ms; /* Задержка только при открытии */
+                                    pointer-events: auto; /* Клики по ссылкам */
+                                }
                             }
 
                             svg {
-                                transform: rotate(-180deg);
+                                transform: rotateX(180deg);
                             }
                         }
                     }
@@ -254,9 +333,12 @@
             border-radius: 8px;
             transition: 0.3s;
             cursor: pointer;
-            &:hover {
-                color: var(--color-primary-hover);
+            @media (min-width: variables.$tablet) {
+                &:hover {
+                    color: var(--color-primary-hover);
+                }
             }
+
             &:focus-visible {
                 outline: 1px solid var(--color-line-focus);
                 outline-offset: -1px;
@@ -277,17 +359,7 @@ body.menu-open {
         width: 100%;
     }
 }
-body.menu-backdrop::before {
-    content: "";
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    backdrop-filter: blur(2px);
-}
+
 body.menu-open .header {
     position: fixed;
     top: 0;
