@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="initial-scale=1.0" />
+        <link rel="stylesheet" href="css/main.css" />
+        <title>iTech4Sight</title>
+
+        <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+        <link rel="mask-icon" href="images/favicon.svg" color="#000000" />
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="wrapper">
+                <a class="logo" href="/">
+                    <img src="images/logo.svg" alt="Лого" />
+                </a>
+                <nav class="nav">
+                    <a href="#" class="link">О компании</a>
+                    <a href="#" class="link">Платформа</a>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <button class="link" id="btn-dropdown-menu">
+                            Продукты
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M17.2929 8.29302C17.6834 7.90249 18.3164 7.90249 18.707 8.29302C19.0973 8.68355 19.0974 9.3166 18.707 9.70708L12.707 15.7071C12.3165 16.0976 11.6834 16.0975 11.2929 15.7071L5.29289 9.70708C4.90237 9.31655 4.90237 8.68354 5.29289 8.29302C5.68342 7.90249 6.31643 7.90249 6.70696 8.29302L11.9999 13.586L17.2929 8.29302Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu-items">
+                            <a href="/smart.html">AgrosaSmart</a>
+                            <a href="/agrosainsurance.html">AgrosaInsurance</a>
+                            <a href="/farm.html">AgrosaFarm</a>
+                            <a href="/chem.html" class="active">AgroChem</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="link">Новости</a>
+                    <a href="#" class="link">Контакты</a>
+                </nav>
+
+                <div class="meta">
+                    <button class="language-switcher">En</button>
+                    <button class="button primary small send">
+                        Написать нам
+                    </button>
+                    <div class="nav_mobile">
+                        <button class="button-icon">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    class="hamburger-line line1"
+                                    d="M21 15.2861C21.5523 15.2861 22 15.7338 22 16.2861C21.9997 16.8382 21.5521 17.2861 21 17.2861H3C2.44788 17.2861 2.00026 16.8382 2 16.2861C2 15.7338 2.44772 15.2861 3 15.2861H21Z"
+                                    fill="currentColor"
+                                />
+                                <path
+                                    class="hamburger-line line2"
+                                    d="M21 6.71387C21.5523 6.71387 22 7.16256 22 7.71484C21.9997 8.2669 21.5521 8.71484 21 8.71484H3C2.44788 8.71484 2.00026 8.2669 2 7.71484C2 7.16256 2.44772 6.71387 3 6.71387H21Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </button>
+                        <nav class="nav_mobile-links">
+                            <a href="#" class="nav_mobile-link">О компании</a>
+                            <a href="#" class="nav_mobile-link">Платформа</a>
+                            <button
+                                class="nav_mobile-link nav_mobile-links_submenu"
+                            >
+                                <div class="nav_mobile-links_submenu-top">
+                                    Продукты
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M17.2929 8.29289C17.6834 7.90237 18.3164 7.90237 18.707 8.29289C19.0973 8.68343 19.0974 9.31648 18.707 9.70696L12.707 15.707C12.3165 16.0974 11.6834 16.0973 11.2929 15.707L5.29289 9.70696C4.90237 9.31643 4.90237 8.68342 5.29289 8.29289C5.68342 7.90237 6.31643 7.90237 6.70696 8.29289L11.9999 13.5859L17.2929 8.29289Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="nav_mobile-links_submenu-items">
+                                    <a
+                                        href="/smart.html"
+                                        class="header__sublink-mobile"
+                                        >AgrosaSmart</a
+                                    >
+                                    <a
+                                        href="/agrosainsurance.html"
+                                        class="header__sublink-mobile"
+                                        >AgrosaInsurance</a
+                                    >
+                                    <a
+                                        href="/farm.html"
+                                        class="header__sublink-mobile"
+                                        >AgrosaFarm</a
+                                    >
+                                    <a
+                                        href="/chem.html"
+                                        class="header__sublink-mobile selected"
+                                        >AgroChem</a
+                                    >
+                                </div>
+                            </button>
+                            <a href="#" class="nav_mobile-link">Новости</a>
+                            <a href="#" class="nav_mobile-link">Контакты</a>
+                            <div class="header__mobile-btn">
+                                <button class="button primary small">
+                                    Оставить заявку
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="welcome">
+                <div class="welcome__wrapper">
+                    <div class="welcome__main">
+                        <div class="welcome__info chem">
+                            <h1 class="welcome__title">
+                                Agrosa&#8203;<span class="welcome__title_custom"
+                                    >Chem</span
+                                >
+                            </h1>
+                            <p class="welcome__description">
+                                Управление процессом проведения производственных
+                                опытов и агрохимических обследований
+                                с&nbsp;возможностью оперативного контроля
+                                состояния с/х&nbsp;угодий и&nbsp;посевов.
+                            </p>
+                        </div>
+                        <div>
+                            <button class="button secondary welcome__button">
+                                Оставить заявку
+                            </button>
+                        </div>
+                    </div>
+                    <div class="welcome__secondary">
+                        <div class="welcome__img-wrapper chem">
+                            <img
+                                src="images/welcome-img-chem.png"
+                                class="welcome__img"
+                                alt="smart"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <img
+                    class="footer__background"
+                    src="images/footer-bg.svg"
+                    alt="Задний фон"
+                />
+                <div class="footer__main">
+                    <div class="footer__contacts">
+                        <h4 class="footer__title">
+                            Если у вас остались вопросы, свяжитесь с нами любым
+                            удобным вам способом
+                        </h4>
+                        <div class="footer__contacts-list">
+                            <a
+                                target="_blank"
+                                class="footer__contact"
+                                href="mailto:hello@itech4sight.ru"
+                            >
+                                hello@itech4sight.ru
+                            </a>
+                            <a
+                                target="_blank"
+                                class="footer__contact"
+                                href="tel:88003019698"
+                            >
+                                8 (800) 301-96-98
+                            </a>
+                            <a
+                                target="_blank"
+                                href="https://vk.com/itech4sight"
+                                class="footer__contact footer__contact_icon"
+                            >
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M11.5267 5.13965C12.5563 5.15405 12.8232 5.21965 13.1976 5.31445C13.9511 5.49448 13.9658 5.98337 13.8998 7.64648C13.8806 8.12168 13.8597 8.65712 13.8597 9.28711C13.8597 9.42144 13.8539 9.57134 13.8539 9.72363C13.8311 10.5768 13.8013 11.5378 14.4037 11.9326C14.4814 11.9818 14.5715 12.0075 14.6635 12.0068C14.8722 12.0068 15.4982 12.0075 17.1937 9.09766C17.9375 7.81291 18.5131 6.29758 18.5531 6.18262C18.5867 6.11902 18.6875 5.94016 18.8099 5.86816C18.8974 5.82288 18.9947 5.7996 19.0931 5.80078H23.1674C23.6112 5.80082 23.9123 5.86818 23.9711 6.03613C24.0694 6.30862 23.9518 7.14048 22.0922 9.65527C21.7791 10.0739 21.5042 10.4362 21.2631 10.7529C19.5771 12.9657 19.5771 13.0778 21.3627 14.7578C21.3909 14.7857 23.3059 16.6802 23.7826 17.5605C23.7924 17.5729 23.7997 17.5874 23.8041 17.6025C23.9993 17.9297 24.0483 18.1882 23.9515 18.377C23.7894 18.69 23.241 18.8472 23.0551 18.8604H19.6254C19.3864 18.8603 18.8898 18.798 18.2855 18.3809C17.8235 18.0581 17.3635 17.5264 16.9183 17.0068C16.2535 16.2353 15.679 15.5655 15.097 15.5654C15.0237 15.5663 14.9509 15.5786 14.8812 15.6016C14.4408 15.7408 13.8812 16.3684 13.8812 18.04C13.881 18.563 13.4682 18.8604 13.1791 18.8604H11.6088C11.0736 18.8604 8.2866 18.6736 5.8158 16.0684C2.79241 12.8832 0.0771505 6.49769 0.0433348 6.42383C-0.125816 6.00995 0.2288 5.78431 0.612671 5.78418H4.07654C4.54041 5.78431 4.69167 6.06458 4.79724 6.31641C4.91964 6.60561 5.37355 7.7629 6.11755 9.0625C7.32232 11.1768 8.06307 12.0371 8.65466 12.0371C8.76563 12.0372 8.87475 12.0082 8.97107 11.9531C9.74376 11.5281 9.59984 8.76799 9.56384 8.19922C9.56384 8.08637 9.56187 6.96651 9.16638 6.4248C8.8833 6.03628 8.40135 5.88533 8.10974 5.83008C8.18774 5.71728 8.3534 5.54438 8.5658 5.44238C9.09503 5.17846 10.0513 5.13965 11.0004 5.13965H11.5267Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                target="_blank"
+                                href="https://t.me/itech4sight"
+                                class="footer__contact footer__contact_icon"
+                            >
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M20.5595 4.3261C20.8251 4.36209 21.0765 4.46872 21.287 4.63469C21.4976 4.80071 21.6598 5.02047 21.7567 5.27044C21.8536 5.52021 21.8822 5.79125 21.8388 6.05559L19.5702 19.8124C19.3502 21.1394 17.8946 21.901 16.6776 21.2402C15.6598 20.6872 14.1479 19.8351 12.788 18.9462C12.108 18.5012 10.0242 17.0755 10.2802 16.0615C10.501 15.194 14.0011 11.9367 16.0009 9.99993C16.7856 9.23907 16.4277 8.80017 15.5009 9.49993C13.1989 11.2379 9.50218 13.8809 8.28018 14.6249C7.20245 15.2807 6.64054 15.3931 5.96866 15.2812C4.74269 15.0772 3.60563 14.7609 2.67764 14.3759C1.42364 13.8559 1.48467 12.1318 2.67667 11.6298L19.7763 4.42962C20.0233 4.32565 20.2939 4.29018 20.5595 4.3261Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__info">
+                        <p class="footer__info-description">
+                            Облачная платформа AgroSmartAssistant включена в
+                            реестр российского ПО
+                            <a
+                                target="_blank"
+                                href="https://reestr.digital.gov.ru/reestr/2039331/?sphrase_id=4474329"
+                                class="footer__info-link"
+                                >Запись №20832&nbsp;от&nbsp;26.12.2023</a
+                            >
+                        </p>
+                        <!-- <img
+                            src="images/skolkovo.png"
+                            height="48"
+                            width="172"
+                            alt="Сколково"
+                        /> -->
+                    </div>
+                </div>
+                <div class="footer__meta">
+                    <div class="footer__copyright">
+                        © 2025 iTech4Signt. Все права защищены.
+                    </div>
+                    <div class="footer__links">
+                        <a
+                            class="button_link secondary"
+                            href="http://localhost:3000/agrosainsurance.html#"
+                            >Политика конфиденциальности</a
+                        >
+                        <a class="button_link secondary" href="#"
+                            >Условия использования</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>

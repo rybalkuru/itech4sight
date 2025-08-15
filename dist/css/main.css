@@ -24,6 +24,9 @@ body {
   --color-bg-light: #ebefff;
   --color-bg-grey: #f6f7f9;
   --color-text-muted: #445565;
+  --color-text-primary-chem: #9712ff;
+  --color-text-primary-farm: #d69d00;
+  --color-text-primary-smart: #1f9854;
   /* fonts */
   --font-main: "Roboto", sans-serif;
   --font-second: "Exo 2", sans-serif;
@@ -35,6 +38,54 @@ body {
   --coloreffectsshadow-2: #10182814;
 }
 
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Exo 2/Exo2-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Exo 2/Exo2-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Exo 2/Exo2-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Exo 2/Exo2-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Roboto/Roboto-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Roboto/Roboto-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/Roboto/Roboto-Black.woff2") format("woff2");
+}
 html,
 body {
   font-size: var(--font-size-base);
@@ -69,6 +120,7 @@ button {
   padding: 0 24px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 8px;
   font-weight: 500;
   font-size: 18px;
@@ -241,15 +293,9 @@ button {
 }
 
 .main {
-  max-width: 1200px;
   margin: 0 auto;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  max-width: 1232px;
+  padding: 0 16px;
 }
 
 .title {
@@ -1078,19 +1124,38 @@ body.menu-open .header {
 }
 
 .welcome__wrapper {
-  display: flex;
-  gap: 56px;
   width: 100%;
-  height: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(328px, 1fr);
+  align-items: self-start;
+  gap: 48px;
+}
+@media (max-width: 1024px) {
+  .welcome__wrapper {
+    padding: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .welcome__wrapper {
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .welcome__main {
+  margin-top: 78px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 48px;
   flex: 1;
   z-index: 2;
+}
+@media (max-width: 1024px) {
+  .welcome__main {
+    margin-top: 18px;
+  }
 }
 
 .welcome__info {
@@ -1101,20 +1166,40 @@ body.menu-open .header {
 .welcome__info::before {
   content: "";
   position: absolute;
-  top: -16px;
-  left: -50px;
+  top: -106px;
+  left: -106px;
   width: 540px;
   height: 540px;
   background: url("../../images/welcome-bg.svg") no-repeat;
   background-position: left top;
   z-index: -1;
 }
-
-.welcome__secondary {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1;
+@media (max-width: 1024px) {
+  .welcome__info::before {
+    width: 398px;
+    height: 398px;
+  }
+}
+.welcome__info .welcome__title_custom {
+  color: var(--color-text-primary);
+}
+.welcome__info.chem::before {
+  background: url("../../images/welcome-bg-chem.svg") no-repeat;
+}
+.welcome__info.chem .welcome__title_custom {
+  color: var(--color-text-primary-chem);
+}
+.welcome__info.farm::before {
+  background: url("../../images/welcome-bg-farm.svg") no-repeat;
+}
+.welcome__info.farm .welcome__title_custom {
+  color: var(--color-text-primary-farm);
+}
+.welcome__info.smart::before {
+  background: url("../../images/welcome-bg-smart.svg") no-repeat;
+}
+.welcome__info.smart .welcome__title_custom {
+  color: var(--color-text-primary-smart);
 }
 
 .welcome__title {
@@ -1122,12 +1207,15 @@ body.menu-open .header {
   font-size: 71px;
   line-height: 80px;
   font-family: var(--font-second);
+  white-space: nowrap;
 }
-
-.welcome__title_custom {
-  color: var(--color-primary-hover);
+@media (max-width: 1024px) {
+  .welcome__title {
+    font-size: 56px;
+    line-height: 64px;
+    white-space: normal;
+  }
 }
-
 .welcome__description {
   margin-top: 24px;
   font-size: 24px;
@@ -1135,38 +1223,63 @@ body.menu-open .header {
   color: var(--color-text-muted);
 }
 
-.welcome__button {
-  padding: 16px 24px;
-  letter-spacing: 0.01em;
-  background-color: var(--color-text-main);
-  width: 193px;
+@media (max-width: 768px) {
+  .welcome__button {
+    width: 100%;
+  }
+}
+
+.welcome__secondary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 56px 46px;
+}
+@media (max-width: 1024px) {
+  .welcome__secondary {
+    padding: 36px 29px;
+  }
+}
+@media (max-width: 768px) {
+  .welcome__secondary {
+    padding: 0;
+  }
 }
 
 .welcome__img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 514/338;
 }
-
-.welcome__img-bg {
+.welcome__img-wrapper::before {
+  content: "";
   position: absolute;
-  top: 4px;
-  width: 100%;
-  height: 100%;
+  aspect-ratio: 515/335;
+  top: 0;
+  bottom: 0;
+  left: -4%;
+  right: -4%;
   background: var(--color-bg-light);
   transform: rotate(-4deg);
-  border-radius: 24px;
+  border-radius: 16px;
 }
-
-.welcome__img {
+.welcome__img-wrapper .welcome__img {
+  aspect-ratio: 472/338;
   position: relative;
   z-index: 1;
-  border-radius: 24px;
-  width: 87.5%;
-  height: 100%;
-  box-shadow: 0 8px 16px 0 rgba(16, 24, 40, 0.08), 0 0 4px 0 rgba(16, 24, 40, 0.04);
+  border-radius: 16px;
+  width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(16, 24, 40, 0.0784313725), 0 0 4px 0 rgba(16, 24, 40, 0.0392156863);
   object-fit: cover;
-  margin-left: 30px;
+}
+.welcome__img-wrapper.chem::before {
+  background: #101828;
+}
+.welcome__img-wrapper.farm::before {
+  background: #101828;
+}
+.welcome__img-wrapper.smart::before {
+  background: #101828;
 }
 
 .mobile {

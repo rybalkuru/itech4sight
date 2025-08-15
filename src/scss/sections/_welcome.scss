@@ -1,3 +1,4 @@
+@use "../base/variables";
 .welcome {
     height: calc(100vh - 64px); /* Учитываем высоту шапки */
     position: relative;
@@ -5,40 +6,81 @@
     align-items: center;
 }
 .welcome__wrapper {
-    display: flex;
-    gap: 56px;
     width: 100%;
-    height: 100%;
+    display: grid;
+    grid-template-columns: auto minmax(328px, 1fr);
+    align-items: self-start;
+    gap: 48px;
+    @media (max-width: variables.$tablet) {
+        padding: calc(48px - 16px);
+    }
+    @media (max-width: variables.$mobile) {
+        padding: 0;
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 .welcome__main {
+    margin-top: 78px;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 48px;
     flex: 1;
     z-index: 2;
+    @media (max-width: variables.$tablet) {
+        margin-top: 18px;
+    }
 }
 .welcome__info {
     max-width: 572px;
     position: relative;
 }
-.welcome__info::before {
-    content: "";
-    position: absolute;
-    top: -16px;
-    left: -50px;
-    width: 540px;
-    height: 540px;
-    background: url("../../images/welcome-bg.svg") no-repeat;
-    background-position: left top;
-    z-index: -1;
-}
-.welcome__secondary {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex: 1;
+.welcome__info {
+    &::before {
+        content: "";
+        position: absolute;
+        top: -106px;
+        left: -106px;
+        width: 540px;
+        height: 540px;
+        background: url("../../images/welcome-bg.svg") no-repeat;
+        background-position: left top;
+        z-index: -1;
+
+        @media (max-width: variables.$tablet) {
+            width: 398px;
+            height: 398px;
+        }
+    }
+    .welcome__title_custom {
+        color: var(--color-text-primary);
+    }
+    &.chem {
+        &::before {
+            background: url("../../images/welcome-bg-chem.svg") no-repeat;
+        }
+        .welcome__title_custom {
+            color: var(--color-text-primary-chem);
+        }
+    }
+    &.farm {
+        &::before {
+            background: url("../../images/welcome-bg-farm.svg") no-repeat;
+        }
+        .welcome__title_custom {
+            color: var(--color-text-primary-farm);
+        }
+    }
+    &.smart {
+        &::before {
+            background: url("../../images/welcome-bg-smart.svg") no-repeat;
+        }
+        .welcome__title_custom {
+            color: var(--color-text-primary-smart);
+        }
+    }
 }
 
 .welcome__title {
@@ -46,10 +88,14 @@
     font-size: 71px;
     line-height: 80px;
     font-family: var(--font-second);
-}
-
-.welcome__title_custom {
-    color: var(--color-primary-hover);
+    white-space: nowrap;
+    @media (max-width: variables.$tablet) {
+        font-size: 56px;
+        line-height: 64px;
+        white-space: normal;
+    }
+    @media (max-width: variables.$mobile) {
+    }
 }
 
 .welcome__description {
@@ -58,38 +104,64 @@
     line-height: 133%;
     color: var(--color-text-muted);
 }
-
 .welcome__button {
-    padding: 16px 24px;
-    letter-spacing: 0.01em;
-    background-color: var(--color-text-main);
-    width: 193px;
+    @media (max-width: variables.$mobile) {
+        width: 100%;
+    }
+}
+.welcome__secondary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    padding: 56px 46px;
+    @media (max-width: variables.$tablet) {
+        padding: 36px 29px;
+    }
+    @media (max-width: variables.$mobile) {
+        padding: 0;
+    }
 }
 
 .welcome__img-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 514 / 338;
-}
 
-.welcome__img-bg {
-    position: absolute;
-    top: 4px;
-    width: 100%;
-    height: 100%;
-    background: var(--color-bg-light);
-    transform: rotate(-4deg);
-    border-radius: 24px;
-}
+    &::before {
+        content: "";
+        position: absolute;
+        aspect-ratio: 515 / 335;
+        top: 0;
+        bottom: 0;
+        left: -4%;
+        right: -4%;
 
-.welcome__img {
-    position: relative;
-    z-index: 1;
-    border-radius: 24px;
-    width: 87.5%;
-    height: 100%;
-    box-shadow: 0 8px 16px 0 rgba(16, 24, 40, 0.08),
-        0 0 4px 0 rgba(16, 24, 40, 0.04);
-    object-fit: cover;
-    margin-left: 30px;
+        background: var(--color-bg-light);
+        transform: rotate(-4deg);
+        border-radius: 16px;
+    }
+    .welcome__img {
+        aspect-ratio: 472 / 338;
+        position: relative;
+        z-index: 1;
+        border-radius: 16px;
+        width: 100%;
+        box-shadow: 0 8px 16px 0 #10182814, 0 0 4px 0 #1018280a;
+        object-fit: cover;
+    }
+    &.chem {
+        &::before {
+            background: #101828;
+        }
+    }
+    &.farm {
+        &::before {
+            background: #101828;
+        }
+    }
+    &.smart {
+        &::before {
+            background: #101828;
+        }
+    }
 }
