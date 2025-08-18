@@ -203,8 +203,10 @@ button {
     }
 }
 .main {
-    
     margin: 0 auto;
     max-width: calc(1200px + (16px * 2));
-    padding: 0 16px;
+    padding: 0 40px;
+    @media (max-width: variables.$mobile) {
+        padding: 0 16px;
+    }
 }

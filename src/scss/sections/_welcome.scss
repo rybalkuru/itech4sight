@@ -12,7 +12,7 @@
     align-items: self-start;
     gap: 48px;
     @media (max-width: variables.$tablet) {
-        padding: calc(48px - 16px);
+        padding: calc(48px - 16px), 0;
     }
     @media (max-width: variables.$mobile) {
         padding: 0;
@@ -37,6 +37,7 @@
     max-width: 572px;
     position: relative;
 }
+
 .welcome__info {
     &::before {
         content: "";
@@ -45,7 +46,7 @@
         left: -106px;
         width: 540px;
         height: 540px;
-        background: url("../../images/welcome-bg.svg") no-repeat;
+
         background-position: left top;
         z-index: -1;
 
@@ -54,33 +55,42 @@
             height: 398px;
         }
     }
+}
+.welcome__info--ins {
+    &::before {
+        background: url("../../images/welcome-bg-ins.svg") no-repeat;
+    }
     .welcome__title_custom {
         color: var(--color-text-primary);
     }
-    &.chem {
-        &::before {
-            background: url("../../images/welcome-bg-chem.svg") no-repeat;
-        }
-        .welcome__title_custom {
-            color: var(--color-text-primary-chem);
-        }
+}
+.welcome__info--farm {
+    &::before {
+        background: url("../../images/welcome-bg-farm.svg") no-repeat;
     }
-    &.farm {
-        &::before {
-            background: url("../../images/welcome-bg-farm.svg") no-repeat;
-        }
-        .welcome__title_custom {
-            color: var(--color-text-primary-farm);
-        }
+    .welcome__title_custom {
+        color: var(--color-text-primary-farm);
     }
-    &.smart {
-        &::before {
-            background: url("../../images/welcome-bg-smart.svg") no-repeat;
-        }
-        .welcome__title_custom {
-            color: var(--color-text-primary-smart);
-        }
+}
+.welcome__info--chem {
+    &::before {
+        background: url("../../images/welcome-bg-chem.svg") no-repeat;
     }
+    .welcome__title_custom {
+        color: var(--color-text-primary-chem);
+    }
+}
+.welcome__info--smart {
+    &::before {
+        background: url("../../images/welcome-bg-ins.smart") no-repeat;
+    }
+    .welcome__title_custom {
+        color: var(--color-text-primary-smart);
+    }
+}
+
+.welcome__info--chem::before {
+    background: url("/images/welcome-bg-chem.svg") no-repeat;
 }
 
 .welcome__title {
@@ -114,12 +124,12 @@
     align-items: center;
     justify-content: flex-end;
     flex: 1;
-    padding: 56px 46px;
+    padding: 56px 18px 56px 46px;
     @media (max-width: variables.$tablet) {
-        padding: 36px 29px;
+        padding: 36px 16px 36px 29px;
     }
     @media (max-width: variables.$mobile) {
-        padding: 0;
+        padding: 0 41px;
     }
 }
 
@@ -141,8 +151,8 @@
         border-radius: 16px;
     }
     .welcome__img {
-        aspect-ratio: 472 / 338;
         position: relative;
+        aspect-ratio: 472 / 338;
         z-index: 1;
         border-radius: 16px;
         width: 100%;
@@ -152,16 +162,31 @@
     &.chem {
         &::before {
             background: #101828;
+            aspect-ratio: 517 / 301;
+            transform: rotate(-3.54deg);
+        }
+        .welcome__img {
+            aspect-ratio: 482 / 303;
         }
     }
     &.farm {
         &::before {
             background: #101828;
+             aspect-ratio: 532 / 302;
+              transform: rotate(4deg);
+        }
+                .welcome__img {
+            aspect-ratio: 482 / 302;
         }
     }
     &.smart {
         &::before {
             background: #101828;
+            aspect-ratio: 531 / 335;
+            transform: rotate(-3.6deg);
+        }
+         .welcome__img {
+            aspect-ratio: 488 / 338;
         }
     }
 }
