@@ -1,3 +1,4 @@
+@use "../base/variables";
 .feedback {
     padding: 112px 0px;
 }
@@ -8,57 +9,60 @@
 }
 
 .feedback__content {
-    border-radius: 12px;
     padding: 32px;
-    box-shadow:
-        0 8px 16px rgba(16, 24, 40, 0.08),
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(16, 24, 40, 0.08),
         0 0 4px rgba(16, 24, 40, 0.04);
-    background:
-        url("../../images/feedback-bg.svg") no-repeat 852px 50px,
-        #295bff;
-}
+    .feedback__info {
+        margin-bottom: 32px;
+        max-width: 740px;
+    }
 
-.feedback__info {
-    margin-bottom: 32px;
-    max-width: 740px;
-}
+    .feedback__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 133%;
+        color: #fdfdfd;
+        margin-bottom: 16px;
+    }
 
-.feedback__title {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 133%;
-    color: #fdfdfd;
-    margin-bottom: 16px;
-}
+    .feedback__description {
+        color: #d2ddff;
+        line-height: 144%;
+        max-width: 640px;
+    }
+    &.ins {
+        background: url("../../images/feedback-bg-ins.svg") no-repeat 852px 50px,
+            #295bff;
+    }
 
-.feedback__description {
-    color: #d2ddff;
-    line-height: 144%;
-    max-width: 640px;
+    &.chem {
+        background: url("../../images/feedback-bg.svg-chem") no-repeat 852px
+                50px,
+            #7600c7;
+    }
+    &.farm {
+        background: url("../../images/feedback-bg.svg-farm") no-repeat 852px
+                50px,
+            #ffcb3d;
+        .feedback__title {
+            color: #101828;
+        }
+        .feedback__description {
+            color: #101828;
+        }
+    }
 }
-
+.feedback__buttons {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
 .feedback__button {
-    border-radius: 8px;
-    padding: 16px 24px;
     width: 280px;
-    min-width: 280px;
-    background-color: var(--btn-sec-bg);
-    letter-spacing: 0.01em;
 }
 
-.feedback__button:hover {
-    background-color: var(--btn-sec-bg-hover);
-}
-
-.feedback__button:focus {
-    background-color: var(--btn-sec-bg-focus);
-}
-
-.feedback__button:active {
-    background-color: var(--btn-sec-bg-active);
-}
-
-@media (max-width: 1024px) {
+@media (max-width: variables.$tablet) {
     .feedback {
         padding: 80px 0;
     }
@@ -74,9 +78,12 @@
     }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: variables.$mobile) {
+    .feedback__buttons {
+        flex-direction: column;
+    }
     .feedback__button {
         letter-spacing: 0;
+        width: 100%;
     }
 }

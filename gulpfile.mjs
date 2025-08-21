@@ -18,6 +18,7 @@ import commonjs from "@rollup/plugin-commonjs";
 
 import sharp from "gulp-sharp-responsive";
 import rename from "gulp-rename";
+import merge2 from "merge2";
 
 const sass = gulpSass(dartSass);
 const bs = browserSync.create();
@@ -66,8 +67,14 @@ export function images() {
             .pipe(bs.stream());
     }
 
-    // Prod: конвертация только jpg/png → webp
-    return gulp
+    // Prod:
+    // 1. копируем все картинки кроме jpg/png
+    const copyOthers = gulp
+        .src(["src/images/**/*", "!src/images/**/*.{jpg,jpeg,png}"])
+        .pipe(gulp.dest(paths.images.dest));
+
+    // 2. конвертируем jpg/png → webp
+    const convertToWebp = gulp
         .src("src/images/**/*.{jpg,jpeg,png}")
         .pipe(
             sharp({
@@ -76,12 +83,13 @@ export function images() {
         )
         .pipe(
             rename((path) => {
-                // сохраняем оригинальные имена
                 path.basename = path.basename.replace(/-optimized$/, "");
             })
         )
-        .pipe(gulp.dest(paths.images.dest))
-        .pipe(bs.stream());
+        .pipe(gulp.dest(paths.images.dest));
+
+    // 3. объединяем и возвращаем
+    return merge2(copyOthers, convertToWebp).pipe(bs.stream());
 }
 
 // Стили
@@ -128,36 +136,48 @@ export function scripts() {
 
 // HTML
 export function html() {
-    return gulp
-        .src(paths.html.src)
-        .pipe(
-            gulpIf(
-                isProd,
-                replace(
-                    /(src|href)="(\.\.\/)*(images\/[^"']+)\.(jpg|jpeg|png)"/g,
-                    (match, attr, prefix, filename) =>
-                        `${attr}="<?= SITE_TEMPLATE_PATH ?>/${filename}.webp"`
+    return (
+        gulp
+            .src(paths.html.src)
+            .pipe(
+                gulpIf(
+                    isProd,
+                    replace(
+                        /(src|href)="(\.\.\/)*(images\/[^"']+)\.(jpg|jpeg|png)"/g,
+                        (match, attr, prefix, filename) =>
+                            `${attr}="<?= SITE_TEMPLATE_PATH ?>/${filename}.webp"`
+                    )
                 )
             )
-        )
-        .pipe(
-            gulpIf(
-                isProd,
-                replace(/url\(['"]?([^'")]+)['"]?\)/g, (match, url) => {
-                    if (url.includes("../images/")) {
-                        let cleanUrl = url.replace("../", "");
-                        cleanUrl = cleanUrl.replace(
-                            /\.(jpg|jpeg|png)$/,
-                            ".webp"
-                        );
-                        return `url("<?= SITE_TEMPLATE_PATH ?>/${cleanUrl}")`;
-                    }
-                    return match;
-                })
+            // Добавляем обработку SVG-спрайтов в use
+            .pipe(
+                gulpIf(
+                    isProd,
+                    replace(
+                        /(<use\s+href=["'])((?:\.\.\/)*)(images\/[^"']+\.svg#\w+)(["']\s*\/?>)/g,
+                        "$1<?= SITE_TEMPLATE_PATH ?>/$3$4"
+                    )
+                )
             )
-        )
-        .pipe(gulp.dest(paths.html.dest))
-        .pipe(bs.stream());
+            .pipe(
+                gulpIf(
+                    isProd,
+                    replace(/url\(['"]?([^'")]+)['"]?\)/g, (match, url) => {
+                        if (url.includes("../images/")) {
+                            let cleanUrl = url.replace("../", "");
+                            cleanUrl = cleanUrl.replace(
+                                /\.(jpg|jpeg|png)$/,
+                                ".webp"
+                            );
+                            return `url("<?= SITE_TEMPLATE_PATH ?>/${cleanUrl}")`;
+                        }
+                        return match;
+                    })
+                )
+            )
+            .pipe(gulp.dest(paths.html.dest))
+            .pipe(bs.stream())
+    );
 }
 
 // Видео

@@ -126,8 +126,10 @@ button {
     display: grid;
     place-content: center;
     color: #101828;
+    background: #e1e6ea;
     transition: 0.3s;
-    img {
+    img,
+    svg {
         height: 24px;
         width: 24px;
     }
@@ -145,7 +147,9 @@ button {
     &.loading {
         background: #97a9b9;
     }
+    &:disabled,
     &.disabled {
+        background: #E1E6EA;
         color: #97a9b9;
         pointer-events: none;
     }

@@ -1,0 +1,66 @@
+@use "../base/variables";
+.partners {
+    padding: 112px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    @media (max-width: variables.$tablet) {
+        padding: 80px 8px;
+    }
+
+    h2 {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 56px;
+        @media (max-width: variables.$tablet) {
+            font-size: 40px;
+            line-height: 48px;
+        }
+    }
+
+    .carousel {
+        overflow: hidden;
+        cursor: grab;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        .track {
+            display: flex;
+            gap: 16px;
+            will-change: transform;
+        }
+    }
+
+    .partners__item {
+        flex-shrink: 0;
+        height: 188px;
+        width: 437px;
+        background: #f6f7f9;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        @media (max-width: variables.$tablet) {
+            height: 138px;
+            width: 320px;
+        }
+        @media (max-width: variables.$mobile) {
+            height: 95px;
+            width: 220px;
+        }
+        &:hover {
+            background: #e1e6ea;
+        }
+    }
+    .partners__item,
+    .partners__item img {
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+    }
+
+    .carousel:active {
+        cursor: grabbing;
+    }
+}

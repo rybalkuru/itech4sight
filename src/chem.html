@@ -2,8 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="viewport" content="initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/main.css" />
         <title>iTech4Sight</title>
 
@@ -172,13 +171,15 @@
                     <div class="audience__content">
                         <div class="audience__list">
                             <div class="audience__item">
-                                <img
-                                    src="images/icons/confirm.svg"
-                                    alt="Подтверждаем"
-                                    class="audience__item-img"
-                                />
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#confirm"
+                                    />
+                                </svg>
                                 <h4 class="audience__subtitle">
-                                    Менеджеры и&nbsp;эксперты компаний производителей удобрений и&nbsp;средств защиты растений&nbsp;(СЗР)
+                                    Менеджеры и&nbsp;эксперты компаний
+                                    производителей удобрений и&nbsp;средств
+                                    защиты растений&nbsp;(СЗР)
                                 </h4>
                             </div>
                         </div>
@@ -190,6 +191,256 @@
                                 alt="Кому полезен продукт"
                             />
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="advantages">
+                <div class="advantages__wrapper">
+                    <h2 class="title advantages__title">
+                        Ключевые преимущества
+                    </h2>
+                    <div class="advantages__cards-wrapper chem">
+                        <div class="advantages__cards">
+                            <div
+                                class="advantages__card advantages__card_chart"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Автоматизация
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#flash"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Удобные и простые инструменты
+                                    для автоматизации управления процессами
+                                    проведения производственных опытов
+                                    и агрохимических обследований.
+                                </div>
+                            </div>
+                            <div
+                                class="advantages__card advantages__card_security"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Скорость и безопасность
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#shield-check"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Скоростные каналы связи, эффективные
+                                    алгоритмы обработки данных, резервное
+                                    копирование, дата-центры на территории
+                                    РФ для надёжной и безопасной работы.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advantages__cards">
+                            <div class="advantages__card advantages__card_ease">
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Агрегация данных
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#ai-science-spark"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Опытные делянки, индексы вегетации,
+                                    результаты АХО, расчёты доз внесения
+                                    удобрений — все необходимые данные под рукой
+                                    и в удобном формате.
+                                </div>
+                            </div>
+                            <div
+                                class="advantages__card advantages__card_solution"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Прозрачность и помощь в принятии решений
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#artificial"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Ускорение принятия решений за счёт
+                                    ситуационной осведомлённости и оперативный
+                                    контроль результатов использования
+                                    агрохимикатов на полях.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="questions">
+                <div class="questions__wrapper">
+                    <h2 class="title questions__title">
+                        Часто задаваемые вопросы
+                    </h2>
+                    <div class="questions__list">
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    Можно ли получить тестовый доступ к системе
+                                    AgrosaChem?
+                                </div>
+
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Да. Для этого отправьте запрос по адресу
+                                <a
+                                    class="questions__email"
+                                    href="mailto:hello@itech4sight.ru"
+                                    >hello@itech4sight.ru</a
+                                >. В запросе укажите название организации, ФИО и
+                                данные для связи (номер телефона, адрес
+                                электронной почты) с контактным лицом.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    Как долго сохраняются в системе журналы
+                                    производственных опытов и данные АХО?
+                                    Можно ли их выгрузить себе на диск?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Время хранения данных АХО и журналов с ходом
+                                проведения производственных опытов
+                                не ограничено. Архивы с данными хорошо
+                                структурированы и доступны в системе в любое
+                                время. Вы можете выгрузить данные АХО в файлы
+                                обменных форматов (.xls,.csv). Для журналов
+                                проведения производственных опытов пока опция
+                                выгрузки не предусмотрена.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    В калькуляторе нет с/х культуры, которая
+                                    меня интересует. Как посчитать дозы внесения
+                                    удобрений?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Калькулятор даёт возможность расчёта
+                                доз внесения удобрений только для тех культур,
+                                по которым мы смогли собрать необходимые
+                                для выполнения расчётов данные. Мы постоянно
+                                работаем над расширением числа поддерживаемых
+                                с/х культур. Если вы не нашли интересующую
+                                вас культуру, то калькулятор не сможет пока
+                                выполнить расчёты, но вы можете прислать запрос
+                                в нашу службу поддержки, и мы попробуем решить
+                                этот вопрос.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    Для каких территорий и за какой период
+                                    времени доступны спутниковые снимки? Какое у
+                                    них разрешение?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Глубина текущего архива спутниковых снимков
+                                у нас до 5ти лет. В перспективе планируем
+                                увеличить этот показатель до 10ти лет.
+                                Мы собираем спутниковые снимки для всех
+                                сельскохозяйственных угодий на территории РФ.
+                                Разрешение оптических снимков спутников Sentinel
+                                до 10м, а спутника Landsat до 30м.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    Я скачал мобильное приложение, но не
+                                    понимаю, как его использовать?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Мобильное приложение доступно для скачивания
+                                бесплатно и является частью мобильного сервиса
+                                по проведению обследований системы AgrosaChem.
+                                Чтобы использовать приложение нужно
+                                чтобы вам как исполнителю поставили задание
+                                в системе AgrosaChem. Задание после постановки
+                                станет автоматически доступно в мобильном
+                                приложении, и вы сможете начать его выполнение.
+                                Более подробную информацию вы можете посмотреть
+                                в руководстве пользователя.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="feedback">
+                <div class="feedback__wrapper">
+                    <div class="feedback__content chem">
+                        <div class="feedback__info">
+                            <h4 class="feedback__title">
+                                Оцените возможности системы AgrosaChem
+                                в действии
+                            </h4>
+                            <p class="feedback__description">
+                                Начните использовать систему управления
+                                агрохимическими обследованиями
+                                и производственными опытами прямо сейчас.
+                            </p>
+                        </div>
+                        <button class="button secondary feedback__button">
+                            Оставить заявку
+                        </button>
                     </div>
                 </div>
             </section>
@@ -281,7 +532,7 @@
                 </div>
                 <div class="footer__meta">
                     <div class="footer__copyright">
-                        © 2025 iTech4Signt. Все права защищены.
+                        © 2025 iTech4Sight. Все права защищены.
                     </div>
                     <div class="footer__links">
                         <a

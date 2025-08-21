@@ -4,10 +4,16 @@
 @use "components/header";
 @use "components/footer";
 
+@use "sections/index-welcome";
 @use "sections/audience";
 @use "sections/advantages";
 @use "sections/features";
+@use "sections/feedback";
 @use "sections/welcome";
 @use "sections/mobile";
 @use "sections/price";
 @use "sections/questions";
+@use "sections/index-about-company";
+@use "sections/products";
+@use "sections/partners";
+@use "sections/news";

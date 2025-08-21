@@ -1,0 +1,36 @@
+.index-about-company {
+    margin: 112px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding: 0 8px;
+    h2 {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 56px;
+    }
+    .box {
+        display: flex;
+        gap: 32px;
+        .accent {
+            font-weight: 700;
+            font-size: 24px;
+
+            line-height: 32px;
+        }
+        .items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            div {
+                padding: 32px;
+                background-color: #F6F7F9;
+                border-radius: 16px;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+    }
+}

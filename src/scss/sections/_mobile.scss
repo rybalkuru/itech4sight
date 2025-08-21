@@ -36,6 +36,7 @@
 }
 
 .mobile__link {
+    color: #fdfdfd;
     line-height: normal;
     border-radius: 8px;
     width: 156px;
@@ -45,6 +46,10 @@
     justify-content: center;
     gap: 4px;
     background-color: #101828;
+    svg {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 .mobile__link:hover {
@@ -122,7 +127,6 @@
 }
 
 @media (max-width: 1024px) {
-
     .mobile__wrapper {
         gap: 24px;
         display: flex;
@@ -156,7 +160,6 @@
     .mobile__img {
         margin: 0;
     }
-
 }
 
 @media (max-width: 811px) {

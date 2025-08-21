@@ -2,8 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="viewport" content="initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/main.css" />
         <title>iTech4Sight</title>
 
@@ -147,8 +146,11 @@
                                 и индивидуальных особенностей полей.
                             </p>
                         </div>
-                        <div>
+                        <div class="welcome_buttons">
                             <button class="button secondary welcome__button">
+                                Начать работу
+                            </button>
+                            <button class="button tertiary welcome__button">
                                 Оставить заявку
                             </button>
                         </div>
@@ -172,23 +174,25 @@
                     <div class="audience__content">
                         <div class="audience__list">
                             <div class="audience__item">
-                                <img
-                                    src="images/icons/confirm.svg"
-                                    alt="Подтверждаем"
-                                    class="audience__item-img"
-                                />
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#confirm"
+                                    />
+                                </svg>
                                 <h4 class="audience__subtitle">
-                                    Управляющий персонал растениеводческого предприятия
+                                    Управляющий персонал растениеводческого
+                                    предприятия
                                 </h4>
                             </div>
                             <div class="audience__item">
-                                <img
-                                    src="images/icons/confirm.svg"
-                                    alt="Подтверждаем"
-                                    class="audience__item-img"
-                                />
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#confirm"
+                                    />
+                                </svg>
                                 <h4 class="audience__subtitle">
-                                    Агрономы и специалисты, которые занимаются обследованием полей.
+                                    Агрономы и специалисты, которые занимаются
+                                    обследованием полей.
                                 </h4>
                             </div>
                         </div>
@@ -199,6 +203,271 @@
                                 class="audience__img"
                                 alt="Кому полезен продукт"
                             />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="advantages">
+                <div class="advantages__wrapper">
+                    <h2 class="title advantages__title">
+                        Ключевые преимущества
+                    </h2>
+                    <div class="advantages__cards-wrapper farm">
+                        <div class="advantages__cards">
+                            <div
+                                class="advantages__card advantages__card_chart"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Простота освоения и удобство
+                                        использования
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#like"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Интуитивно понятные и простые
+                                    в использовании инструменты оцифровки полей,
+                                    управления севооборотами, проведения
+                                    обследований и оценки состояния посевов.
+                                </div>
+                            </div>
+                            <div
+                                class="advantages__card advantages__card_security"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Скорость и безопасность
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#shield-check"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Скоростные каналы связи, эффективные
+                                    алгоритмы обработки данных, резервное
+                                    копирование, дата-центры на территории
+                                    РФ для надёжной и безопасной работы.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advantages__cards">
+                            <div class="advantages__card advantages__card_ease">
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Оперативность и доступность
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#satellite-dish"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Ежедневно обновляемые спутниковые
+                                    и климатические данные, дополненные
+                                    развитыми инструментами для их представления
+                                    и анализа.
+                                </div>
+                            </div>
+                            <div
+                                class="advantages__card advantages__card_solution"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Прозрачность и помощь в принятии решений
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#artificial"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Ускорение принятия решений за счёт
+                                    ситуационной осведомлённости и своевременное
+                                    выявление депрессивных зон на полях.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="questions">
+                <div class="questions__wrapper">
+                    <h2 class="title questions__title">
+                        Часто задаваемые вопросы
+                    </h2>
+                    <div class="questions__list">
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    Я бесплатно зарегистрировал аккаунт
+                                    в системе AgrosaFarm. Как долго он будет
+                                    действовать?
+                                </div>
+
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Базовая версия системы AgrosaFarm абсолютно
+                                бесплатна. Ограничений по времени действия нет.
+                                При необходимости вы можете добавлять к своей
+                                системе платные сервисы. Для получения
+                                дополнительной информации вы можете отправить
+                                запрос на адрес
+                                <a
+                                    class="questions__email"
+                                    href="mailto:hello@itech4sight.ru"
+                                    >hello@itech4sight.ru</a
+                                >. В запросе укажите название организации,
+                                ФИО и данные для связи (номер телефона, адрес
+                                электронной почты) с контактным лицом.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    У меня в хозяйстве много полей. Как проще
+                                    оцифровать их?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                В системе AgrosaFarm реализованы несколько
+                                вариантов оцифровки полей. Если у вас
+                                есть кадастровые номера, то вы можете
+                                в несколько кликов оцифровать свои поля по этим
+                                номерам. Если вы делали ранее карту своих полей
+                                в ГИС системе, то можете загрузить сразу
+                                все поля из файлов обменных форматов (Shape
+                                files, GeoJson, KML). Если указанные выше
+                                варианты вам не подходят, то воспользуйтесь
+                                нашим ИИ инструментом для оцифровки полей:
+                                загрузите спутниковую подложку и оцифровывайте
+                                каждое поле одним кликом по его изображению
+                                на карте.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    В калькуляторе нет с/х культуры, которая
+                                    меня интересует. Как посчитать дозы внесения
+                                    удобрений?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Калькулятор даёт возможность расчёта
+                                доз внесения удобрений только для тех культур,
+                                по которым мы смогли собрать необходимые
+                                для выполнения расчётов данные. Мы постоянно
+                                работаем над расширением числа поддерживаемых
+                                с/х культур. Если вы не нашли интересующую
+                                вас культуру, то калькулятор не сможет пока
+                                выполнить расчёты, но вы можете прислать запрос
+                                в нашу службу поддержки, и мы попробуем решить
+                                этот вопрос.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    Для каких территорий и за какой период
+                                    времени доступны спутниковые снимки? Какое у
+                                    них разрешение?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Глубина текущего архива спутниковых снимков
+                                у нас до 5ти лет. В перспективе планируем
+                                увеличить этот показатель до 10ти лет.
+                                Мы собираем спутниковые снимки для всех
+                                сельскохозяйственных угодий на территории РФ.
+                                Разрешение оптических снимков спутников Sentinel
+                                до 10м, а спутника Landsat до 30м.
+                            </p>
+                        </div>
+                        <div class="questions__item">
+                            <div class="questions__item-header">
+                                <div class="questions__item-title">
+                                    Я скачал мобильное приложение, но не
+                                    понимаю, как его использовать?
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="questions__item-info">
+                                Мобильное приложение доступно для скачивания
+                                бесплатно и является частью мобильного сервиса
+                                по проведению обследований системы AgrosaFarm.
+                                Чтобы использовать приложение нужно
+                                чтобы вам как исполнителю поставили задание
+                                в системе AgrosaFarm. Задание после постановки
+                                станет автоматически доступно в мобильном
+                                приложении, и вы сможете начать его выполнение.
+                                Более подробную информацию вы можете посмотреть
+                                в руководстве пользователя.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="feedback">
+                <div class="feedback__wrapper">
+                    <div class="feedback__content farm">
+                        <div class="feedback__info">
+                            <h4 class="feedback__title">
+                                Оцените возможности системы AgrosaFarm
+                                в действии
+                            </h4>
+                            <p class="feedback__description">
+                                Начните отслеживать состояние посевов,
+                                управляйте севооборотами и планируйте внесение
+                                удобрений прямо сейчас.
+                            </p>
+                        </div>
+                        <div class="feedback__buttons">
+                            <button class="button secondary feedback__button">
+                                Оставить заявку
+                            </button>
+                            <button class="button tertiary feedback__button">
+                                Начать работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -291,7 +560,7 @@
                 </div>
                 <div class="footer__meta">
                     <div class="footer__copyright">
-                        © 2025 iTech4Signt. Все права защищены.
+                        © 2025 iTech4Sight. Все права защищены.
                     </div>
                     <div class="footer__links">
                         <a

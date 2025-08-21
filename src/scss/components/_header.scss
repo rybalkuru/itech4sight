@@ -231,11 +231,14 @@
                     }
 
                     .nav_mobile-links_submenu {
+                        border-radius: 8px;
+                        padding: 12px 0;
                         flex-direction: column;
                         align-items: flex-start;
                         cursor: auto;
 
                         .nav_mobile-links_submenu-top {
+                            padding: 0 16px;
                             width: 100%;
                             display: flex;
                             align-items: center;
@@ -244,24 +247,25 @@
                         }
 
                         .nav_mobile-links_submenu-items {
+                            width: 100%;
                             margin-top: 0;
-                            display: flex; /* Постоянно включен flex */
+                            display: flex;
                             flex-direction: column;
                             max-height: 0;
                             opacity: 0;
                             overflow: hidden;
                             transform: translateY(-10px);
-                            pointer-events: none; /* Блокировка кликов в закрытом состоянии */
+                            pointer-events: none;
                             transition: max-height 400ms
                                     cubic-bezier(0.2, 0.8, 0.4, 1),
                                 opacity 400ms cubic-bezier(0.2, 0.8, 0.4, 1),
                                 transform 400ms cubic-bezier(0.2, 0.8, 0.4, 1),
-                                margin-top 400ms cubic-bezier(0.2, 0.8, 0.4, 1); /* Анимация отступа */
-
+                                margin-top 400ms cubic-bezier(0.2, 0.8, 0.4, 1);
                             a {
+                                width: 100%;
+                                padding: 0 16px;
                                 height: 0;
                                 opacity: 0;
-                                pointer-events: none; /* Блокировка кликов по ссылкам */
                                 transition: height 400ms
                                         cubic-bezier(0.2, 0.8, 0.4, 1),
                                     opacity 400ms cubic-bezier(0.2, 0.8, 0.4, 1);

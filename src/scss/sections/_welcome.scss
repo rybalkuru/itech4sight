@@ -22,6 +22,7 @@
 }
 
 .welcome__main {
+    width: 100%;
     margin-top: 78px;
     position: relative;
     display: flex;
@@ -113,6 +114,12 @@
     font-size: 24px;
     line-height: 133%;
     color: var(--color-text-muted);
+}
+.welcome_buttons {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 .welcome__button {
     @media (max-width: variables.$mobile) {

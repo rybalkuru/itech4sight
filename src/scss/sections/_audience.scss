@@ -38,11 +38,10 @@
     background-color: var(--color-bg-grey);
     display: flex;
     gap: 16px;
-}
-
-.audience__item-img {
-    width: 40px;
-    height: 40px;
+    svg {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .audience__subtitle {
@@ -80,6 +79,11 @@
             aspect-ratio: 328 / 200;
         }
     }
+    &.ins {
+        .audience__img {
+            object-position: 0 -85px;
+        }
+    }
     &.chem {
         padding: 0 23px 12px 0;
         .audience__img-bg {
@@ -112,7 +116,7 @@
             width: calc(100% - 46px);
             height: calc(100% - 18px);
             border-radius: 24px;
-            background-color: #FFCB3D;
+            background-color: #ffcb3d;
             transform: translate(47px, 18px);
             z-index: 0;
         }

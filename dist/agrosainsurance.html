@@ -2,8 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="viewport" content="initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/main.css" />
         <title>iTech4Sight</title>
 
@@ -79,7 +78,7 @@
                         <nav class="nav_mobile-links">
                             <a href="#" class="nav_mobile-link">О компании</a>
                             <a href="#" class="nav_mobile-link">Платформа</a>
-                            <button
+                            <div
                                 class="nav_mobile-link nav_mobile-links_submenu"
                             >
                                 <div class="nav_mobile-links_submenu-top">
@@ -119,7 +118,7 @@
                                         >AgroChem</a
                                     >
                                 </div>
-                            </button>
+                            </div>
                             <a href="#" class="nav_mobile-link">Новости</a>
                             <a href="#" class="nav_mobile-link">Контакты</a>
                             <div class="header__mobile-btn">
@@ -174,40 +173,40 @@
                     <div class="audience__content">
                         <div class="audience__list">
                             <div class="audience__item">
-                                <img
-                                    src="images/icons/confirm.svg"
-                                    alt="Подтверждаем"
-                                    class="audience__item-img"
-                                />
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#confirm"
+                                    />
+                                </svg>
                                 <h4 class="audience__subtitle">
                                     Консультанты и юристы, работающие в сфере
                                     сельского хозяйства
                                 </h4>
                             </div>
                             <div class="audience__item">
-                                <img
-                                    src="images/icons/confirm.svg"
-                                    alt="Подтверждаем"
-                                    class="audience__item-img"
-                                />
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#confirm"
+                                    />
+                                </svg>
                                 <h4 class="audience__subtitle">
                                     Эксперты, выезжающие на поля для проведения
                                     обследований
                                 </h4>
                             </div>
                             <div class="audience__item">
-                                <img
-                                    src="images/icons/confirm.svg"
-                                    alt="Подтверждаем"
-                                    class="audience__item-img"
-                                />
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#confirm"
+                                    />
+                                </svg>
                                 <h4 class="audience__subtitle">
                                     Специалисты страховых компаний по
                                     андеррайтингу и урегулированию убытков
                                 </h4>
                             </div>
                         </div>
-                        <div class="audience__img-wrapper">
+                        <div class="audience__img-wrapper ins">
                             <div class="audience__img-bg"></div>
                             <img
                                 src="images/audience-img-ins.jpg"
@@ -223,87 +222,94 @@
                     <h2 class="title advantages__title">
                         Ключевые преимущества
                     </h2>
-                    <div class="advantages__cards">
-                        <div class="advantages__card advantages__card_chart">
-                            <div class="advantages__card-header">
-                                <h5 class="advantages__subtitle">
-                                    Комплексный анализ разнородных данных
-                                </h5>
-                                <div class="advantages__icon">
-                                    <img
-                                        src="images/icons/chart.svg"
-                                        width="24"
-                                        height="24"
-                                        alt="Анализ"
-                                    />
+                    <div class="advantages__cards-wrapper">
+                        <div class="advantages__cards">
+                            <div
+                                class="advantages__card advantages__card_chart"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Комплексный анализ разнородных данных
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#chart"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Развитые инструменты для комплексного
+                                    анализа агроландшафтных, климатических,
+                                    почвенных и спутниковых данных
+                                    с визуализацией на графиках и картах.
                                 </div>
                             </div>
-                            <div class="advantages__description">
-                                Развитые инструменты для комплексного анализа
-                                агроландшафтных, климатических, почвенных и
-                                спутниковых данных с визуализацией на графиках и
-                                картах.
+                            <div
+                                class="advantages__card advantages__card_security"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Скорость и безопасность
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#shield-check"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Скоростные каналы связи, эффективные
+                                    алгоритмы обработки данных, резервное
+                                    копирование, дата-центры на территории
+                                    РФ для надёжной и безопасной работы.
+                                </div>
                             </div>
                         </div>
-                        <div class="advantages__card advantages__card_security">
-                            <div class="advantages__card-header">
-                                <h5 class="advantages__subtitle">
-                                    Скорость и безопасность
-                                </h5>
-                                <div class="advantages__icon">
-                                    <img
-                                        src="images/icons/shield-check.svg"
-                                        width="24"
-                                        height="24"
-                                        alt="Скорость и безопасность"
-                                    />
+                        <div class="advantages__cards">
+                            <div class="advantages__card advantages__card_ease">
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Удобство и простота
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#flash"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="advantages__description">
+                                    Для начала работы даже не требуется
+                                    оцифровка контуров полей. Основной
+                                    функционал доступен в несколько кликов.
                                 </div>
                             </div>
-                            <div class="advantages__description">
-                                Скоростные каналы связи, эффективные алгоритмы
-                                обработки данных, резервное копирование,
-                                дата-центры на территории РФ для надёжной и
-                                безопасной работы.
-                            </div>
-                        </div>
-                        <div class="advantages__card advantages__card_ease">
-                            <div class="advantages__card-header">
-                                <h5 class="advantages__subtitle">
-                                    Удобство и простота
-                                </h5>
-                                <div class="advantages__icon">
-                                    <img
-                                        src="images/icons/flash.svg"
-                                        width="24"
-                                        height="24"
-                                        alt="Удобство и простота"
-                                    />
+                            <div
+                                class="advantages__card advantages__card_solution"
+                            >
+                                <div class="advantages__card-header">
+                                    <h5 class="advantages__subtitle">
+                                        Прозрачность и помощь в принятии решений
+                                    </h5>
+                                    <div class="advantages__icon">
+                                        <svg>
+                                            <use
+                                                href="images/icons/icons.svg#artificial"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="advantages__description">
-                                Для начала работы даже не требуется оцифровка
-                                контуров полей. Основной функционал доступен в
-                                несколько кликов.
-                            </div>
-                        </div>
-                        <div class="advantages__card advantages__card_solution">
-                            <div class="advantages__card-header">
-                                <h5 class="advantages__subtitle">
-                                    Прозрачность и помощь в принятии решений
-                                </h5>
-                                <div class="advantages__icon">
-                                    <img
-                                        src="images/icons/artificial.svg"
-                                        width="24"
-                                        height="24"
-                                        alt="Прозрачность и помощь"
-                                    />
+                                <div class="advantages__description">
+                                    Ускорение принятия решений за счёт
+                                    ситуационной осведомлённости и упрощения
+                                    процессов по мониторингу, оценке и фиксации
+                                    рисков.
                                 </div>
-                            </div>
-                            <div class="advantages__description">
-                                Ускорение принятия решений за счёт ситуационной
-                                осведомлённости и упрощения процессов по
-                                мониторингу, оценке и фиксации рисков.
                             </div>
                         </div>
                     </div>
@@ -869,22 +875,22 @@
                             <h5 class="costs__title">Базовый</h5>
                             <div class="costs__main-info">
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Пользователи:</span
                                     >
                                     <span class="costs__item-value">10</span>
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Количество областей:</span
                                     >
@@ -898,51 +904,51 @@
                             <span class="costs__line"></span>
                             <div class="costs__secondary-info">
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Спутниковые данные</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Заметки на полях</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Управление полями</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Карточка поля</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Таблица севооборотов</span
                                     >
@@ -953,22 +959,22 @@
                             <h5 class="costs__title">Стандарт</h5>
                             <div class="costs__main-info">
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Пользователи:</span
                                     >
                                     <span class="costs__item-value">10</span>
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Количество областей:</span
                                     >
@@ -982,81 +988,82 @@
                             <span class="costs__line"></span>
                             <div class="costs__secondary-info">
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
+
                                     <span class="costs__item-title"
                                         >Спутниковые данные</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Заметки на полях</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Управление полями</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Карточка поля</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Таблица севооборотов</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Калькулятор NPK</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Климатические данные</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Чрезвычайные ситуации</span
                                     >
@@ -1067,22 +1074,22 @@
                             <h5 class="costs__title">Профи</h5>
                             <div class="costs__main-info">
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Пользователи:</span
                                     >
                                     <span class="costs__item-value">10</span>
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Количество областей:</span
                                     >
@@ -1096,101 +1103,101 @@
                             <span class="costs__line"></span>
                             <div class="costs__secondary-info">
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Спутниковые данные</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Заметки на полях</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Управление полями</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Карточка поля</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Таблица севооборотов</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Калькулятор NPK</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Климатические данные</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Чрезвычайные ситуации</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Мобильное приложение</span
                                     >
                                 </div>
                                 <div class="costs__item">
-                                    <img
-                                        class="costs__item-img"
-                                        src="images/icons/check-white.svg"
-                                        alt="Подтверждаем"
-                                    />
+                                    <svg>
+                                        <use
+                                            href="images/icons/icons.svg#check"
+                                        />
+                                    </svg>
                                     <span class="costs__item-title"
                                         >Рисковое райнирование</span
                                     >
@@ -1217,15 +1224,16 @@
                     <div class="questions__list">
                         <div class="questions__item">
                             <div class="questions__item-header">
-                                <h6 class="questions__item-title">
+                                <div class="questions__item-title">
                                     Можно ли получить тестовый доступ к системе
                                     AgrosaInsurance?
-                                </h6>
-                                <img
-                                    src="images/icons/chewron-up.svg"
-                                    class="questions__item-img"
-                                    alt="Подробнее"
-                                />
+                                </div>
+
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
                             </div>
                             <p class="questions__item-info">
                                 Да. Для этого отправьте запрос по адресу
@@ -1240,15 +1248,15 @@
                         </div>
                         <div class="questions__item">
                             <div class="questions__item-header">
-                                <h6 class="questions__item-title">
+                                <div class="questions__item-title">
                                     Как часто обновляются спутниковые данные?
                                     Какое у них разрешение?
-                                </h6>
-                                <img
-                                    src="images/icons/chewron-up.svg"
-                                    class="questions__item-img"
-                                    alt="Подробнее"
-                                />
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
                             </div>
                             <p class="questions__item-info">
                                 Спутниковые данные в текущей версии системы мы
@@ -1264,15 +1272,15 @@
                         </div>
                         <div class="questions__item">
                             <div class="questions__item-header">
-                                <h6 class="questions__item-title">
+                                <div class="questions__item-title">
                                     Для каких территорий и за какой период
                                     времени доступны спутниковые снимки?
-                                </h6>
-                                <img
-                                    src="images/icons/chewron-up.svg"
-                                    class="questions__item-img"
-                                    alt="Подробнее"
-                                />
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
                             </div>
                             <p class="questions__item-info">
                                 Глубина текущего архива спутниковых снимков у
@@ -1284,16 +1292,16 @@
                         </div>
                         <div class="questions__item">
                             <div class="questions__item-header">
-                                <h6 class="questions__item-title">
+                                <div class="questions__item-title">
                                     Как часто обновляются климатические данные?
                                     Есть ли данные за прошлые года и
                                     прогноз погоды?
-                                </h6>
-                                <img
-                                    src="images/icons/chewron-up.svg"
-                                    class="questions__item-img"
-                                    alt="Подробнее"
-                                />
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
                             </div>
                             <p class="questions__item-info">
                                 Климатические данные мы собираем из различных
@@ -1309,15 +1317,15 @@
                         </div>
                         <div class="questions__item">
                             <div class="questions__item-header">
-                                <h6 class="questions__item-title">
+                                <div class="questions__item-title">
                                     Я скачал мобильное приложение, но не
                                     понимаю, как его использовать?
-                                </h6>
-                                <img
-                                    src="images/icons/chewron-up.svg"
-                                    class="questions__item-img"
-                                    alt="Подробнее"
-                                />
+                                </div>
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#chevron-up"
+                                    />
+                                </svg>
                             </div>
                             <p class="questions__item-info">
                                 Мобильное приложение доступно для скачивания
@@ -1337,7 +1345,7 @@
             </section>
             <section class="feedback">
                 <div class="feedback__wrapper">
-                    <div class="feedback__content">
+                    <div class="feedback__content ins">
                         <div class="feedback__info">
                             <h4 class="feedback__title">
                                 Оцените возможности системы AgrosaInsurance в
@@ -1350,7 +1358,7 @@
                                 сегодня.
                             </p>
                         </div>
-                        <button class="feedback__button">
+                        <button class="button secondary feedback__button">
                             Оставить заявку
                         </button>
                     </div>
@@ -1369,36 +1377,34 @@
                             </p>
                         </div>
                         <div class="mobile__links mobile__links_desktop">
-                            <button class="mobile__link">
-                                <img
-                                    src="images/icons/apple.svg"
-                                    width="32"
-                                    height="32"
-                                    alt="Apple"
-                                />
+                            <div class="mobile__link">
+                                <svg>
+                                    <use href="images/icons/icons.svg#apple" />
+                                </svg>
                                 <div class="mobile__link-info">
                                     <p class="mobile__link-subtitle">
                                         Доступно в
                                     </p>
-                                    <h6 class="mobile__link-title">
+                                    <div class="mobile__link-title">
                                         App Store
-                                    </h6>
+                                    </div>
                                 </div>
-                            </button>
-                            <button class="mobile__link">
-                                <img
-                                    src="images/ru-store.svg"
-                                    width="32"
-                                    height="32"
-                                    alt="RuStore"
-                                />
+                            </div>
+                            <div class="mobile__link">
+                                <svg>
+                                    <use
+                                        href="images/icons/icons.svg#ru-store"
+                                    />
+                                </svg>
                                 <div class="mobile__link-info">
                                     <p class="mobile__link-subtitle">
                                         Доступно в
                                     </p>
-                                    <h6 class="mobile__link-title">RuStore</h6>
+                                    <div class="mobile__link-title">
+                                        RuStore
+                                    </div>
                                 </div>
-                            </button>
+                            </div>
                         </div>
                     </div>
                     <div class="mobile__img-wrapper">
@@ -1409,19 +1415,16 @@
                         />
                         <div class="mobile__links mobile__links_mobile">
                             <a class="mobile__link">
-                                <img
-                                    src="images/icons/apple.svg"
-                                    width="32"
-                                    height="32"
-                                    alt="Apple"
-                                />
+                                <svg>
+                                    <use href="images/icons/icons.svg#apple" />
+                                </svg>
                                 <div class="mobile__link-info">
                                     <p class="mobile__link-subtitle">
                                         Доступно в
                                     </p>
-                                    <h6 class="mobile__link-title">
+                                    <div class="mobile__link-title">
                                         App Store
-                                    </h6>
+                                    </div>
                                 </div>
                             </a>
                             <a class="mobile__link">
@@ -1435,7 +1438,9 @@
                                     <p class="mobile__link-subtitle">
                                         Доступно в
                                     </p>
-                                    <h6 class="mobile__link-title">RuStore</h6>
+                                    <div class="mobile__link-title">
+                                        RuStore
+                                    </div>
                                 </div>
                             </a>
                         </div>
@@ -1540,7 +1545,7 @@
                 </div>
                 <div class="footer__meta">
                     <div class="footer__copyright">
-                        © 2025 iTech4Signt. Все права защищены.
+                        © 2025 iTech4Sight. Все права защищены.
                     </div>
                     <div class="footer__links">
                         <a
