@@ -1,0 +1,132 @@
+@use "../base/variables";
+.news-article {
+    padding: 16px 8px 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 56px;
+    @media (max-width: variables.$tablet) {
+        padding: 16px 0 80px;
+        gap: 48px;
+    }
+    article {
+        align-self: center;
+        max-width: 768px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--color-text-main);
+        @media (max-width: variables.$tablet) {
+            gap: 24px;
+        }
+        .title-with-date {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .date {
+                color: var(--color-text-secondary);
+            }
+        }
+        .news-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        h1 {
+            padding: 0;
+            margin: 0;
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            color: var(--color-text-main);
+            @media (max-width: variables.$tablet) {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 24px auto;
+            border-radius: 16px;
+            @media (max-width: variables.$tablet) {
+                margin: 16px auto;
+            }
+        }
+    }
+}
+.news-about {
+    width: 100%;
+    padding: 56px 8px 112px;
+    border-top: 2px solid #e1e6ea;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: space-between;
+    @media (max-width: variables.$tablet) {
+        padding: 56px 0 80px;
+    }
+    @media (max-width: variables.$mobile) {
+        flex-direction: column;
+    }
+    a {
+        width: 320px;
+        height: 146px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .link {
+            height: 26px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            color: var(--color-text-main);
+            transition: 0.3s;
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        &:hover {
+            .link {
+                color: var(--color-primary-hover);
+            }
+        }
+        &:active {
+            .link {
+                color: var(--color-primary-press);
+            }
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            color: var(--color-text-main);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            .date {
+                color: var(--color-text-secondary);
+            }
+        }
+        &:nth-child(2) {
+            text-align: right;
+            .link {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}

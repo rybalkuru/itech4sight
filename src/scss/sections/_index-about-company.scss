@@ -1,35 +1,57 @@
+@use "../base/variables";
 .index-about-company {
-    margin: 112px 0;
+    padding: 112px 0;
     display: flex;
     flex-direction: column;
     gap: 56px;
     padding: 0 8px;
+
+    @media (max-width: variables.$tablet) {
+        padding: 80px 0;
+        gap: 48px;
+    }
     h2 {
         font-family: var(--second-family);
         font-weight: 700;
         font-size: 50px;
         line-height: 56px;
+        @media (max-width: variables.$tablet) {
+            font-size: 40px;
+            line-height: 48px;
+        }
     }
     .box {
         display: flex;
         gap: 32px;
+        @media (max-width: variables.$tablet) {
+            gap: 24px;
+        }
+        @media (max-width: variables.$mobile) {
+            flex-direction: column;
+        }
         .accent {
             font-weight: 700;
             font-size: 24px;
-
             line-height: 32px;
+            @media (max-width: variables.$tablet) {
+                font-size: 20px;
+                line-height: 26px;
+            }
         }
         .items {
             display: flex;
             flex-direction: column;
             gap: 16px;
-            div {
+            p {
                 padding: 32px;
-                background-color: #F6F7F9;
+                background-color: #f6f7f9;
                 border-radius: 16px;
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 24px;
+                @media (max-width: variables.$tablet) {
+                    padding: 24px;
+                }
             }
         }
     }

@@ -16,35 +16,50 @@
                 <a class="logo" href="/">
                     <img src="images/logo.svg" alt="Лого" />
                 </a>
-                <nav class="nav">
-                    <a href="#" class="link">О компании</a>
-                    <a href="#" class="link">Платформа</a>
-                    <div class="dropdown-menu" id="dropdown-menu">
-                        <button class="link" id="btn-dropdown-menu">
-                            Продукты
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
+                <nav class="nav" aria-label="Основная навигация">
+                    <ul>
+                        <li><a href="#" class="link">О компании</a></li>
+                        <li><a href="#" class="link">Платформа</a></li>
+                        <li class="dropdown-menu" id="dropdown-menu">
+                            <button
+                                class="link"
+                                id="btn-dropdown-menu"
+                                aria-expanded="false"
+                                aria-controls="submenu"
                             >
-                                <path
-                                    d="M17.2929 8.29302C17.6834 7.90249 18.3164 7.90249 18.707 8.29302C19.0973 8.68355 19.0974 9.3166 18.707 9.70708L12.707 15.7071C12.3165 16.0976 11.6834 16.0975 11.2929 15.7071L5.29289 9.70708C4.90237 9.31655 4.90237 8.68354 5.29289 8.29302C5.68342 7.90249 6.31643 7.90249 6.70696 8.29302L11.9999 13.586L17.2929 8.29302Z"
-                                    fill="currentColor"
-                                />
-                            </svg>
-                        </button>
-                        <div class="dropdown-menu-items">
-                            <a href="/smart.html">AgrosaSmart</a>
-                            <a href="/agrosainsurance.html">AgrosaInsurance</a>
-                            <a href="/farm.html">AgrosaFarm</a>
-                            <a href="/chem.html" class="active">AgroChem</a>
-                        </div>
-                    </div>
+                                Продукты
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M17.2929 8.29302C17.6834 7.90249 18.3164 7.90249 18.707 8.29302C19.0973 8.68355 19.0974 9.3166 18.707 9.70708L12.707 15.7071C12.3165 16.0976 11.6834 16.0975 11.2929 15.7071L5.29289 9.70708C4.90237 9.31655 4.90237 8.68354 5.29289 8.29302C5.68342 7.90249 6.31643 7.90249 6.70696 8.29302L11.9999 13.586L17.2929 8.29302Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </button>
+                            <ul class="submenu">
+                                <li><a href="/smart.html">AgrosaSmart</a></li>
+                                <li>
+                                    <a href="/agrosainsurance.html"
+                                        >AgrosaInsurance</a
+                                    >
+                                </li>
+                                <li><a href="/farm.html">AgrosaFarm</a></li>
+                                <li>
+                                    <a href="/chem.html" class="active"
+                                        >AgroChem</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
 
-                    <a href="#" class="link">Новости</a>
-                    <a href="#" class="link">Контакты</a>
+                        <li><a href="#" class="link">Новости</a></li>
+                        <li><a href="#" class="link">Контакты</a></li>
+                    </ul>
                 </nav>
 
                 <div class="meta">
@@ -52,7 +67,7 @@
                     <button class="button primary small send">
                         Написать нам
                     </button>
-                    <div class="nav_mobile">
+                    <nav class="nav_mobile">
                         <button class="button-icon">
                             <svg
                                 width="24"
@@ -73,59 +88,76 @@
                                 />
                             </svg>
                         </button>
-                        <nav class="nav_mobile-links">
-                            <a href="#" class="nav_mobile-link">О компании</a>
-                            <a href="#" class="nav_mobile-link">Платформа</a>
-                            <button
-                                class="nav_mobile-link nav_mobile-links_submenu"
-                            >
-                                <div class="nav_mobile-links_submenu-top">
-                                    Продукты
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M17.2929 8.29289C17.6834 7.90237 18.3164 7.90237 18.707 8.29289C19.0973 8.68343 19.0974 9.31648 18.707 9.70696L12.707 15.707C12.3165 16.0974 11.6834 16.0973 11.2929 15.707L5.29289 9.70696C4.90237 9.31643 4.90237 8.68342 5.29289 8.29289C5.68342 7.90237 6.31643 7.90237 6.70696 8.29289L11.9999 13.5859L17.2929 8.29289Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                </div>
-                                <div class="nav_mobile-links_submenu-items">
-                                    <a
-                                        href="/smart.html"
-                                        class="header__sublink-mobile"
-                                        >AgrosaSmart</a
-                                    >
-                                    <a
-                                        href="/agrosainsurance.html"
-                                        class="header__sublink-mobile"
-                                        >AgrosaInsurance</a
-                                    >
-                                    <a
-                                        href="/farm.html"
-                                        class="header__sublink-mobile"
-                                        >AgrosaFarm</a
-                                    >
-                                    <a
-                                        href="/chem.html"
-                                        class="header__sublink-mobile selected"
-                                        >AgroChem</a
-                                    >
-                                </div>
-                            </button>
-                            <a href="#" class="nav_mobile-link">Новости</a>
-                            <a href="#" class="nav_mobile-link">Контакты</a>
+                        <ul
+                            class="nav_mobile-links"
+                            aria-label="Мобильная навигация"
+                        >
+                            <li>
+                                <a href="#" class="nav_mobile-link"
+                                    >О компании</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="nav_mobile-link"
+                                    >Платформа</a
+                                >
+                            </li>
+                            <li>
+                                <button
+                                    class="nav_mobile-link nav_mobile-links_submenu"
+                                >
+                                    <div class="nav_mobile-links_submenu-top">
+                                        Продукты
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M17.2929 8.29289C17.6834 7.90237 18.3164 7.90237 18.707 8.29289C19.0973 8.68343 19.0974 9.31648 18.707 9.70696L12.707 15.707C12.3165 16.0974 11.6834 16.0973 11.2929 15.707L5.29289 9.70696C4.90237 9.31643 4.90237 8.68342 5.29289 8.29289C5.68342 7.90237 6.31643 7.90237 6.70696 8.29289L11.9999 13.5859L17.2929 8.29289Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="nav_mobile-links_submenu-items">
+                                        <a
+                                            href="/smart.html"
+                                            class="header__sublink-mobile"
+                                            >AgrosaSmart</a
+                                        >
+                                        <a
+                                            href="/agrosainsurance.html"
+                                            class="header__sublink-mobile"
+                                            >AgrosaInsurance</a
+                                        >
+                                        <a
+                                            href="/farm.html"
+                                            class="header__sublink-mobile"
+                                            >AgrosaFarm</a
+                                        >
+                                        <a
+                                            href="/chem.html"
+                                            class="header__sublink-mobile selected"
+                                            >AgroChem</a
+                                        >
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <a href="#" class="nav_mobile-link">Новости</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav_mobile-link">Контакты</a>
+                            </li>
                             <div class="header__mobile-btn">
                                 <button class="button primary small">
                                     Оставить заявку
                                 </button>
                             </div>
-                        </nav>
-                    </div>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>

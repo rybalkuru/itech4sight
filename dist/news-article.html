@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <link rel="stylesheet" href="css/main.css" />
         <title>iTech4Sight</title>
 
@@ -162,145 +163,153 @@
             </div>
         </header>
         <main class="main">
-            <section class="welcome">
-                <div class="welcome__wrapper">
-                    <div class="welcome__main">
-                        <div class="welcome__info welcome__info--smart">
-                            <h1 class="welcome__title">
-                                Agrosa&#8203;<span class="welcome__title_custom"
-                                    >Smart</span
-                                >
-                            </h1>
-                            <p class="welcome__description">
-                                Визуализация и анализ пространственных
-                                данных с использованием геоинформационных
-                                технологий, инструментов спутникового
-                                мониторинга и обработки больших данных.
+            <section class="news-article">
+                <a class="breadcrumbs" href="/news">
+                    <svg>
+                        <use href="images/icons/icons.svg#chevron-left" /></svg
+                    >Все новости
+                </a>
+                <article itemtype="https://schema.org/NewsArticle">
+                    <div class="title-with-date">
+                        <time
+                            class="date"
+                            datetime="2025-02-07"
+                            itemprop="datePublished"
+                        >
+                            07.02.2025
+                        </time>
+                        <h1>
+                            Зачем нужен агросервис и чем он будет полезен
+                            сельхозпроизводителям рассказал руководитель
+                            «АйТекФорсайт» Владимир Диденко на вебинаре компании
+                            «Еврохим»
+                        </h1>
+                    </div>
+                    <div class="news-text">
+                        <p itemprop="description">
+                            29 января руководитель нашей компании «АйТекФорсайт»
+                            Владимир Диденко принял участие в вебинаре
+                            «Актуальные агрознания и агросервис».
+                        </p>
+                        <p>
+                            Также на мероприятии выступали спикеры Всеволод
+                            Лапушкин — кандидат биологических наук, доцент
+                            кафедры РГАУ-МСХА им. К.А Тимирязева и Максим
+                            Евгеньевич Столяров — руководитель агросопровождения
+                            ключевых клиентов компании «Еврохим». В ходе
+                            вебинара обсудили вопросы будущего аграрной науки
+                            и аграрного производства, важность полевых опытов,
+                            работу агросервисов, пути их интеграции
+                            в сельскохозяйственное производство.
+                        </p>
+                        <img
+                            src="images/welcome-img-smart.png"
+                            alt="Награда"
+                            loading="lazy"
+                            itemprop="image"
+                        />
+
+                        <p itemprop="description">
+                            Владимир Иванович рассказал, где в растениеводстве
+                            используются спутниковые данные, и как они способны
+                            повысить эффективность производства. Одним из важных
+                            направлений использования снимков ДЗЗ в сельском
+                            хозяйстве является картирование полей по актуальным
+                            данным и мониторинг изменений землепользования.
+                            Ещё одним актуальным вопросом стало обсуждение
+                            возможностей мониторинга состояния посевов
+                            и оперативного получения данных о качестве биомассы,
+                            фазе развития культуры, наличии и влиянии
+                            стресс-факторов на растения и выявлении
+                            проблемных зон. На основе этих данных агрономы
+                            и руководители хозяйства смогут быстро принимать
+                            наиболее эффективные решения, например, проводить
+                            обработку проблемных участков фунгицидами
+                            или вносить подкормку там, где есть дефицит
+                            питательных веществ. Также Владимир Иванович
+                            рассказал о перспективах использования инструментов
+                            ИИ для анализа спутниковых снимков и снимков
+                            сверхвысокого разрешения, получаемых с БПЛА. Такой
+                            подход позволяет, например, выполнять автоматическую
+                            классификацию культур на полях, а также выявлять
+                            зоны заражения на ранних стадиях развития болезней.
+                        </p>
+                        <img
+                            src="images/news-article-mini.png"
+                            alt="Награда"
+                            loading="lazy"
+                            itemprop="image"
+                        />
+                        <p>
+                            В конце вебинара спикеры ответили на вопросы
+                            пользователей чата компании «Еврохим».
+                        </p>
+                        <p>
+                            Если вы хотите больше узнать об агросервисе
+                            и технологиях ИИ в растениеводстве, то приглашаем
+                            посмотреть запись вебинара по ссылке.
+                        </p>
+                    </div>
+                </article>
+            </section>
+            <section class="news-about">
+                <a href="#">
+                    <div class="link">
+                        <svg>
+                            <use
+                                href="images/icons/icons.svg#chevron-left"
+                            /></svg
+                        >Предыдущая новость
+                    </div>
+                    <div class="text">
+                        <div class="title-with-date">
+                            <time
+                                class="date"
+                                datetime="2025-02-07"
+                                itemprop="datePublished"
+                            >
+                                07.02.2025
+                            </time>
+                            <p>
+                                «АйТекФорсайт» - ведущий поставщик решений
+                                в области космического мониторинга
+                                для агрострахования.
                             </p>
                         </div>
-                        <div>
-                            <button class="button secondary welcome__button">
-                                Оставить заявку
-                            </button>
-                        </div>
                     </div>
-                    <div class="welcome__secondary">
-                        <div class="welcome__img-wrapper smart">
-                            <img
-                                src="images/welcome-img-smart.png"
-                                class="welcome__img"
-                                alt="smart"
-                            />
-                        </div>
+                </a>
+                <a href="#">
+                    <div class="link">
+                        <svg>
+                            <use
+                                href="images/icons/icons.svg#chevron-right"
+                            /></svg
+                        >Следующая новость
                     </div>
-                </div>
-            </section>
-            <section class="advantages">
-                <div class="advantages__wrapper">
-                    <h2 class="title advantages__title">
-                        Ключевые преимущества
-                    </h2>
-                    <div class="advantages__cards-wrapper smart">
-                        <div class="advantages__cards">
-                            <div
-                                class="advantages__card advantages__card_chart"
-                            >
-                                <div class="advantages__card-header">
-                                    <h5 class="advantages__subtitle">
-                                        Комплексный анализ разнородных данных
-                                    </h5>
-                                    <div class="advantages__icon">
-                                        <svg>
-                                            <use
-                                                href="images/icons/icons.svg#chart"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="advantages__description">
-                                    Развитые инструменты для комплексного
-                                    анализа агроландшафтных, климатических,
-                                    почвенных и спутниковых данных
-                                    с визуализацией на графиках и картах.
-                                </div>
-                            </div>
-                            <div
-                                class="advantages__card advantages__card_security"
-                            >
-                                <div class="advantages__card-header">
-                                    <h5 class="advantages__subtitle">
-                                        Скорость и безопасность
-                                    </h5>
-                                    <div class="advantages__icon">
-                                        <svg>
-                                            <use
-                                                href="images/icons/icons.svg#shield-check"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="advantages__description">
-                                    Скоростные каналы связи, эффективные
-                                    алгоритмы обработки данных, резервное
-                                    копирование, дата-центры на территории
-                                    РФ для надёжной и безопасной работы.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="advantages__cards">
-                            <div class="advantages__card advantages__card_ease">
-                                <div class="advantages__card-header">
-                                    <h5 class="advantages__subtitle">
-                                        Настройка под задачу
-                                    </h5>
-                                    <div class="advantages__icon">
-                                        <svg>
-                                            <use
-                                                href="images/icons/icons.svg#flash"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="advantages__description">
-                                    Пользовательский интерфейс
-                                    и функциональность решения определяется
-                                    требованиями конкретной прикладной задачи
-                                    и может изменяться по мере необходимости.
-                                </div>
-                            </div>
-                            <div
-                                class="advantages__card advantages__card_solution"
-                            >
-                                <div class="advantages__card-header">
-                                    <h5 class="advantages__subtitle">
-                                        Производительность и доступность
-                                    </h5>
-                                    <div class="advantages__icon">
-                                        <svg>
-                                            <use
-                                                href="images/icons/icons.svg#like"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="advantages__description">
-                                    Решение AgrosaSmart доступно практически с
-                                    любого вычислительного устройства,
-                                    подключенного к сети Интернет, обработка
-                                    данных выполняется на мощных серверах.
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text">
+                        <time
+                            class="date"
+                            datetime="2025-02-07"
+                            itemprop="datePublished"
+                        >
+                            07.02.2025
+                        </time>
+                        <p>
+                            «АйТекФорсайт» - ведущий поставщик решений в области
+                            космического мониторинга для агрострахования.
+                        </p>
                     </div>
-                </div>
+                </a>
             </section>
         </main>
+
         <footer class="footer">
             <div class="footer__wrapper">
                 <img
                     class="footer__background"
                     src="images/footer-bg.svg"
                     alt="Задний фон"
+                    loading="lazy"
                 />
                 <div class="footer__main">
                     <div class="footer__contacts">
@@ -308,7 +317,7 @@
                             Если у вас остались вопросы, свяжитесь с нами любым
                             удобным вам способом
                         </h4>
-                        <div class="footer__contacts-list">
+                        <address class="footer__contacts-list">
                             <a
                                 target="_blank"
                                 class="footer__contact"
@@ -359,7 +368,7 @@
                                     />
                                 </svg>
                             </a>
-                        </div>
+                        </address>
                     </div>
                     <div class="footer__info">
                         <p class="footer__info-description">
@@ -398,5 +407,24 @@
             </div>
         </footer>
         <script src="js/main.js"></script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "iTech4Sight",
+                "url": "https://itech4sight.ru/",
+                "logo": "https://itech4sight.ru/images/logo.svg",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+7-800-301-9698",
+                    "contactType": "customer service",
+                    "availableLanguage": ["Russian", "English"]
+                },
+                "sameAs": [
+                    "https://vk.com/itech4sight",
+                    "https://t.me/itech4sight"
+                ]
+            }
+        </script>
     </body>
 </html>

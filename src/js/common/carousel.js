@@ -1,145 +1,146 @@
 (function () {
-    const partners_carousel = document.querySelector(".partners .carousel");
-    const partners_track = partners_carousel.querySelector(".track");
+    const carousel = document.querySelector(".partners .carousel-wrapper");
+    const track = carousel.querySelector(".track");
+    const gap = 16;
 
-    let partners_speed = 0.5; // px за кадр
-    let partners_position = 0;
+    const items = Array.from(track.querySelectorAll(".partner-card"));
 
-    // клонируем для бесконечной прокрутки
-    partners_track.innerHTML += partners_track.innerHTML;
-
-    const partners_items = partners_track.querySelectorAll(".partners__item");
-    const partners_itemWidth = partners_items[0].offsetWidth + 16; // ширина + gap
-    const partners_totalWidth = partners_itemWidth * partners_items.length;
-
-    let partners_paused = false;
-    let partners_isDragging = false;
-    let partners_startX = 0;
-    let partners_dragStartPos = 0;
-    let partners_dragged = false;
-
-    let partners_lastX = 0;
-    let partners_lastTime = 0;
-    let partners_velocity = 0;
-    let partners_raf;
-
-    function partners_animate() {
-        if (!partners_paused && !partners_isDragging) {
-            partners_position -= partners_speed;
-            if (Math.abs(partners_position) >= partners_totalWidth / 2) {
-                partners_position = 0;
-            }
-            partners_track.style.transform = `translateX(${partners_position}px)`;
+    // клонируем элементы, чтобы track > 2 * экран
+    function cloneItems() {
+        let currentItems = [...items];
+        while (getTrackWidth(currentItems) < window.innerWidth * 2) {
+            const clones = items.map((el) => el.cloneNode(true));
+            clones.forEach((clone) => track.appendChild(clone));
+            currentItems = currentItems.concat(clones);
         }
-        requestAnimationFrame(partners_animate);
-    }
-    partners_animate();
-
-    // hover → стоп
-    partners_carousel.addEventListener(
-        "mouseenter",
-        () => (partners_paused = true)
-    );
-    partners_carousel.addEventListener(
-        "mouseleave",
-        () => (partners_paused = false)
-    );
-
-    // --- Drag/Swipe ---
-    function partners_startDrag(e) {
-        partners_isDragging = true;
-        partners_dragged = false;
-        partners_startX = e.pageX || e.touches[0].pageX;
-        partners_dragStartPos = partners_position;
-
-        partners_lastX = partners_startX;
-        partners_lastTime = Date.now();
-
-        cancelAnimationFrame(partners_raf);
+        return currentItems;
     }
 
-    function partners_onDrag(e) {
-        if (!partners_isDragging) return;
+    function getTrackWidth(itemArray) {
+        let width = 0;
+        itemArray.forEach((el) => (width += el.offsetWidth));
+        width += (itemArray.length - 1) * gap;
+        return width;
+    }
 
+    let allItems = cloneItems();
+    let totalWidth = getTrackWidth(allItems);
+    const wrapWidth = totalWidth / 2; // wrap по половине клонированного блока
+
+    let position = 0;
+    const speed = 0.5;
+    let raf;
+
+    let paused = false;
+    let isDragging = false;
+    let startX = 0;
+    let dragStartPos = 0;
+    let dragged = false;
+
+    let velocity = 0;
+    let lastX = 0;
+    let lastTime = 0;
+
+    function animate() {
+        if (!paused && !isDragging) {
+            position -= speed;
+            if (position <= -wrapWidth) position += wrapWidth;
+            if (position >= 0) position -= wrapWidth;
+            track.style.transform = `translate3d(${position}px,0,0)`; // точное GPU-преобразование
+        }
+        raf = requestAnimationFrame(animate);
+    }
+    animate();
+
+    carousel.addEventListener("mouseenter", () => (paused = true));
+    carousel.addEventListener("mouseleave", () => (paused = false));
+
+    // --- drag ---
+    function startDrag(e) {
+        isDragging = true;
+        dragged = false;
+        startX = e.pageX || e.touches[0].pageX;
+        dragStartPos = position;
+        lastX = startX;
+        lastTime = performance.now();
+        velocity = 0;
+        cancelAnimationFrame(raf);
+    }
+
+    function onDrag(e) {
+        if (!isDragging) return;
         const x = e.pageX || e.touches[0].pageX;
-        const dx = x - partners_startX;
-        if (Math.abs(dx) > 3) partners_dragged = true;
+        const dx = x - startX;
+        if (Math.abs(dx) > 3) dragged = true;
 
-        partners_position = partners_dragStartPos + dx;
+        position = dragStartPos + dx;
 
-        // бесконечность
-        if (partners_position <= -partners_totalWidth / 2)
-            partners_position += partners_totalWidth / 2;
-        if (partners_position >= 0)
-            partners_position -= partners_totalWidth / 2;
+        // wrap-around
+        if (position <= -wrapWidth) position += wrapWidth;
+        if (position >= 0) position -= wrapWidth;
 
-        partners_track.style.transform = `translateX(${partners_position}px)`;
+        track.style.transform = `translate3d(${position}px,0,0)`;
 
-        // для инерции
-        const now = Date.now();
-        const deltaX = x - partners_lastX;
-        const deltaT = now - partners_lastTime || 1;
-        partners_velocity = deltaX / deltaT;
-
-        partners_lastX = x;
-        partners_lastTime = now;
+        // вычисляем мгновенную скорость для инерции
+        const now = performance.now();
+        const dt = now - lastTime || 1;
+        velocity = (x - lastX) / dt;
+        lastX = x;
+        lastTime = now;
     }
 
-    function partners_endDrag() {
-        if (!partners_isDragging) return;
-        partners_isDragging = false;
+    function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        if (!dragged) {
+            animate();
+            return;
+        }
 
-        if (!partners_dragged) return; // клик, ничего не делаем
+        let momentum = velocity * 200; // небольшая инерция
+        const friction = 0.92;
 
-        // инерция
-        let target = partners_position + partners_velocity * 200; // коэффициент инерции
+        function inertia() {
+            momentum *= friction;
+            //position += momentum;
 
-        // ограничение по бесконечной логике
-        if (target <= -partners_totalWidth / 2)
-            target += partners_totalWidth / 2;
-        if (target >= 0) target -= partners_totalWidth / 2;
+            // wrap-around
+            if (position <= -wrapWidth) position += wrapWidth;
+            if (position >= 0) position -= wrapWidth;
 
-        const duration = 500;
-        const start = partners_position;
-        const startTime = performance.now();
+            track.style.transform = `translate3d(${position}px,0,0)`;
 
-        function animate(time) {
-            const progress = Math.min(1, (time - startTime) / duration);
-            const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-            partners_position = start + (target - start) * ease;
-
-            // бесконечность во время анимации
-            if (partners_position <= -partners_totalWidth / 2)
-                partners_position += partners_totalWidth / 2;
-            if (partners_position >= 0)
-                partners_position -= partners_totalWidth / 2;
-
-            partners_track.style.transform = `translateX(${partners_position}px)`;
-            if (progress < 1) {
-                partners_raf = requestAnimationFrame(animate);
+            if (Math.abs(momentum) > 0.1) {
+                raf = requestAnimationFrame(inertia);
+            } else {
+                animate();
             }
         }
-        requestAnimationFrame(animate);
+        inertia();
     }
 
-    // --- События ---
-    partners_carousel.addEventListener("mousedown", partners_startDrag);
-    partners_carousel.addEventListener("touchstart", partners_startDrag);
+    // --- события ---
+    carousel.addEventListener("mousedown", startDrag);
+    carousel.addEventListener("touchstart", startDrag);
+    window.addEventListener("mousemove", onDrag);
+    window.addEventListener("touchmove", onDrag);
+    window.addEventListener("mouseup", endDrag);
+    window.addEventListener("touchend", endDrag);
 
-    window.addEventListener("mousemove", partners_onDrag);
-    window.addEventListener("touchmove", partners_onDrag);
-
-    window.addEventListener("mouseup", partners_endDrag);
-    window.addEventListener("touchend", partners_endDrag);
-
-    // --- Ссылки и картинки: блокируем drag у них и клики при перетаскивании ---
-    partners_track.querySelectorAll("a, img").forEach((el) => {
-        el.addEventListener("dragstart", (e) => e.preventDefault());
-    });
-
-    partners_track.querySelectorAll("a").forEach((link) => {
+    track
+        .querySelectorAll("a, img")
+        .forEach((el) =>
+            el.addEventListener("dragstart", (e) => e.preventDefault())
+        );
+    track.querySelectorAll("a").forEach((link) =>
         link.addEventListener("click", (e) => {
-            if (partners_dragged) e.preventDefault();
-        });
+            if (dragged) e.preventDefault();
+        })
+    );
+
+    // --- resize ---
+    window.addEventListener("resize", () => {
+        totalWidth = getTrackWidth(allItems);
+        raf = requestAnimationFrame(animate);
     });
 })();

@@ -63,7 +63,8 @@
 }
 
 .switcher__active {
-    box-shadow: 0 2px 4px 0 rgba(16, 24, 40, 0.08), 1px 0 6px 0 rgba(16, 24, 40, 0.04);
+    box-shadow: 0 2px 4px 0 rgba(16, 24, 40, 0.08),
+        1px 0 6px 0 rgba(16, 24, 40, 0.04);
     background: #fdfdfd;
     border-radius: 4px;
     color: var(--color-text-main);
@@ -91,7 +92,6 @@
     width: 200px;
 }
 
-
 .range-input {
     margin: 0;
     -webkit-appearance: none;
@@ -117,8 +117,7 @@
     height: 28px;
     border-radius: 999px;
     background-color: #fdfdfd;
-    box-shadow:
-        0 2px 4px rgba(16, 24, 40, 0.08),
+    box-shadow: 0 2px 4px rgba(16, 24, 40, 0.08),
         1px 0 6px rgba(16, 24, 40, 0.04);
     margin-top: -6px;
     position: relative;
@@ -136,14 +135,12 @@
     height: 28px;
     border-radius: 999px;
     background-color: #fdfdfd;
-    box-shadow:
-        0 2px 4px rgba(16, 24, 40, 0.08),
+    box-shadow: 0 2px 4px rgba(16, 24, 40, 0.08),
         1px 0 6px rgba(16, 24, 40, 0.04);
     border: none;
     position: relative;
     z-index: 3;
 }
-
 
 .range-marks {
     width: 100%;
@@ -157,7 +154,6 @@
     z-index: 3;
     height: 4px;
 }
-
 
 .range-mark {
     width: 4px;
@@ -364,14 +360,11 @@
 
 .switcher__left,
 .switcher__right {
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
+    transition: background-color 0.3s ease, color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 @media (max-width: 1024px) {
-
     .prices {
         padding: 80px 0px;
     }
@@ -403,7 +396,6 @@
         margin: 24px 0;
     }
 
-
     .costs__line {
         margin: 24px 0;
     }
@@ -417,7 +409,6 @@
     }
 }
 
-
 @media (max-width: 1022px) {
     .prices__costs {
         grid-template-columns: repeat(2, 1fr);
@@ -425,7 +416,6 @@
 }
 
 @media (max-width: 811px) {
-
     .costs__block {
         height: 669px;
     }
@@ -450,7 +440,6 @@
     .switcher__right {
         width: 100%;
     }
-
 }
 
 @media (max-width: 768px) {

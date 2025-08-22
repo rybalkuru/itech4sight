@@ -4,11 +4,19 @@
     display: flex;
     flex-direction: column;
     gap: 56px;
+    @media (max-width: variables.$tablet) {
+        padding: 80px 0;
+        gap: 48px;
+    }
     h2 {
         font-family: var(--second-family);
         font-weight: 700;
         font-size: 50px;
         line-height: 56px;
+        @media (max-width: variables.$tablet) {
+            font-size: 40px;
+            line-height: 48px;
+        }
     }
     .grids {
         display: flex;
@@ -44,7 +52,7 @@
             @media (max-width: variables.$tablet) {
                 padding: 24px 24px 0 24px;
             }
-            h4 {
+            h3 {
                 font-family: var(--font-main);
                 font-weight: 700;
                 font-size: 34px;
@@ -72,7 +80,7 @@
                 background: url("../../images/product-bg-ins.svg") no-repeat
                         calc(100% - 32px) 32px,
                     #ebefff;
-                h4 span {
+                h3 span {
                     color: var(--color-text-primary);
                 }
                 .img {
@@ -84,7 +92,7 @@
                 background: url("../../images/product-bg-chem.svg") no-repeat
                         calc(100% - 32px) 32px,
                     #f7ebff;
-                h4 span {
+                h3 span {
                     color: var(--color-text-primary-chem);
                 }
                 .img {
@@ -97,7 +105,7 @@
                 background: url("../../images/product-bg-farm.svg") no-repeat
                         calc(100% - 32px) 32px,
                     #fff8e5;
-                h4 span {
+                h3 span {
                     color: var(--color-text-primary-farm);
                 }
                 .img {
@@ -110,7 +118,7 @@
                 background: url("../../images/product-bg-smart.svg") no-repeat
                         calc(100% - 32px) 32px,
                     #e6faee;
-                h4 span {
+                h3 span {
                     color: var(--color-text-primary-smart);
                 }
                 .img {
